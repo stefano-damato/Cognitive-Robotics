@@ -1,0 +1,52 @@
+version: "2.0"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+  
+#rule per mostrare tutte le activities
+- rule: Show all activities
+  steps:
+  - intent: show_all_activities
+  - action: action_submit
+  
+#rule per rimuovere una activity specifica
+- rule: Remove an activity
+  steps:
+  - intent: remove_activity
+  - action: remove_activity_form
+  - active_loop: remove_activity_form
+ 
+#form per rimuovere una activity specifica
+- rule: Remove activity form
+  condition: 
+  - active_loop: remove_activity_form
+  steps:
+  - action: remove_activity_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_thanks
+  - action: action_submit
+  
+#rule per aggiungere una activity
+- rule: Add activity
+  steps:
+  - intent: add_activity
+  - action: add_activity_form
+  - active_loop: add_activity_form
+ 
+ 
+#form per aggiungere una activity
+- rule: Add activity form
+  condition: 
+  - active_loop: add_activity_form
+  steps:
+  - action: add_activity_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_thanks

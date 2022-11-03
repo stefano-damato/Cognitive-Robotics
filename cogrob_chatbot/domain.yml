@@ -1,0 +1,94 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - thankyou
+  - deny
+  - affirm
+  - inform
+  - add_activity
+  - show_all_activities
+  - remove_activity
+  
+
+entities:
+  - action
+  - deadline
+  - activity
+  - reminder
+
+actions:
+  - action_submit
+  - utter_greet
+  - utter_goodbye
+  - utter_noworries
+  - utter_thanks
+  - utter_ask_activity
+
+slots:
+  activity:
+    type: text
+    influence_conversation: false
+  deadline:
+    type: text
+    influence_conversation: false
+  reminder:
+    type: text
+    influence_conversation: false
+
+forms:
+  show_activity_form:
+    required_slots:
+      activity:
+      - type: from_entity
+        entity: activity
+  remove_activity_form:
+    required_slots:
+      activity:
+      - type: from_entity
+        entity: activity
+  add_activity_form:
+    required_slots:
+      activity:
+      - type: from_entity
+        entity: activity
+      deadline:
+      - type: from_entity
+        entity: deadline
+  
+ 
+
+responses:
+
+  utter_ask_activity:
+  - text: "What kind of activity would you like to add?"
+  - text: "What kind of activity would you like to add?"
+  - text: "What activity would you like to add?"
+  - text: "What activity would you like to add?"
+
+  utter_ask_deadline:
+  - text: "What is the deadline?"
+  - text: "Please specify the deadline"
+  - text: "At what date and time does the activity start?"
+  - text: "When does the activity start?"
+
+  utter_greet:
+  - text: "Hi. What are you looking for?"
+  - text: "Hello! What can I help you find today?"
+
+  utter_goodbye:
+  - text: "Talk to you later!"
+  - text: "Have a good day."
+  - text: "Until next time!"
+
+  utter_noworries:
+  - text: "My pleasure."
+  - text: "You are welcome!"
+
+  utter_thanks:
+  - text: "Ok. Thank you!"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
