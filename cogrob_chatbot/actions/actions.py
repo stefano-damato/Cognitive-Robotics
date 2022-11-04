@@ -17,6 +17,7 @@ def exportDict(filepath,dict):
 
 
 FILENAME="toDoList.txt"
+
 class ActionAddSubmit(Action):
 
     def name(self) -> Text:
@@ -41,4 +42,24 @@ class ActionAddSubmit(Action):
         exportDict(FILENAME, toDoList)
 
         dispatcher.utter_message(text=f"Added activity {activity} at {deadline}")
+        return [AllSlotsReset()]
+
+class ActionDisplaySubmit(Action):
+
+    def name(self) -> Text:
+        return "action_display_submit"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        if(os.path.exists(FILENAME)):
+            toDoList=importDict(FILENAME)
+        else:
+            toDoList={}
+
+        i = 1
+
+        for key,value in toDoList.items():
+            dispatcher.utter_message(text=f"[{i}] Activity: {key}, deadline: {value}\n")
         return [AllSlotsReset()]
