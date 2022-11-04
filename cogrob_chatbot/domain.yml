@@ -19,7 +19,7 @@ entities:
   - reminder
 
 actions:
-  - action_submit
+  - action_add_submit
   - utter_greet
   - utter_goodbye
   - utter_noworries

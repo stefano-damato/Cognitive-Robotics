@@ -11,7 +11,7 @@ rules:
 - rule: Show all activities
   steps:
   - intent: show_all_activities
-  - action: action_submit
+  - action: action_add_submit
   
 #rule per rimuovere una activity specifica
 - rule: Remove an activity
@@ -30,7 +30,7 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: utter_thanks
-  - action: action_submit
+  - action: action_add_submit
   
 #rule per aggiungere una activity
 - rule: Add activity
@@ -50,3 +50,4 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: utter_thanks
+  - action: action_add_submit

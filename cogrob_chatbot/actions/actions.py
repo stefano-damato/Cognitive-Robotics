@@ -2,8 +2,9 @@ from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.events import SlotSet
+from rasa_sdk.events import SlotSet, AllSlotsReset
 import ast
+import os
 
 def importDict(filepath):
     with open(filepath, 'r') as f:
@@ -11,15 +12,15 @@ def importDict(filepath):
     convertedDict=ast.literal_eval(str)
     return convertedDict
 def exportDict(filepath,dict):
-    with open(filepath, 'w') as f:
+    with open(filepath, 'w+') as f:
         f.write(str(dict))
 
 
 FILENAME="toDoList.txt"
-class ActionSubmit(Action):
+class ActionAddSubmit(Action):
 
     def name(self) -> Text:
-        return "action_submit"
+        return "action_add_submit"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
@@ -30,9 +31,14 @@ class ActionSubmit(Action):
 
         print("\nActivity:",activity)
         print("Deadline:",deadline)
-        toDoList=importDict(FILENAME)
-        attr=list() #qui poi mettimo il campo deadline e reminder
-        toDoList[Activity]=attr.append(deadline)
+
+        if(os.path.exists(FILENAME)):
+            toDoList=importDict(FILENAME)
+        else:
+            toDoList={}
+        #attr=list() #qui poi mettimo il campo deadline e reminder
+        toDoList[activity]=deadline
+        exportDict(FILENAME, toDoList)
 
         dispatcher.utter_message(text=f"Added activity {activity} at {deadline}")
-        return "????"
+        return [AllSlotsReset()]
