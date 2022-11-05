@@ -20,6 +20,8 @@ entities:
 
 actions:
   - action_add_submit
+  - action_display_submit
+  - action_remove_submit
   - utter_greet
   - utter_goodbye
   - utter_noworries
@@ -38,11 +40,6 @@ slots:
     influence_conversation: false
 
 forms:
-  show_activity_form:
-    required_slots:
-      activity:
-      - type: from_entity
-        entity: activity
   remove_activity_form:
     required_slots:
       activity:
@@ -62,10 +59,19 @@ forms:
 responses:
 
   utter_ask_activity:
-  - text: "What kind of activity would you like to add?"
-  - text: "What kind of activity would you like to add?"
-  - text: "What activity would you like to add?"
-  - text: "What activity would you like to add?"
+  - text: "What kind of activity would you like to add/remove/modify?"
+  - text: "What kind of task would you like to add/remove/modify?"
+  - text: "What activity would you like to add/remove/modify?"
+  - text: "What task would you like to add/remove/modify?"
+  - condition: 
+    - type: form
+      name: remove_activity_form
+      value: 
+    text: "What activity would you like to remove?"
+  - condition: 
+    - type: form
+      name: add_activity_form
+    text: "What activity would you like to add?"
 
   utter_ask_deadline:
   - text: "What is the deadline?"

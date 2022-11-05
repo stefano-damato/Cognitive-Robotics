@@ -62,4 +62,31 @@ class ActionDisplaySubmit(Action):
 
         for key,value in toDoList.items():
             dispatcher.utter_message(text=f"[{i}] Activity: {key}, deadline: {value}\n")
+            i+=1
+        return [AllSlotsReset()]
+
+class ActionRemoveSubmit(Action):
+
+    def name(self) -> Text:
+        return "action_remove_submit"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        activity = tracker.get_slot("activity")
+
+        print("\nActivity:",activity)
+
+        if(not os.path.exists(FILENAME)):
+            dispatcher.utter_message(text=f"There are no activities")
+        else:
+            toDoList=importDict(FILENAME)
+            if(not activity in toDoList):
+                dispatcher.utter_message(text=f"There is no such activity")
+            else:
+                removed_activity=toDoList.pop(activity)
+        exportDict(FILENAME, toDoList)
+
+        dispatcher.utter_message(text=f"Removed activity {activity} with deadline {removed_activity}")
         return [AllSlotsReset()]

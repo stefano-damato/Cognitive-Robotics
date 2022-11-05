@@ -127,7 +127,28 @@ nlu:
     - Please remind me to [book a train](activity) at [02-03-2022 11:50](deadline)
     - Set a reminder saying [contact service center](activity) at [02-03-2022 14:50](deadline)
     - Remind me to [verify project budget](action) at [02-03-2022 14:50](deadline)
-
+- intent: show_all_activities
+  examples: |
+    - Show me the notes
+    - Show all
+    - Show me the activities
+    - Show me the tasks
+    - Display the notes
+    - Display all
+    - Display the activities
+    - Display the tasks
+    - Show the notes
+    - Show the activities
+    - Show the tasks
+- intent: remove_activity
+  examples: |
+    - Remove a note
+    - Remove a task
+    - Remove an activity
+    - Delete a note
+    - Delete a task
+    - Delete an activity
+    - Remove
 - intent: thankyou
   examples: |
     - Thanks
