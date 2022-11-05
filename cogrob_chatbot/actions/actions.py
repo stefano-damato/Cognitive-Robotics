@@ -29,6 +29,7 @@ class ActionAddSubmit(Action):
         
         activity = tracker.get_slot("activity")
         deadline = tracker.get_slot("deadline")
+        reminder = tracker.get_slot("reminder")
 
         print("\nActivity:",activity)
         print("Deadline:",deadline)
@@ -38,7 +39,10 @@ class ActionAddSubmit(Action):
         else:
             toDoList={}
         #attr=list() #qui poi mettimo il campo deadline e reminder
-        toDoList[activity]=deadline
+        toDoList[activity]=list()
+        toDoList[activity].append(deadline)
+        toDoList[activity].append(reminder)
+
         exportDict(FILENAME, toDoList)
 
         dispatcher.utter_message(text=f"Added activity {activity} at {deadline}")
@@ -61,7 +65,7 @@ class ActionDisplaySubmit(Action):
         i = 1
 
         for key,value in toDoList.items():
-            dispatcher.utter_message(text=f"[{i}] Activity: {key}, deadline: {value}\n")
+            dispatcher.utter_message(text=f"[{i}] Activity: {key}, deadline: {value[0]}, reminder: {value[1]}\n")
             i+=1
         return [AllSlotsReset()]
 
@@ -73,17 +77,19 @@ class ActionRemoveSubmit(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
+
         activity = tracker.get_slot("activity")
 
         print("\nActivity:",activity)
 
         if(not os.path.exists(FILENAME)):
             dispatcher.utter_message(text=f"There are no activities")
+            return [AllSlotsReset()]
         else:
             toDoList=importDict(FILENAME)
-            if(not activity in toDoList):
+            if(activity not in toDoList):
                 dispatcher.utter_message(text=f"There is no such activity")
+                return [AllSlotsReset()]
             else:
                 removed_activity=toDoList.pop(activity)
         exportDict(FILENAME, toDoList)

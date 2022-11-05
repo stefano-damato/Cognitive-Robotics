@@ -11,9 +11,7 @@ intents:
   - show_all_activities
   - remove_activity
   
-
 entities:
-  - action
   - deadline
   - activity
   - reminder
@@ -26,7 +24,9 @@ actions:
   - utter_goodbye
   - utter_noworries
   - utter_thanks
-  - utter_ask_activity
+  - utter_ask_add_activity_form_activity
+  - utter_ask_remove_activity_form_activity
+  - utter_ask_reminder
 
 slots:
   activity:
@@ -36,7 +36,7 @@ slots:
     type: text
     influence_conversation: false
   reminder:
-    type: text
+    type: bool
     influence_conversation: false
 
 forms:
@@ -53,31 +53,38 @@ forms:
       deadline:
       - type: from_entity
         entity: deadline
+      reminder:
+      - intent: affirm
+        type: from_intent
+        value: true
+      - intent: deny
+        type: from_intent
+        value: false
   
  
 
 responses:
 
-  utter_ask_activity:
-  - text: "What kind of activity would you like to add/remove/modify?"
-  - text: "What kind of task would you like to add/remove/modify?"
-  - text: "What activity would you like to add/remove/modify?"
-  - text: "What task would you like to add/remove/modify?"
-  - condition: 
-    - type: form
-      name: remove_activity_form
-      value: 
-    text: "What activity would you like to remove?"
-  - condition: 
-    - type: form
-      name: add_activity_form
-    text: "What activity would you like to add?"
+  utter_ask_add_activity_form_activity:
+  - text: "What kind of activity would you like to add?"
+  - text: "What kind of task would you like to add?"
+  - text: "What activity would you like to add?"
+  - text: "What task would you like to add?"
+
+  utter_ask_remove_activity_form_activity:
+  - text: "What kind of activity would you like to remove?"
+  - text: "What kind of task would you like to remove?"
+  - text: "What activity would you like to remove?"
+  - text: "What task would you like to remove?"
 
   utter_ask_deadline:
   - text: "What is the deadline?"
   - text: "Please specify the deadline"
   - text: "At what date and time does the activity start?"
   - text: "When does the activity start?"
+
+  utter_ask_reminder:
+  - text: "Would you like to activate a reminder for this activity?"
 
   utter_greet:
   - text: "Hi. What are you looking for?"

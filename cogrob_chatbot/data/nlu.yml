@@ -149,6 +149,25 @@ nlu:
     - Delete a task
     - Delete an activity
     - Remove
+    - remove [grocery](activity)
+    - delete [shopping](activity)
+    - Remove [running](activity)
+    - Remove the note [brunch](activity)
+    - remove the task [buy apples](activity)
+    - delete the note [go out](activity)
+    - delete the task [study](activity)
+    - Remove the activity [call Steve](activity)
+    - Delete the activity [visit grandma](action)
+    - remove [email team for updates](activity)
+    - delete [send out meeting request](activity)
+    - delete [prepare a deck for next meeting](activity)
+    - Remove [book conference room](activity)
+    - Delete [update project plan](action)
+    - remove [create a meeting agenda](activity)
+    - delete [book a plane](activity)
+    - Remove [book a train](activity)
+    - Delete [contact service center](activity)
+    - Remove [verify project budget](action)
 - intent: thankyou
   examples: |
     - Thanks

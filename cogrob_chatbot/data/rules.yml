@@ -29,7 +29,6 @@ rules:
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
-  - action: utter_thanks
   - action: action_remove_submit
   
 #rule per aggiungere una activity
