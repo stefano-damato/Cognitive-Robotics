@@ -11,6 +11,18 @@ rules:
 - rule: Show all activities
   steps:
   - intent: show_all_activities
+  - action: show_all_activities_form
+  - active_loop: show_all_activities_form
+
+#form per mostrare tutte le activities
+- rule: Show all activities form
+  condition: 
+  - active_loop: show_all_activities_form
+  steps:
+  - action: show_all_activities_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
   - action: action_display_submit
   
 #rule per rimuovere una activity specifica

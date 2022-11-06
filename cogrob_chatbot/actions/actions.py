@@ -16,7 +16,7 @@ def exportDict(filepath,dict):
         f.write(str(dict))
 
 
-FILENAME="toDoList.txt"
+FILENAME="_toDoList.txt"
 
 class ActionAddSubmit(Action):
 
@@ -30,12 +30,15 @@ class ActionAddSubmit(Action):
         activity = tracker.get_slot("activity")
         deadline = tracker.get_slot("deadline")
         reminder = tracker.get_slot("reminder")
+        user_name = tracker.get_slot("user_name")
 
         print("\nActivity:",activity)
         print("Deadline:",deadline)
 
-        if(os.path.exists(FILENAME)):
-            toDoList=importDict(FILENAME)
+        file_path = user_name + FILENAME
+        
+        if(os.path.exists(file_path)):
+            toDoList=importDict(file_path)
         else:
             toDoList={}
         #attr=list() #qui poi mettimo il campo deadline e reminder
@@ -43,9 +46,10 @@ class ActionAddSubmit(Action):
         toDoList[activity].append(deadline)
         toDoList[activity].append(reminder)
 
-        exportDict(FILENAME, toDoList)
+        exportDict(file_path, toDoList)
 
-        dispatcher.utter_message(text=f"Added activity {activity} at {deadline}")
+        dispatcher.utter_message(text=f"Added activity {activity} at {deadline} for {user_name}")
+        
         return [AllSlotsReset()]
 
 class ActionDisplaySubmit(Action):
@@ -57,10 +61,20 @@ class ActionDisplaySubmit(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        if(os.path.exists(FILENAME)):
-            toDoList=importDict(FILENAME)
+        user_name = tracker.get_slot("user_name")
+
+        if(user_name is None):
+            dispatcher.utter_message(text=f"Please enter your name")
+            return [AllSlotsReset()]
+
+        file_path = user_name + FILENAME
+
+        if(os.path.exists(file_path)):
+            toDoList=importDict(file_path)
         else:
             toDoList={}
+
+        dispatcher.utter_message(text=f"{user_name}'s ToDo List\n")
 
         i = 1
 
@@ -79,20 +93,23 @@ class ActionRemoveSubmit(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         activity = tracker.get_slot("activity")
+        user_name = tracker.get_slot("user_name")
+
+        file_path = user_name + FILENAME
 
         print("\nActivity:",activity)
 
-        if(not os.path.exists(FILENAME)):
+        if(not os.path.exists(file_path)):
             dispatcher.utter_message(text=f"There are no activities")
             return [AllSlotsReset()]
         else:
-            toDoList=importDict(FILENAME)
+            toDoList=importDict(file_path)
             if(activity not in toDoList):
                 dispatcher.utter_message(text=f"There is no such activity")
                 return [AllSlotsReset()]
             else:
                 removed_activity=toDoList.pop(activity)
-        exportDict(FILENAME, toDoList)
+        exportDict(file_path, toDoList)
 
         dispatcher.utter_message(text=f"Removed activity {activity} with deadline {removed_activity}")
         return [AllSlotsReset()]

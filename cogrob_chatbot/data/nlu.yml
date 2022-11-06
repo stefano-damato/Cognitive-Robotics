@@ -96,6 +96,38 @@ nlu:
     - [book a train](activity)
     - [contact service center](activity)
     - [verify project budget](activity)
+    - [Marco](user_name)
+    - [Mario](user_name)
+    - [Stefano](user_name)
+    - [Fabio](user_name)
+    - [Giusy](user_name)
+    - [Giuseppe](user_name)
+    - [Francesca](user_name)
+    - [Franco](user_name)
+    - [Luigi](user_name)
+    - [Maria](user_name)
+    - [Andrea](user_name)
+    - [Giovanni](user_name)
+    - [Chiara](user_name)
+    - [Lucrezia](user_name)
+    - [Alessia](user_name)
+    - [Antonio](user_name)
+    - [Emanuele](user_name)
+    - [Alessandro](user_name)
+    - [Luca](user_name)
+    - [Matilde](user_name)
+    - [Letizia](user_name)
+    - [Paola](user_name)
+    - [Gianluca](user_name)
+    - [Matteo](user_name)
+    - [Carmelo](user_name)
+    - [Giovanna](user_name)
+    - [Massimo](user_name)
+- intent: introduce
+  examples: |
+    - my name is [Andrea](user_name)
+    - I'm [Giovanna](user_name)
+    - [Chiara](user_name) is my name
 - intent: add_activity
   examples: |
     - Remind me to do
@@ -157,6 +189,11 @@ nlu:
     - Show the notes
     - Show the activities
     - Show the tasks
+    - Show me [Mario](user_name)'s notes
+    - Show me the activities for [Giovanna](user_name)
+    - Show me [Luigi](user_name)'s tasks
+    - Display the notes for [Gianluca](user_name)
+    - Display [Matilde](user_name)'s activities
 - intent: remove_activity
   examples: |
     - Remove a note

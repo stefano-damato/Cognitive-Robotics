@@ -10,11 +10,13 @@ intents:
   - add_activity
   - show_all_activities
   - remove_activity
+  - introduce
   
 entities:
   - deadline
   - activity
   - reminder
+  - user_name
 
 actions:
   - action_add_submit
@@ -38,6 +40,9 @@ slots:
   reminder:
     type: bool
     influence_conversation: false
+  user_name:
+    type: text
+    influence_conversation: false
 
 forms:
   remove_activity_form:
@@ -45,6 +50,14 @@ forms:
       activity:
       - type: from_entity
         entity: activity
+      user_name:
+      - type: from_entity
+        entity: user_name
+  show_all_activities_form:
+    required_slots:
+      user_name:
+      - type: from_entity
+        entity: user_name
   add_activity_form:
     required_slots:
       activity:
@@ -60,6 +73,9 @@ forms:
       - intent: deny
         type: from_intent
         value: false
+      user_name:
+      - type: from_entity
+        entity: user_name
   
  
 
@@ -82,6 +98,12 @@ responses:
   - text: "Please specify the deadline"
   - text: "At what date and time does the activity start?"
   - text: "When does the activity start?"
+
+  utter_ask_user_name:
+  - text: "What's your name?"
+  - text: "Who am I talking to?"
+  - text: "Who are you?"
+  - text: "Who should I have do this action for?"
 
   utter_ask_reminder:
   - text: "Would you like to activate a reminder for this activity?"
