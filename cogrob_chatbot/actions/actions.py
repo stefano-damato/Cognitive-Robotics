@@ -129,6 +129,6 @@ class ActionPresentation(Action):
 
         user_name = tracker.get_slot("user_name")
 
-        dispatcher.utter_message(text=f"Hello {user_name}! What can I help you find today?")
+        dispatcher.utter_message(text=f"Hello {user_name}! How can I help you today?")
         
         return []
