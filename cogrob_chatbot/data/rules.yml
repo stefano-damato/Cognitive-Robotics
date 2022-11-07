@@ -64,6 +64,24 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: action_remove_submit
+
+#rule per modificare una activity specifica
+- rule: Modify an activity
+  steps:
+  - intent: modify_activity
+  - action: modify_activity_form
+  - active_loop: modify_activity_form
+ 
+#form per modificare una activity specifica
+- rule: modify activity form
+  condition: 
+  - active_loop: modify_activity_form
+  steps:
+  - action: modify_activity_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_modify_submit
   
 #rule per aggiungere una activity
 - rule: Add activity

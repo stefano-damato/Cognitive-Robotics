@@ -118,6 +118,43 @@ class ActionRemoveSubmit(Action):
         
         return [AllSlotsReset(), SlotSet("user_name", user_name)]
 
+class ActionModifySubmit(Action):
+
+    def name(self) -> Text:
+        return "action_modify_submit"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        activity = tracker.get_slot("activity")
+        user_name = tracker.get_slot("user_name")
+        deadline = tracker.get_slot("deadline")
+        reminder = tracker.get_slot("reminder")
+        category = tracker.get_slot("category")
+
+        file_path = user_name + FILENAME
+
+        print("\nActivity:",activity)
+
+        if(not os.path.exists(file_path)):
+            dispatcher.utter_message(text=f"There are no activities")
+            return [AllSlotsReset(), SlotSet("user_name", user_name)]
+        else:
+            toDoList=importDict(file_path)
+            if(activity not in toDoList):
+                dispatcher.utter_message(text=f"There is no such activity")
+                return [AllSlotsReset(), SlotSet("user_name", user_name)]
+            else:
+                toDoList[activity][0]=category
+                toDoList[activity][1]=deadline
+                toDoList[activity][2]=reminder
+        exportDict(file_path, toDoList)
+
+        dispatcher.utter_message(text=f"Modified activity {activity} with deadline {deadline} and reminder {reminder}")
+        
+        return [AllSlotsReset(), SlotSet("user_name", user_name)]
+
 class ActionPresentation(Action):
 
     def name(self) -> Text:

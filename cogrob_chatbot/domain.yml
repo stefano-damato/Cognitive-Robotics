@@ -11,6 +11,7 @@ intents:
   - show_all_activities
   - remove_activity
   - introduce
+  - modify_activity
   
 entities:
   - deadline
@@ -23,6 +24,7 @@ actions:
   - action_add_submit
   - action_display_submit
   - action_remove_submit
+  - action_modify_submit
   - action_presentation
   - utter_greet
   - utter_goodbye
@@ -30,6 +32,9 @@ actions:
   - utter_thanks
   - utter_ask_add_activity_form_activity
   - utter_ask_remove_activity_form_activity
+  - utter_ask_modify_activity_form_activity
+  - utter_ask_modify_activity_form_deadline
+  - utter_ask_modify_activity_form_category
   - utter_ask_reminder
   - utter_ask_deadline
   - utter_ask_user_name
@@ -58,6 +63,27 @@ forms:
       activity:
       - type: from_entity
         entity: activity
+      user_name:
+      - type: from_entity
+        entity: user_name
+  modify_activity_form:
+    required_slots:
+      activity:
+      - type: from_entity
+        entity: activity
+      category:
+      - type: from_entity
+        entity: category
+      deadline:
+      - type: from_entity
+        entity: deadline
+      reminder:
+      - intent: affirm
+        type: from_intent
+        value: true
+      - intent: deny
+        type: from_intent
+        value: false
       user_name:
       - type: from_entity
         entity: user_name
@@ -108,6 +134,18 @@ responses:
   - text: "What kind of task would you like to remove?"
   - text: "What activity would you like to remove?"
   - text: "What task would you like to remove?"
+
+  utter_ask_modify_activity_form_activity:
+  - text: "What kind of activity would you like to modify?"
+  - text: "What kind of task would you like to modify?"
+  - text: "What activity would you like to modify?"
+  - text: "What task would you like to modify?"
+
+  utter_ask_modify_activity_form_category:
+  - text: "Insert the new category"
+
+  utter_ask_modify_activity_form_deadline:
+  - text: "Insert the new deadline"
 
   utter_ask_deadline:
   - text: "What is the deadline?"

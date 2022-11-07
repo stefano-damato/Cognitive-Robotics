@@ -170,10 +170,11 @@ nlu:
     - Add an activity: [study](activity)
     - I want to add a task: [call Steve](activity)
     - Remember me to [visit grandma](action)
+    - [Remember me](reminder) to [visit grandma](action)
     - Add a note saying [email team for updates](activity)
     - Add an activity saying [send out meeting request](activity)
     - Set a reminder: [prepare a deck for next meeting](activity)
-    - Set a reminder: [prepare a deck for next meeting](activity) for [work](catgeory)
+    - Set a reminder: [prepare a deck for next meeting](activity) for [work](category)
     - Set a note: [book conference room](activity)
     - Remind me to [update project plan](action)
     - Add: [create a meeting agenda](activity)
@@ -246,6 +247,37 @@ nlu:
     - Remove [book a train](activity)
     - Delete [contact service center](activity)
     - Remove [verify project budget](category)
+- intent: modify_activity
+  examples: |
+    - Modify a note
+    - Modify a task
+    - Modify an activity
+    - Edit a note
+    - Edit a task
+    - Edit an activity
+    - modify
+    - edit
+    - Edit
+    - Modify
+    - modify [grocery](activity)
+    - Edit [shopping](activity)
+    - modify [running](activity)
+    - Edit the note [brunch](activity)
+    - modify the task [buy apples](activity)
+    - Modify the note [go out](activity)
+    - modify the task [study](activity)
+    - Edit the activity [call Steve](activity)
+    - edit the activity [visit grandma](category)
+    - modify [email team for updates](activity)
+    - edit [send out meeting request](activity)
+    - edit [prepare a deck for next meeting](activity)
+    - Edit [book conference room](activity)
+    - Modify [update project plan](category)
+    - modify [create a meeting agenda](activity)
+    - Edit [book a plane](activity)
+    - Edit [book a train](activity)
+    - Modify [contact service center](activity)
+    - Edit [verify project budget](category)
 - intent: thankyou
   examples: |
     - Thanks
