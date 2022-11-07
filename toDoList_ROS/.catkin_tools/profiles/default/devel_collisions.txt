@@ -1,0 +1,3 @@
+/home/andrea/Desktop/backup/prove/cogrob/cogrob_ws/devel/./cmake.lock 3
+/home/andrea/Desktop/backup/Cognitive-Robotics/toDoList_ROS/devel/./cmake.lock 1
+/home/andrea/Desktop/Cognitive-Robotics/toDoList_ROS/devel/./cmake.lock 1
