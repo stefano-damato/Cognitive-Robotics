@@ -30,6 +30,7 @@ class ActionAddSubmit(Action):
         activity = tracker.get_slot("activity")
         deadline = tracker.get_slot("deadline")
         reminder = tracker.get_slot("reminder")
+        category = tracker.get_slot("category")
         user_name = tracker.get_slot("user_name")
 
         print("\nActivity:",activity)
@@ -43,14 +44,15 @@ class ActionAddSubmit(Action):
             toDoList={}
         #attr=list() #qui poi mettimo il campo deadline e reminder
         toDoList[activity]=list()
+        toDoList[activity].append(category)
         toDoList[activity].append(deadline)
         toDoList[activity].append(reminder)
 
         exportDict(file_path, toDoList)
 
-        dispatcher.utter_message(text=f"Added activity {activity} at {deadline} for {user_name}")
+        dispatcher.utter_message(text=f"Added activity {activity}, {category} at {deadline} for {user_name}")
         
-        return [AllSlotsReset()]
+        return [AllSlotsReset(), SlotSet("user_name", user_name)]
 
 class ActionDisplaySubmit(Action):
 
@@ -74,14 +76,15 @@ class ActionDisplaySubmit(Action):
         else:
             toDoList={}
 
-        dispatcher.utter_message(text=f"{user_name}'s ToDo List\n")
+        dispatcher.utter_message(text=f"{user_name}'s ToDo List:\n")
 
         i = 1
 
         for key,value in toDoList.items():
-            dispatcher.utter_message(text=f"[{i}] Activity: {key}, deadline: {value[0]}, reminder: {value[1]}\n")
+            dispatcher.utter_message(text=f"[{i}] Activity: {key}, category: {value[0]}, deadline: {value[1]}, reminder: {value[2]}\n")
             i+=1
-        return [AllSlotsReset()]
+
+        return [AllSlotsReset(), SlotSet("user_name", user_name)]
 
 class ActionRemoveSubmit(Action):
 
@@ -101,15 +104,31 @@ class ActionRemoveSubmit(Action):
 
         if(not os.path.exists(file_path)):
             dispatcher.utter_message(text=f"There are no activities")
-            return [AllSlotsReset()]
+            return [AllSlotsReset(), SlotSet("user_name", user_name)]
         else:
             toDoList=importDict(file_path)
             if(activity not in toDoList):
                 dispatcher.utter_message(text=f"There is no such activity")
-                return [AllSlotsReset()]
+                return [AllSlotsReset(), SlotSet("user_name", user_name)]
             else:
                 removed_activity=toDoList.pop(activity)
         exportDict(file_path, toDoList)
 
         dispatcher.utter_message(text=f"Removed activity {activity} with deadline {removed_activity}")
-        return [AllSlotsReset()]
+        
+        return [AllSlotsReset(), SlotSet("user_name", user_name)]
+
+class ActionPresentation(Action):
+
+    def name(self) -> Text:
+        return "action_presentation"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        user_name = tracker.get_slot("user_name")
+
+        dispatcher.utter_message(text=f"Hello {user_name}! What can I help you find today?")
+        
+        return []

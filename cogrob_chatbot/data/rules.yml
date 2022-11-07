@@ -6,6 +6,28 @@ rules:
   steps:
   - intent: goodbye
   - action: utter_goodbye
+
+- rule: Introduce
+  steps:
+  - intent: introduce
+  - action: action_presentation
+
+- rule: Presentation
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: presentation_form
+  - active_loop: presentation_form
+
+- rule: Presentation form
+  condition:
+  - active_loop: presentation_form
+  steps:
+  - action: presentation_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_presentation
   
 #rule per mostrare tutte le activities
 - rule: Show all activities

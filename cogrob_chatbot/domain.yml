@@ -17,11 +17,13 @@ entities:
   - activity
   - reminder
   - user_name
+  - category
 
 actions:
   - action_add_submit
   - action_display_submit
   - action_remove_submit
+  - action_presentation
   - utter_greet
   - utter_goodbye
   - utter_noworries
@@ -29,6 +31,9 @@ actions:
   - utter_ask_add_activity_form_activity
   - utter_ask_remove_activity_form_activity
   - utter_ask_reminder
+  - utter_ask_deadline
+  - utter_ask_user_name
+  - utter_ask_category
 
 slots:
   activity:
@@ -41,6 +46,9 @@ slots:
     type: bool
     influence_conversation: false
   user_name:
+    type: text
+    influence_conversation: false
+  category:
     type: text
     influence_conversation: false
 
@@ -63,6 +71,9 @@ forms:
       activity:
       - type: from_entity
         entity: activity
+      category:
+      - type: from_entity
+        entity: category
       deadline:
       - type: from_entity
         entity: deadline
@@ -73,6 +84,11 @@ forms:
       - intent: deny
         type: from_intent
         value: false
+      user_name:
+      - type: from_entity
+        entity: user_name
+  presentation_form:
+    required_slots:
       user_name:
       - type: from_entity
         entity: user_name
@@ -107,10 +123,15 @@ responses:
 
   utter_ask_reminder:
   - text: "Would you like to activate a reminder for this activity?"
+  - text: "Do you need a reminder for this activity?"
+
+  utter_ask_category:
+  - text: "In which category do you want to add this activity?"
+  - text: "For which category?"
 
   utter_greet:
-  - text: "Hi. What are you looking for?"
-  - text: "Hello! What can I help you find today?"
+  - text: "Hi!"
+  - text: "Hello!"
 
   utter_goodbye:
   - text: "Talk to you later!"

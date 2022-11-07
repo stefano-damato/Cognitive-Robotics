@@ -123,11 +123,31 @@ nlu:
     - [Carmelo](user_name)
     - [Giovanna](user_name)
     - [Massimo](user_name)
+    - [Roberto](user_name)
+    - [sport](category)
+    - [personal](category)
+    - [school](category)
+    - [University](category)
+    - [CR course](category)
+    - [math course](category)
+    - [robotics course](category)
+    - [automation course](category)
+    - [AV course](category)
+    - [food](category)
+    - [family](category)
+    - [work](category)
+    - [general](category)
+    - [hobby](category)
+    - [friends](category)
+    - [house](category)
 - intent: introduce
   examples: |
     - my name is [Andrea](user_name)
     - I'm [Giovanna](user_name)
     - [Chiara](user_name) is my name
+    - Hi, my name is [Andrea](user_name)
+    - Hello! I'm [Giovanna](user_name)
+    - Good morning bot,[Chiara](user_name) is my name
 - intent: add_activity
   examples: |
     - Remind me to do
@@ -138,11 +158,14 @@ nlu:
     - Add a task
     - Set a reminder
     - Add an activity
-    - Remind me to go for the [grocery](activity)
-    - Remind me to go [shopping](activity)
+    - Add a note for [swimming](activity)
+    - Add a note for [swimming](activity) in [sport](category) category
+    - Add a task for [playing](activity)
+    - [Remind me](reminder) to go for the [grocery](activity)
+    - Remind me to go [shopping](activity) in [house](category) category
     - Remind me to go [running](activity)
     - Remind me to do a [brunch](activity)
-    - Add a note: [buy apples](activity)
+    - Add a note: [buy apples](activity), [food](category) category
     - Add a task: [go out](activity)
     - Add an activity: [study](activity)
     - I want to add a task: [call Steve](activity)
@@ -150,6 +173,7 @@ nlu:
     - Add a note saying [email team for updates](activity)
     - Add an activity saying [send out meeting request](activity)
     - Set a reminder: [prepare a deck for next meeting](activity)
+    - Set a reminder: [prepare a deck for next meeting](activity) for [work](catgeory)
     - Set a note: [book conference room](activity)
     - Remind me to [update project plan](action)
     - Add: [create a meeting agenda](activity)
@@ -211,17 +235,17 @@ nlu:
     - delete the note [go out](activity)
     - delete the task [study](activity)
     - Remove the activity [call Steve](activity)
-    - Delete the activity [visit grandma](action)
+    - Delete the activity [visit grandma](category)
     - remove [email team for updates](activity)
     - delete [send out meeting request](activity)
     - delete [prepare a deck for next meeting](activity)
     - Remove [book conference room](activity)
-    - Delete [update project plan](action)
+    - Delete [update project plan](category)
     - remove [create a meeting agenda](activity)
     - delete [book a plane](activity)
     - Remove [book a train](activity)
     - Delete [contact service center](activity)
-    - Remove [verify project budget](action)
+    - Remove [verify project budget](category)
 - intent: thankyou
   examples: |
     - Thanks
