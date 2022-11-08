@@ -161,33 +161,46 @@ nlu:
     - Add a note for [swimming](activity)
     - Add a note for [swimming](activity) in [sport](category) category
     - Add a task for [playing](activity)
-    - [Remind me](reminder) to go for the [grocery](activity)
+    - [Remind me](reminder) to go for the [grocery](activity) 
+    - [Remind me](reminder) to go for the [grocery](activity) in [house](category) category
     - Remind me to go [shopping](activity) in [house](category) category
     - Remind me to go [running](activity)
     - Remind me to do a [brunch](activity)
     - Add a note: [buy apples](activity), [food](category) category
     - Add a task: [go out](activity)
     - Add an activity: [study](activity)
+    - Add an activity: [study](activity) in [University](category) category
     - I want to add a task: [call Steve](activity)
+    - I want to add a task: [call Ariana](activity) in [general](category) category
+    - I want to add the task [call Matt](activity) in [general](category) category
+    - I want to add the task [call Andrew](activity) in [general](category)
     - Remember me to [visit grandma](action)
+    - Remember me to [visit grandpa](action) in [personal](category) category
+    - Remember me to [visit grandpa](action) in [personal](category)
     - [Remember me](reminder) to [visit grandma](action)
+    - [Remember me](reminder) to [visit grandma](action) in [personal](category) category
     - Add a note saying [email team for updates](activity)
     - Add an activity saying [send out meeting request](activity)
     - Set a reminder: [prepare a deck for next meeting](activity)
     - Set a reminder: [prepare a deck for next meeting](activity) for [work](category)
     - Set a note: [book conference room](activity)
+    - Remind me to [book the conference room](activity) in [work](category) category
     - Remind me to [update project plan](action)
+    - Remind me to [update project plan](action) in [work](category) category
     - Add: [create a meeting agenda](activity)
+    - Set the task: [create a meeting agenda](activity) in [work](category) category
     - Remind me to [book a plane](activity)
+    - Remind me to [book a plane](activity) in [personal](category)
     - Please remind me to [book a train](activity)
-    - Set a reminder saying [contact service center](activity)
+    - Set a reminder saying [contact service center](activity) in [personal](category) category
     - Remind me to [verify project budget](action)
     - Remind me to go for the [grocery](activity) at [02-03-2022 14:50](deadline)
+    - Please remind me to go for the [grocery](activity) at [10-03-2022 16:50](deadline) in [house](category) category
     - Remind me to go [shopping](activity) at [02-04-2022 11:50](deadline)
-    - Remind me to go [running](activity) at [02-06-2022 14:50](deadline)
-    - Remind me to do a [brunch](activity) at [02-03-2023 01:30](deadline)
+    - Remind me to go [running](activity) at [02-06-2022 14:50](deadline) in [sport](category)
+    - Remind me to do a [brunch](activity) at [02-03-2023 01:30](deadline) in [personal](category)
     - Add a note: [buy apples](activity) at [01-03-2022 12:50](deadline)
-    - Add a task: [go out](activity) at [02-11-2024 14:50](deadline)
+    - Add a task: [go out](activity) at [02-11-2024 14:50](deadline) in [hobby](category)
     - Add an activity: [study](activity) at [02-03-2023 02:03](deadline)
     - I want to add a task: [call Steve](activity) at [11-04-2025 16:50](deadline)
     - Remember me to [visit grandma](action) at [02-04-2023 18:30](deadline)
