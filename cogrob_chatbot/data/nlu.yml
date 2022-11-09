@@ -163,6 +163,15 @@ nlu:
     - Add an activity
     - Add a note for [swimming](activity)
     - Add a note for [swimming](activity) in [sport](category) category
+    - Add a note for [playing violin](activity) in [hobby](category) category
+    - Add a note for [skiing](activity) in [sport](category) category
+    - Add a note for [buy a book](activity) in [personal](category) category
+    - Add a note for [buy the pasta](activity) in [house](category) category
+    - Add a note for [walk the dog](activity) in [personal](category) category
+    - Add a note for [pay the bill](activity) in [general](category) category
+    - Add a note for [book a plane](activity) in [hobby](category) category
+    - Add a note for [pay the bill](activity) in [general](category) category
+    - Add a note for [do the homework](activity) in [math course](category) category
     - Add a task for [playing piano](activity)
     - [Remind me](reminder) to go for the [grocery](activity) 
     - [Remind me](reminder) to go for the [grocery](activity) in [house](category) category
