@@ -95,34 +95,34 @@ nlu:
     - [book a train](activity)
     - [contact service center](activity)
     - [verify project budget](activity)
-    - [Marco](user_name)
-    - [Mario](user_name)
-    - [Stefano](user_name)
-    - [Fabio](user_name)
-    - [Giusy](user_name)
-    - [Giuseppe](user_name)
-    - [Francesca](user_name)
-    - [Franco](user_name)
-    - [Luigi](user_name)
-    - [Maria](user_name)
-    - [Andrea](user_name)
-    - [Giovanni](user_name)
-    - [Chiara](user_name)
-    - [Lucrezia](user_name)
-    - [Alessia](user_name)
-    - [Antonio](user_name)
-    - [Emanuele](user_name)
-    - [Alessandro](user_name)
-    - [Luca](user_name)
-    - [Matilde](user_name)
-    - [Letizia](user_name)
-    - [Paola](user_name)
-    - [Gianluca](user_name)
-    - [Matteo](user_name)
-    - [Carmelo](user_name)
-    - [Giovanna](user_name)
-    - [Massimo](user_name)
-    - [Roberto](user_name)
+    - [Marco](PERSON)
+    - [Mario](PERSON)
+    - [Stefano](PERSON)
+    - [Fabio](PERSON)
+    - [Giusy](PERSON)
+    - [Giuseppe](PERSON)
+    - [Francesca](PERSON)
+    - [Franco](PERSON)
+    - [Luigi](PERSON)
+    - [Maria](PERSON)
+    - [Andrea](PERSON)
+    - [Giovanni](PERSON)
+    - [Chiara](PERSON)
+    - [Lucrezia](PERSON)
+    - [Alessia](PERSON)
+    - [Antonio](PERSON)
+    - [Emanuele](PERSON)
+    - [Alessandro](PERSON)
+    - [Luca](PERSON)
+    - [Matilde](PERSON)
+    - [Letizia](PERSON)
+    - [Paola](PERSON)
+    - [Gianluca](PERSON)
+    - [Matteo](PERSON)
+    - [Carmelo](PERSON)
+    - [Giovanna](PERSON)
+    - [Massimo](PERSON)
+    - [Roberto](PERSON)
     - [sport](category)
     - [personal](category)
     - [school](category)
@@ -141,16 +141,16 @@ nlu:
     - [house](category)
 - intent: introduce
   examples: |
-    - my name is [Andrea](user_name)
-    - my name is [Gabriele](user_name)
-    - I'm [Giovanna](user_name)
-    - I'm [Simon](user_name)
-    - [Chiara](user_name) is my name
-    - [Matt](user_name) is my name
-    - Hi, my name is [Antonio](user_name)
-    - Hi, my name is [Marco](user_name)
-    - Hello! I'm [Alberto](user_name)
-    - Good morning bot,[Carlo](user_name) is my name
+    - my name is [Andrea](PERSON)
+    - my name is [Gabriele](PERSON)
+    - I'm [Giovanna](PERSON)
+    - I'm [Simon](PERSON)
+    - [Chiara](PERSON) is my name
+    - [Matt](PERSON) is my name
+    - Hi, my name is [Antonio](PERSON)
+    - Hi, my name is [Marco](PERSON)
+    - Hello! I'm [Alberto](PERSON)
+    - Good morning bot,[Carlo](PERSON) is my name
 - intent: add_activity
   examples: |
     - [Remind me](reminder) to do
@@ -230,11 +230,11 @@ nlu:
     - Show the notes
     - Show the activities
     - Show the tasks
-    - Show me [Mario](user_name)'s notes
-    - Show me the activities for [Giovanna](user_name)
-    - Show me [Luigi](user_name)'s tasks
-    - Display the notes for [Gianluca](user_name)
-    - Display [Matilde](user_name)'s activities
+    - Show me [Mario](PERSON)'s notes
+    - Show me the activities for [Giovanna](PERSON)
+    - Show me [Luigi](PERSON)'s tasks
+    - Display the notes for [Gianluca](PERSON)
+    - Display [Matilde](PERSON)'s activities
 - intent: remove_activity
   examples: |
     - Remove a note

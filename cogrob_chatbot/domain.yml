@@ -17,7 +17,7 @@ entities:
   - deadline
   - activity
   - reminder
-  - user_name
+  - PERSON
   - category
 
 actions:
@@ -37,7 +37,7 @@ actions:
   - utter_ask_modify_activity_form_category
   - utter_ask_reminder
   - utter_ask_deadline
-  - utter_ask_user_name
+  - utter_ask_PERSON
   - utter_ask_category
 
 slots:
@@ -50,7 +50,7 @@ slots:
   reminder:
     type: bool
     influence_conversation: false
-  user_name:
+  PERSON:
     type: text
     influence_conversation: false
   category:
@@ -63,9 +63,9 @@ forms:
       activity:
       - type: from_entity
         entity: activity
-      user_name:
+      PERSON:
       - type: from_entity
-        entity: user_name
+        entity: PERSON
   modify_activity_form:
     required_slots:
       activity:
@@ -84,14 +84,14 @@ forms:
       - intent: deny
         type: from_intent
         value: false
-      user_name:
+      PERSON:
       - type: from_entity
-        entity: user_name
+        entity: PERSON
   show_all_activities_form:
     required_slots:
-      user_name:
+      PERSON:
       - type: from_entity
-        entity: user_name
+        entity: PERSON
   add_activity_form:
     required_slots:
       activity:
@@ -112,14 +112,14 @@ forms:
       - intent: deny
         type: from_intent
         value: false
-      user_name:
+      PERSON:
       - type: from_entity
-        entity: user_name
+        entity: PERSON
   presentation_form:
     required_slots:
-      user_name:
+      PERSON:
       - type: from_entity
-        entity: user_name
+        entity: PERSON
   
  
 
@@ -155,7 +155,7 @@ responses:
   - text: "At what date and time does the activity start?"
   - text: "When does the activity start?"
 
-  utter_ask_user_name:
+  utter_ask_PERSON:
   - text: "What's your name?"
   - text: "Who am I talking to?"
   - text: "Who are you?"

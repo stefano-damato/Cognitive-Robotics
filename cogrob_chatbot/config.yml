@@ -9,6 +9,8 @@ pipeline:
   - name: SpacyFeaturizer
   - name: RegexFeaturizer
   - name: CRFEntityExtractor
+  - name: "SpacyEntityExtractor" # extractor used for person names
+    dimensions: ["PERSON"]
   - name: EntitySynonymMapper
   - name: SklearnIntentClassifier
 
