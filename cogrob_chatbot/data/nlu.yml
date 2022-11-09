@@ -105,7 +105,7 @@ nlu:
     - [Franco](PERSON)
     - [Luigi](PERSON)
     - [Maria](PERSON)
-    - [Andrea](PERSON)
+    - [Giacomo](PERSON)
     - [Giovanni](PERSON)
     - [Chiara](PERSON)
     - [Lucrezia](PERSON)
@@ -141,7 +141,7 @@ nlu:
     - [house](category)
 - intent: introduce
   examples: |
-    - my name is [Andrea](PERSON)
+    - my name is [Giacomo](PERSON)
     - my name is [Gabriele](PERSON)
     - I'm [Giovanna](PERSON)
     - I'm [Simon](PERSON)
