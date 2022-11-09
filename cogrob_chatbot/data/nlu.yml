@@ -150,8 +150,8 @@ nlu:
     - Good morning bot,[Chiara](user_name) is my name
 - intent: add_activity
   examples: |
-    - Remind me to do
-    - Remind me to do something
+    - [Remind me](reminder) to do
+    - [Remind me](reminder) to do something
     - Add a note
     - I want to add a task
     - I want to add a note
@@ -163,9 +163,9 @@ nlu:
     - Add a task for [playing](activity)
     - [Remind me](reminder) to go for the [grocery](activity) 
     - [Remind me](reminder) to go for the [grocery](activity) in [house](category) category
-    - Remind me to go [shopping](activity) in [house](category) category
-    - Remind me to go [running](activity)
-    - Remind me to do a [brunch](activity)
+    - [Remind me](reminder) to go [shopping](activity) in [house](category) category
+    - [Remind me](reminder) to go [running](activity)
+    - [Remind me](reminder) to do a [brunch](activity)
     - Add a note: [buy apples](activity), [food](category) category
     - Add a task: [go out](activity)
     - Add an activity: [study](activity)
@@ -184,21 +184,21 @@ nlu:
     - Set a reminder: [prepare a deck for next meeting](activity)
     - Set a reminder: [prepare a deck for next meeting](activity) for [work](category)
     - Set a note: [book conference room](activity)
-    - Remind me to [book the conference room](activity) in [work](category) category
-    - Remind me to [update project plan](action)
-    - Remind me to [update project plan](action) in [work](category) category
+    - [Remind me](reminder) to [book the conference room](activity) in [work](category) category
+    - [Remind me](reminder) to [update project plan](action)
+    - [Remind me](reminder) to [update project plan](action) in [work](category) category
     - Add: [create a meeting agenda](activity)
     - Set the task: [create a meeting agenda](activity) in [work](category) category
-    - Remind me to [book a plane](activity)
-    - Remind me to [book a plane](activity) in [personal](category)
-    - Please remind me to [book a train](activity)
+    - [Remind me](reminder) to [book a plane](activity)
+    - [Remind me](reminder) to [book a plane](activity) in [personal](category)
+    - Please [Remind me](reminder) to [book a train](activity)
     - Set a reminder saying [contact service center](activity) in [personal](category) category
-    - Remind me to [verify project budget](action)
-    - Remind me to go for the [grocery](activity) at [02-03-2022 14:50](deadline)
-    - Please remind me to go for the [grocery](activity) at [10-03-2022 16:50](deadline) in [house](category) category
-    - Remind me to go [shopping](activity) at [02-04-2022 11:50](deadline)
-    - Remind me to go [running](activity) at [02-06-2022 14:50](deadline) in [sport](category)
-    - Remind me to do a [brunch](activity) at [02-03-2023 01:30](deadline) in [personal](category)
+    - [Remind me](reminder) to [verify project budget](action)
+    - [Remind me](reminder) to go for the [grocery](activity) at [02-03-2022 14:50](deadline)
+    - Please [Remind me](reminder) to go for the [grocery](activity) at [10-03-2022 16:50](deadline) in [house](category) category
+    - [Remind me](reminder) to go [shopping](activity) at [02-04-2022 11:50](deadline)
+    - [Remind me](reminder) to go [running](activity) at [02-06-2022 14:50](deadline) in [sport](category)
+    - [Remind me](reminder) to do a [brunch](activity) at [02-03-2023 01:30](deadline) in [personal](category)
     - Add a note: [buy apples](activity) at [01-03-2022 12:50](deadline)
     - Add a task: [go out](activity) at [02-11-2024 14:50](deadline) in [hobby](category)
     - Add an activity: [study](activity) at [02-03-2023 02:03](deadline)
@@ -208,12 +208,12 @@ nlu:
     - Add an activity saying [send out meeting request](activity) at [02-03-2022 16:30](deadline)
     - Set a reminder: [prepare a deck for next meeting](activity) at [03-04-2022 18:40](deadline)
     - Set a note: [book conference room](activity) at [02-09-2023 19:50](deadline)
-    - Remind me to [update project plan](action) at [02-11-2022 11:50](deadline)
+    - [Remind me](reminder) to [update project plan](action) at [02-11-2022 11:50](deadline)
     - Add: [create a meeting agenda](activity) at [02-12-2022 16:20](deadline)
-    - Remind me to [book a plane](activity) at [02-12-2022 14:20](deadline)
-    - Please remind me to [book a train](activity) at [02-03-2022 11:50](deadline)
+    - [Remind me](reminder) to [book a plane](activity) at [02-12-2022 14:20](deadline)
+    - Please [Remind me](reminder) to [book a train](activity) at [02-03-2022 11:50](deadline)
     - Set a reminder saying [contact service center](activity) at [02-03-2022 14:50](deadline)
-    - Remind me to [verify project budget](action) at [02-03-2022 14:50](deadline)
+    - [Remind me](reminder) to [verify project budget](action) at [02-03-2022 14:50](deadline)
 - intent: show_all_activities
   examples: |
     - Show me the notes
