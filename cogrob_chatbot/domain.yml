@@ -104,6 +104,8 @@ forms:
       - type: from_entity
         entity: deadline
       reminder:
+      - type: from_entity
+        entity: reminder
       - intent: affirm
         type: from_intent
         value: true
