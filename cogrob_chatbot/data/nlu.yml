@@ -142,11 +142,15 @@ nlu:
 - intent: introduce
   examples: |
     - my name is [Andrea](user_name)
+    - my name is [Gabriele](user_name)
     - I'm [Giovanna](user_name)
+    - I'm [Simon](user_name)
     - [Chiara](user_name) is my name
-    - Hi, my name is [Andrea](user_name)
-    - Hello! I'm [Giovanna](user_name)
-    - Good morning bot,[Chiara](user_name) is my name
+    - [Matt](user_name) is my name
+    - Hi, my name is [Antonio](user_name)
+    - Hi, my name is [Marco](user_name)
+    - Hello! I'm [Alberto](user_name)
+    - Good morning bot,[Carlo](user_name) is my name
 - intent: add_activity
   examples: |
     - [Remind me](reminder) to do
