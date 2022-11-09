@@ -167,7 +167,8 @@ class ActionPresentation(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         PERSON = tracker.get_slot("PERSON")
-
+        if(isinstance(PERSON,list)):
+            PERSON=PERSON[0]
         dispatcher.utter_message(text=f"Hello {PERSON}! How can I help you today?")
         
         return []
