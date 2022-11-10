@@ -34,6 +34,8 @@ class ActionAddSubmit(Action):
             reminder=True
         category = tracker.get_slot("category")
         PERSON = tracker.get_slot("PERSON")
+        if(isinstance(PERSON,list)):
+            PERSON=PERSON[0]
 
         print("\nActivity:",activity)
         print("Deadline:",deadline)
@@ -66,6 +68,8 @@ class ActionDisplaySubmit(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         PERSON = tracker.get_slot("PERSON")
+        if(isinstance(PERSON,list)):
+            PERSON=PERSON[0]
 
         if(PERSON is None):
             dispatcher.utter_message(text=f"Please enter your name")
@@ -99,6 +103,8 @@ class ActionRemoveSubmit(Action):
 
         activity = tracker.get_slot("activity")
         PERSON = tracker.get_slot("PERSON")
+        if(isinstance(PERSON,list)):
+            PERSON=PERSON[0]
 
         file_path = PERSON + FILENAME
 
@@ -131,6 +137,8 @@ class ActionModifySubmit(Action):
 
         activity = tracker.get_slot("activity")
         PERSON = tracker.get_slot("PERSON")
+        if(isinstance(PERSON,list)):
+            PERSON=PERSON[0]
         deadline = tracker.get_slot("deadline")
         reminder = tracker.get_slot("reminder")
         category = tracker.get_slot("category")

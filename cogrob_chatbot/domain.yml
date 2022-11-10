@@ -103,6 +103,9 @@ forms:
       deadline:
       - type: from_entity
         entity: deadline
+      - intent: deny
+        type: from_intent
+        value: "31-12-2050 23:59"
       reminder:
       - type: from_entity
         entity: reminder
