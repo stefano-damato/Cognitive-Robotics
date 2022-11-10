@@ -30,8 +30,8 @@ class ActionAddSubmit(Action):
         activity = tracker.get_slot("activity")
         deadline = tracker.get_slot("deadline")
         reminder = tracker.get_slot("reminder")
-        if reminder!="True" or reminder!="False":
-            reminder="True"
+        if (reminder!=True and reminder!=False):
+            reminder=True
         category = tracker.get_slot("category")
         PERSON = tracker.get_slot("PERSON")
 
