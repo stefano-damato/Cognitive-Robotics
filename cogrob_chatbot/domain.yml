@@ -12,6 +12,7 @@ intents:
   - remove_activity
   - introduce
   - modify_activity
+  - add_activity_with_reminder
   
 entities:
   - deadline
@@ -118,6 +119,29 @@ forms:
       PERSON:
       - type: from_entity
         entity: PERSON
+  add_activity_with_reminder_form:
+    required_slots:
+      activity:
+      - type: from_entity
+        entity: activity
+      category:
+      - type: from_entity
+        entity: category
+      deadline:
+      - type: from_entity
+        entity: deadline
+      reminder:
+      - type: from_entity
+        entity: reminder
+      - intent: affirm
+        type: from_intent
+        value: true
+      - intent: deny
+        type: from_intent
+        value: false
+      PERSON:
+      - type: from_entity
+        entity: PERSON
   presentation_form:
     required_slots:
       PERSON:
@@ -153,6 +177,16 @@ responses:
   - text: "Insert the new deadline"
 
   utter_ask_deadline:
+  - text: "What is the deadline?"
+  - text: "Please specify the deadline"
+  - text: "At what date and time does the activity start?"
+  - text: "When does the activity start?"
+
+  utter_ask_add_activity_form_deadline:
+  - text: "Do you want to specify a deadline? If so, insert the deadline, otherwise type no"
+  - text: "Enter a deadline or otherwise enter no"
+
+  utter_ask_add_activity_with_deadline_form_deadline:
   - text: "What is the deadline?"
   - text: "Please specify the deadline"
   - text: "At what date and time does the activity start?"

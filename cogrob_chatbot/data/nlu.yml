@@ -153,13 +153,10 @@ nlu:
     - Good morning bot,[Carlo](PERSON) is my name
 - intent: add_activity
   examples: |
-    - [Remind me](reminder) to do
-    - [Remind me](reminder) to do something
     - Add a note
     - I want to add a task
     - I want to add a note
     - Add a task
-    - [Set a reminder](reminder)
     - Add an activity
     - Add a note for [swimming](activity)
     - Add a note for [swimming](activity) in [sport](category) category
@@ -173,11 +170,6 @@ nlu:
     - Add a note for [pay the bill](activity) in [general](category) category
     - Add a note for [do the homework](activity) in [math course](category) category
     - Add a task for [playing piano](activity)
-    - [Remind me](reminder) to go for the [grocery](activity) 
-    - [Remind me](reminder) to go for the [grocery](activity) in [house](category) category
-    - [Remind me](reminder) to go [shopping](activity) in [house](category) category
-    - [Remind me](reminder) to go [running](activity)
-    - [Remind me](reminder) to do a [brunch](activity)
     - Add a note: [buy apples](activity), [food](category) category
     - Add a task: [go out](activity)
     - Add an activity: [study](activity)
@@ -186,21 +178,39 @@ nlu:
     - I want to add a task: [call Ariana](activity) in [general](category) category
     - I want to add the task [call Matt](activity) in [general](category) category
     - I want to add the task [call Andrew](activity) in [general](category)
+    - Add a note saying [email team for updates](activity)
+    - Add an activity saying [send out meeting request](activity)
+    - Set a note: [book conference room](activity)
+    - Add: [create a meeting agenda](activity)
+    - Set the task: [create a meeting agenda](activity) in [work](category) category
+    - Add a note: [buy apples](activity) at [01-03-2022 12:50](deadline)
+    - Add a task: [go out](activity) at [02-11-2024 14:50](deadline) in [hobby](category)
+    - Add an activity: [study](activity) at [02-03-2023 02:03](deadline)
+    - I want to add a task: [call Steve](activity) at [11-04-2025 16:50](deadline)
+    - Add a note saying [email team for updates](activity) at [02-02-2026 15:50](deadline)
+    - Add an activity saying [send out meeting request](activity) at [02-03-2022 16:30](deadline)
+    - Set a note: [book conference room](activity) at [02-09-2023 19:50](deadline)
+    - Add: [create a meeting agenda](activity) at [02-12-2022 16:20](deadline)
+- intent: add_activity_with_reminder
+  examples: |
+    - [Remind me](reminder) to do
+    - [Remind me](reminder) to do something
+    - [Set a reminder](reminder)
+    - [Remind me](reminder) to go for the [grocery](activity) 
+    - [Remind me](reminder) to go for the [grocery](activity) in [house](category) category
+    - [Remind me](reminder) to go [shopping](activity) in [house](category) category
+    - [Remind me](reminder) to go [running](activity)
+    - [Remind me](reminder) to do a [brunch](activity)
     - [Remember me](reminder) to [visit grandma](action)
     - [Remember me](reminder) to [visit grandpa](action) in [personal](category) category
     - [Remember me](reminder) to [visit grandpa](action) in [personal](category)
     - [Remember me](reminder) to [visit grandma](action)
     - [Remember me](reminder) to [visit grandma](action) in [personal](category) category
-    - Add a note saying [email team for updates](activity)
-    - Add an activity saying [send out meeting request](activity)
     - [Set a reminder](reminder): [prepare a deck for next meeting](activity)
     - [Set a reminder](reminder): [prepare a deck for next meeting](activity) for [work](category)
-    - Set a note: [book conference room](activity)
     - [Remind me](reminder) to [book the conference room](activity) in [work](category) category
     - [Remind me](reminder) to [update project plan](action)
     - [Remind me](reminder) to [update project plan](action) in [work](category) category
-    - Add: [create a meeting agenda](activity)
-    - Set the task: [create a meeting agenda](activity) in [work](category) category
     - [Remind me](reminder) to [book a plane](activity)
     - [Remind me](reminder) to [book a plane](activity) in [personal](category)
     - Please [Remind me](reminder) to [book a train](activity)
@@ -211,17 +221,9 @@ nlu:
     - [Remind me](reminder) to go [shopping](activity) at [02-04-2022 11:50](deadline)
     - [Remind me](reminder) to go [running](activity) at [02-06-2022 14:50](deadline) in [sport](category)
     - [Remind me](reminder) to do a [brunch](activity) at [02-03-2023 01:30](deadline) in [personal](category)
-    - Add a note: [buy apples](activity) at [01-03-2022 12:50](deadline)
-    - Add a task: [go out](activity) at [02-11-2024 14:50](deadline) in [hobby](category)
-    - Add an activity: [study](activity) at [02-03-2023 02:03](deadline)
-    - I want to add a task: [call Steve](activity) at [11-04-2025 16:50](deadline)
     - [Remember me](reminder) to [visit grandma](action) at [02-04-2023 18:30](deadline)
-    - Add a note saying [email team for updates](activity) at [02-02-2026 15:50](deadline)
-    - Add an activity saying [send out meeting request](activity) at [02-03-2022 16:30](deadline)
     - [Set a reminder](reminder): [prepare a deck for next meeting](activity) at [03-04-2022 18:40](deadline)
-    - Set a note: [book conference room](activity) at [02-09-2023 19:50](deadline)
     - [Remind me](reminder) to [update project plan](action) at [02-11-2022 11:50](deadline)
-    - Add: [create a meeting agenda](activity) at [02-12-2022 16:20](deadline)
     - [Remind me](reminder) to [book a plane](activity) at [02-12-2022 14:20](deadline)
     - Please [Remind me](reminder) to [book a train](activity) at [02-03-2022 11:50](deadline)
     - [Set a reminder](reminder) saying [contact service center](activity) at [02-03-2022 14:50](deadline)

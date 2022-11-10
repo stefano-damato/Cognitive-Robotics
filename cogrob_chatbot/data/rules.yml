@@ -103,3 +103,23 @@ rules:
     - requested_slot: null
   - action: utter_thanks
   - action: action_add_submit
+
+#rule per aggiungere una activity con reminder
+- rule: Add activity with reminder
+  steps:
+  - intent: add_activity_with_reminder
+  - action: add_activity_with_reminder_form
+  - active_loop: add_activity_with_reminder_form
+ 
+ 
+#form per aggiungere una activity con reminder
+- rule: Add activity with reminder form
+  condition: 
+  - active_loop: add_activity_with_reminder_form
+  steps:
+  - action: add_activity_with_reminder_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_thanks
+  - action: action_add_submit

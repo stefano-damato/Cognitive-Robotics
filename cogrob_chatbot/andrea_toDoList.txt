@@ -1,1 +1,1 @@
-{'shopping': ['house', '11-11-2023 11:12', False], 'swimming': ['sport', '22-22-2022 22:22', 'True'], 'running': ['sport', '12-12-2012 12:12', True], 'grocery': ['house', '22-12-2022 22:22', True]}
+{'shopping': ['personal', '12-12-2012 12:12', True], 'swimming': ['sport', '22-22-2022 22:22', 'True'], 'running': ['sport', '31-12-2050 23:59', False], 'grocery': ['house', '22-12-2022 22:22', True]}
