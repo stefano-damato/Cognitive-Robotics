@@ -3,6 +3,7 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet, AllSlotsReset
+from datetime import datetime as dt
 import ast
 import os
 
@@ -28,7 +29,10 @@ class ActionAddSubmit(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         activity = tracker.get_slot("activity")
-        deadline = tracker.get_slot("deadline")
+        deadline = tracker.get_slot("time")
+        time_object = dt.strptime(deadline, "%Y-%m-%dT%H:%M:%S.%f%z")
+        deadline=time_object.strftime("%m/%d/%Y, %H:%M:%S")
+        print(deadline)
         reminder = tracker.get_slot("reminder")
         if (reminder!=True and reminder!=False):
             reminder=True
@@ -139,7 +143,9 @@ class ActionModifySubmit(Action):
         PERSON = tracker.get_slot("PERSON")
         if(isinstance(PERSON,list)):
             PERSON=PERSON[0]
-        deadline = tracker.get_slot("deadline")
+        deadline = tracker.get_slot("time")
+        time_object = dt.strptime(deadline, "%Y-%m-%dT%H:%M:%S.%f%z")
+        deadline=time_object.strftime("%m/%d/%Y, %H:%M:%S")
         reminder = tracker.get_slot("reminder")
         category = tracker.get_slot("category")
 

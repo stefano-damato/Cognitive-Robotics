@@ -15,7 +15,7 @@ intents:
   - add_activity_with_reminder
   
 entities:
-  - deadline
+  - time
   - activity
   - reminder
   - PERSON
@@ -34,10 +34,10 @@ actions:
   - utter_ask_add_activity_form_activity
   - utter_ask_remove_activity_form_activity
   - utter_ask_modify_activity_form_activity
-  - utter_ask_modify_activity_form_deadline
+  - utter_ask_modify_activity_form_time
   - utter_ask_modify_activity_form_category
   - utter_ask_reminder
-  - utter_ask_deadline
+  - utter_ask_time
   - utter_ask_PERSON
   - utter_ask_category
 
@@ -45,8 +45,8 @@ slots:
   activity:
     type: text
     influence_conversation: false
-  deadline:
-    type: text
+  time:
+    type: unfeaturized
     influence_conversation: false
   reminder:
     type: bool
@@ -75,9 +75,9 @@ forms:
       category:
       - type: from_entity
         entity: category
-      deadline:
+      time:
       - type: from_entity
-        entity: deadline
+        entity: time
       reminder:
       - intent: affirm
         type: from_intent
@@ -101,9 +101,9 @@ forms:
       category:
       - type: from_entity
         entity: category
-      deadline:
+      time:
       - type: from_entity
-        entity: deadline
+        entity: time
       - intent: deny
         type: from_intent
         value: "31-12-2050 23:59"
@@ -127,9 +127,9 @@ forms:
       category:
       - type: from_entity
         entity: category
-      deadline:
+      time:
       - type: from_entity
-        entity: deadline
+        entity: time
       reminder:
       - type: from_entity
         entity: reminder
@@ -173,20 +173,20 @@ responses:
   utter_ask_modify_activity_form_category:
   - text: "Insert the new category"
 
-  utter_ask_modify_activity_form_deadline:
+  utter_ask_modify_activity_form_time:
   - text: "Insert the new deadline"
 
-  utter_ask_deadline:
+  utter_ask_time:
   - text: "What is the deadline?"
   - text: "Please specify the deadline"
   - text: "At what date and time does the activity start?"
   - text: "When does the activity start?"
 
-  utter_ask_add_activity_form_deadline:
+  utter_ask_add_activity_form_time:
   - text: "Do you want to specify a deadline? If so, insert the deadline, otherwise type no"
   - text: "Enter a deadline or otherwise enter no"
 
-  utter_ask_add_activity_with_deadline_form_deadline:
+  utter_ask_add_activity_with_time_form_time:
   - text: "What is the deadline?"
   - text: "Please specify the deadline"
   - text: "At what date and time does the activity start?"
