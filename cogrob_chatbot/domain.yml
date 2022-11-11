@@ -211,8 +211,8 @@ responses:
   - text: "Hello!"
 
   utter_goodbye:
-  - text: "Talk to you later!"
-  - text: "Have a good day."
+  - text: "Talk to you later {PERSON}!"
+  - text: "Have a good day {PERSON}."
   - text: "Until next time!"
 
   utter_noworries:
