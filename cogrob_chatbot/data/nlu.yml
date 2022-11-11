@@ -183,14 +183,6 @@ nlu:
     - Set a note: [book conference room](activity)
     - Add: [create a meeting agenda](activity)
     - Set the task: [create a meeting agenda](activity) in [work](category) category
-    - Add a note: [buy apples](activity) at [01-03-2022 12:50](time)
-    - Add a task: [go out](activity) at [02-11-2024 14:50](time) in [hobby](category)
-    - Add an activity: [study](activity) at [02-03-2023 02:03](time)
-    - I want to add a task: [call Steve](activity) at [11-04-2025 16:50](time)
-    - Add a note saying [email team for updates](activity) at [02-02-2026 15:50](time)
-    - Add an activity saying [send out meeting request](activity) at [02-03-2022 16:30](time)
-    - Set a note: [book conference room](activity) at [02-09-2023 19:50](time)
-    - Add: [create a meeting agenda](activity) at [02-12-2022 16:20](time)
 - intent: add_activity_with_reminder
   examples: |
     - [Remind me](reminder) to do
@@ -216,18 +208,6 @@ nlu:
     - Please [Remind me](reminder) to [book a train](activity)
     - [Set a reminder](reminder) saying [contact service center](activity) in [personal](category) category
     - [Remind me](reminder) to [verify project budget](action)
-    - [Remind me](reminder) to go for the [grocery](activity) at [02-03-2022 14:50](time)
-    - Please [Remind me](reminder) to go for the [grocery](activity) at [10-03-2022 16:50](time) in [house](category) category
-    - [Remind me](reminder) to go [shopping](activity) at [02-04-2022 11:50](time)
-    - [Remind me](reminder) to go [running](activity) at [02-06-2022 14:50](time) in [sport](category)
-    - [Remind me](reminder) to do a [brunch](activity) at [02-03-2023 01:30](time) in [personal](category)
-    - [Remember me](reminder) to [visit grandma](action) at [02-04-2023 18:30](time)
-    - [Set a reminder](reminder): [prepare a deck for next meeting](activity) at [03-04-2022 18:40](time)
-    - [Remind me](reminder) to [update project plan](action) at [02-11-2022 11:50](time)
-    - [Remind me](reminder) to [book a plane](activity) at [02-12-2022 14:20](time)
-    - Please [Remind me](reminder) to [book a train](activity) at [02-03-2022 11:50](time)
-    - [Set a reminder](reminder) saying [contact service center](activity) at [02-03-2022 14:50](time)
-    - [Remind me](reminder) to [verify project budget](action) at [02-03-2022 14:50](time)
 - intent: show_all_activities
   examples: |
     - Show me the notes
@@ -330,6 +310,3 @@ nlu:
 - synonym: rbry-mqwu
   examples: |
     - time
-- regex: time
-  examples: |
-    - ((0[1-9]|[12][\d]|3[0-1]))-((0[1-9]|1[0-2]))-(\d{4}) ([01][\d]|2[0-3]):([012345][\d])

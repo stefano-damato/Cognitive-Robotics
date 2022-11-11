@@ -31,7 +31,7 @@ class ActionAddSubmit(Action):
         activity = tracker.get_slot("activity")
         deadline = tracker.get_slot("time")
         time_object = dt.strptime(deadline, "%Y-%m-%dT%H:%M:%S.%f%z")
-        deadline=time_object.strftime("%m/%d/%Y, %H:%M:%S")
+        deadline=time_object.strftime("%m/%d/%Y, %H:%M")
         print(deadline)
         reminder = tracker.get_slot("reminder")
         if (reminder!=True and reminder!=False):
@@ -58,7 +58,10 @@ class ActionAddSubmit(Action):
 
         exportDict(file_path, toDoList)
 
-        dispatcher.utter_message(text=f"Added activity {activity}, {category} at {deadline} for {PERSON}")
+        if(deadline=="12/31/2050, 23:59"):
+            dispatcher.utter_message(text=f"Added activity {activity}, {category} for {PERSON}")
+        else:
+            dispatcher.utter_message(text=f"Added activity {activity}, {category} at {deadline} for {PERSON}")
         
         return [AllSlotsReset(), SlotSet("PERSON", PERSON)]
 
@@ -91,7 +94,10 @@ class ActionDisplaySubmit(Action):
         i = 1
 
         for key,value in toDoList.items():
-            dispatcher.utter_message(text=f"[{i}] Activity: {key}, category: {value[0]}, deadline: {value[1]}, reminder: {value[2]}\n")
+            if value[1]=="12/31/2050, 23:59":
+                dispatcher.utter_message(text=f"[{i}] Activity: {key}, category: {value[0]}\n")
+            else:
+                dispatcher.utter_message(text=f"[{i}] Activity: {key}, category: {value[0]}, deadline: {value[1]}, reminder: {value[2]}\n")
             i+=1
 
         return [AllSlotsReset(), SlotSet("PERSON", PERSON)]
@@ -126,7 +132,10 @@ class ActionRemoveSubmit(Action):
                 removed_activity=toDoList.pop(activity)
         exportDict(file_path, toDoList)
 
-        dispatcher.utter_message(text=f"Removed activity {activity} with deadline {removed_activity}")
+        if(deadline=="12/31/2050, 23:59"):
+            dispatcher.utter_message(text=f"Removed activity {activity}, {category} for {PERSON}")
+        else:
+            dispatcher.utter_message(text=f"Removed activity {activity}, {category} at {deadline} for {PERSON}")
         
         return [AllSlotsReset(), SlotSet("PERSON", PERSON)]
 
@@ -167,7 +176,10 @@ class ActionModifySubmit(Action):
                 toDoList[activity][2]=reminder
         exportDict(file_path, toDoList)
 
-        dispatcher.utter_message(text=f"Modified activity {activity} with deadline {deadline} and reminder {reminder}")
+        if(deadline=="12/31/2050, 23:59"):
+            dispatcher.utter_message(text=f"Modified activity {activity}, {category} for {PERSON}")
+        else:
+            dispatcher.utter_message(text=f"Modified activity {activity}, {category} at {deadline} for {PERSON}")
         
         return [AllSlotsReset(), SlotSet("PERSON", PERSON)]
 
