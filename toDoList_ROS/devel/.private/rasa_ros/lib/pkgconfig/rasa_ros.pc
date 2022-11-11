@@ -1,8 +1,0 @@
-prefix=/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros
-
-Name: rasa_ros
-Description: Description of rasa_ros
-Version: 0.0.0
-Cflags: -I/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/include
-Libs: -L${prefix}/lib 
-Requires: 

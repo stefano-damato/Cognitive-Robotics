@@ -1,0 +1,1 @@
+{'shopping': ['personal', '12/31/2050, 23:59', False], 'grocery': ['house', '11/12/2022, 08:00', True], 'play guitar': ['hobby', '11/12/2022, 20:00', True]}

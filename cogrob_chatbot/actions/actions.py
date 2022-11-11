@@ -41,6 +41,7 @@ class ActionAddSubmit(Action):
         if(isinstance(PERSON,list)):
             PERSON=PERSON[0]
 
+        PERSON=PERSON.capitalize()
         file_path = PERSON + FILENAME
         
         if(os.path.exists(file_path)):
@@ -192,6 +193,7 @@ class ActionPresentation(Action):
         PERSON = tracker.get_slot("PERSON")
         if(isinstance(PERSON,list)):
             PERSON=PERSON[0]
+        PERSON=PERSON.capitalize()
         dispatcher.utter_message(text=f"Hello {PERSON}! How can I help you today?")
         
         return []

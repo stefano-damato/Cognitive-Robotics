@@ -1,1 +1,0 @@
-/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/lib/pkgconfig/rasa_ros.pc
