@@ -41,9 +41,6 @@ class ActionAddSubmit(Action):
         if(isinstance(PERSON,list)):
             PERSON=PERSON[0]
 
-        print("\nActivity:",activity)
-        print("Deadline:",deadline)
-
         file_path = PERSON + FILENAME
         
         if(os.path.exists(file_path)):
@@ -61,7 +58,7 @@ class ActionAddSubmit(Action):
         if(deadline=="12/31/2050, 23:59"):
             dispatcher.utter_message(text=f"Added activity {activity}, {category} for {PERSON}")
         else:
-            dispatcher.utter_message(text=f"Added activity {activity}, {category} at {deadline} for {PERSON}")
+            dispatcher.utter_message(text=f"Added activity {activity}, {category} at {deadline} for {PERSON} with reminder:{reminder}")
         
         return [AllSlotsReset(), SlotSet("PERSON", PERSON)]
 
