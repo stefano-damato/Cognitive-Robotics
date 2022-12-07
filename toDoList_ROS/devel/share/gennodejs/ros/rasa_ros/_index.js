@@ -1,0 +1,1 @@
+/home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/_index.js

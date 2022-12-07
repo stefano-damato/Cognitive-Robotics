@@ -1,0 +1,8 @@
+prefix=/home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/.private/rasa_ros
+
+Name: rasa_ros
+Description: Description of rasa_ros
+Version: 0.0.0
+Cflags: -I/home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/.private/rasa_ros/include
+Libs: -L${prefix}/lib 
+Requires: 

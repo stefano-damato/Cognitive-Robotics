@@ -12,11 +12,11 @@ find_package(catkin REQUIRED COMPONENTS
   rosconsole
   rospy
   std_msgs
+  sensor_msgs
 )
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
-
 
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
@@ -55,10 +55,15 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate services in the 'srv' folder
- add_service_files(
-   FILES
-   Dialogue.srv
- )
+add_service_files(
+  FILES
+  Dialogue.srv
+  Text2Speech.srv
+  WakeUp.srv
+  Rest.srv
+  ExecuteJS.srv
+  LoadUrl.srv
+)
 
 ## Generate actions in the 'action' folder
 # add_action_files(

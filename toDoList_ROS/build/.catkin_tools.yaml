@@ -1,0 +1,6 @@
+devel_space: /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel
+install: false
+install_space: /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/install
+profile: default
+source_space: /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/src
+workspace: /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS

@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/.private/ros_audio_pkg/setup.sh

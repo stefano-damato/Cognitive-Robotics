@@ -1,0 +1,1 @@
+/home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/_Dialogue.py

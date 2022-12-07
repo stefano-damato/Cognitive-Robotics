@@ -1,0 +1,5 @@
+ros_audio_pkg
+/home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/.private/ros_audio_pkg/cmake.lock /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/./cmake.lock
+/home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/.private/ros_audio_pkg/lib/pkgconfig/ros_audio_pkg.pc /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/lib/pkgconfig/ros_audio_pkg.pc
+/home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/.private/ros_audio_pkg/share/ros_audio_pkg/cmake/ros_audio_pkgConfig.cmake /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/share/ros_audio_pkg/cmake/ros_audio_pkgConfig.cmake
+/home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/.private/ros_audio_pkg/share/ros_audio_pkg/cmake/ros_audio_pkgConfig-version.cmake /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/share/ros_audio_pkg/cmake/ros_audio_pkgConfig-version.cmake

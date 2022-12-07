@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import rospy
-from rasa_ros.srv import Dialogue, DialogueResponse
+from rasa_ros.srv import Dialogue, DialogueResponse, Text2Speech
 
 class TerminalInterface:
     '''Class implementing a terminal i/o interface. 
@@ -20,8 +20,10 @@ class TerminalInterface:
 
 def main():
     rospy.init_node('writing')
+    rospy.wait_for_service('tts')
     rospy.wait_for_service('dialogue_server')
     dialogue_service = rospy.ServiceProxy('dialogue_server', Dialogue)
+    text2speech_node = rospy.ServiceProxy('tts', Text2Speech)
 
     terminal = TerminalInterface()
 
@@ -31,6 +33,7 @@ def main():
             break
         try:
             bot_answer = dialogue_service(message)
+            text2speech_node(bot_answer.answer)
             terminal.set_text(bot_answer.answer)
         except rospy.ServiceException as e:
             print("Service call failed: %s"%e)

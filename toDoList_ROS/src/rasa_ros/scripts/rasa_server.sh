@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BOT_DIR="$HOME/Desktop/Cognitive-Robotics/cogrob_chatbot"
+BOT_DIR="$HOME/Cognitive/Cognitive-Robotics-main/cogrob_chatbot"
 
 cd $BOT_DIR
 
