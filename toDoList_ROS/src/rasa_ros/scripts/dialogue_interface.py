@@ -24,6 +24,7 @@ def callback(msg):
         exit
     try:
         bot_answer = dialogue_service(message)
+        #text2speech_node(bot_answer)
         terminal.set_text(bot_answer.answer)
     except rospy.ServiceException as e:
         print("Service call failed: %s"%e)
@@ -32,20 +33,15 @@ def callback(msg):
 def main():
     rospy.init_node('writing')
     rospy.wait_for_service('dialogue_server')
+    #rospy.wait_for_service('tts')
     global dialogue_service, terminal
     dialogue_service=rospy.ServiceProxy('dialogue_server', Dialogue)
+    #text2speech_node=rospy.ServiceProxy('tts', Text2Speech)
     rospy.Subscriber("voice_txt", String, callback)
     terminal = TerminalInterface()
 
     while not rospy.is_shutdown():
-        message = terminal.get_text()
-        if message == 'exit': 
-            break
-        try:
-            bot_answer = dialogue_service(message)
-            terminal.set_text(bot_answer.answer)
-        except rospy.ServiceException as e:
-            print("Service call failed: %s"%e)
+        rospy.spin()
 
 if __name__ == '__main__':
     try: 

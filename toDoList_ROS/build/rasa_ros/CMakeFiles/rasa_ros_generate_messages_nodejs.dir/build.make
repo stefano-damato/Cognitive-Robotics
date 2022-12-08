@@ -43,47 +43,61 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/src/rasa_ros
+CMAKE_SOURCE_DIR = /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/build/rasa_ros
+CMAKE_BINARY_DIR = /home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros
 
 # Utility rule file for rasa_ros_generate_messages_nodejs.
 
 # Include the progress variables for this target.
 include CMakeFiles/rasa_ros_generate_messages_nodejs.dir/progress.make
 
-CMakeFiles/rasa_ros_generate_messages_nodejs: /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Dialogue.js
-CMakeFiles/rasa_ros_generate_messages_nodejs: /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Text2Speech.js
-CMakeFiles/rasa_ros_generate_messages_nodejs: /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/WakeUp.js
-CMakeFiles/rasa_ros_generate_messages_nodejs: /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Rest.js
+CMakeFiles/rasa_ros_generate_messages_nodejs: /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Dialogue.js
+CMakeFiles/rasa_ros_generate_messages_nodejs: /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Text2Speech.js
+CMakeFiles/rasa_ros_generate_messages_nodejs: /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/WakeUp.js
+CMakeFiles/rasa_ros_generate_messages_nodejs: /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Rest.js
+CMakeFiles/rasa_ros_generate_messages_nodejs: /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/ExecuteJS.js
+CMakeFiles/rasa_ros_generate_messages_nodejs: /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/LoadUrl.js
 
 
-/home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Dialogue.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
-/home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Dialogue.js: /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from rasa_ros/Dialogue.srv"
-	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv
+/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Dialogue.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Dialogue.js: /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from rasa_ros/Dialogue.srv"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv
 
-/home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Text2Speech.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
-/home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Text2Speech.js: /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from rasa_ros/Text2Speech.srv"
-	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv
+/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Text2Speech.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Text2Speech.js: /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from rasa_ros/Text2Speech.srv"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv
 
-/home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/WakeUp.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
-/home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/WakeUp.js: /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Javascript code from rasa_ros/WakeUp.srv"
-	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv
+/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/WakeUp.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/WakeUp.js: /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Javascript code from rasa_ros/WakeUp.srv"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv
 
-/home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Rest.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
-/home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Rest.js: /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/src/rasa_ros/srv/Rest.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Javascript code from rasa_ros/Rest.srv"
-	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/src/rasa_ros/srv/Rest.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv
+/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Rest.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Rest.js: /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Javascript code from rasa_ros/Rest.srv"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv
+
+/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/ExecuteJS.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/ExecuteJS.js: /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/ExecuteJS.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Javascript code from rasa_ros/ExecuteJS.srv"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/ExecuteJS.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv
+
+/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/LoadUrl.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/LoadUrl.js: /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/LoadUrl.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Javascript code from rasa_ros/LoadUrl.srv"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/LoadUrl.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv
 
 rasa_ros_generate_messages_nodejs: CMakeFiles/rasa_ros_generate_messages_nodejs
-rasa_ros_generate_messages_nodejs: /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Dialogue.js
-rasa_ros_generate_messages_nodejs: /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Text2Speech.js
-rasa_ros_generate_messages_nodejs: /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/WakeUp.js
-rasa_ros_generate_messages_nodejs: /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Rest.js
+rasa_ros_generate_messages_nodejs: /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Dialogue.js
+rasa_ros_generate_messages_nodejs: /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Text2Speech.js
+rasa_ros_generate_messages_nodejs: /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/WakeUp.js
+rasa_ros_generate_messages_nodejs: /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Rest.js
+rasa_ros_generate_messages_nodejs: /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/ExecuteJS.js
+rasa_ros_generate_messages_nodejs: /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/LoadUrl.js
 rasa_ros_generate_messages_nodejs: CMakeFiles/rasa_ros_generate_messages_nodejs.dir/build.make
 
 .PHONY : rasa_ros_generate_messages_nodejs
@@ -98,6 +112,6 @@ CMakeFiles/rasa_ros_generate_messages_nodejs.dir/clean:
 .PHONY : CMakeFiles/rasa_ros_generate_messages_nodejs.dir/clean
 
 CMakeFiles/rasa_ros_generate_messages_nodejs.dir/depend:
-	cd /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/build/rasa_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/src/rasa_ros /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/src/rasa_ros /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/build/rasa_ros /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/build/rasa_ros /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/build/rasa_ros/CMakeFiles/rasa_ros_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros /home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros /home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros /home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles/rasa_ros_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/rasa_ros_generate_messages_nodejs.dir/depend
 

@@ -67,14 +67,14 @@ set(ros_audio_pkg_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(ros_audio_pkg_SOURCE_PREFIX /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/src/ros_audio_pkg)
-  set(ros_audio_pkg_DEVEL_PREFIX /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/.private/ros_audio_pkg)
+  set(ros_audio_pkg_SOURCE_PREFIX /home/andrea/Cognitive-Robotics/toDoList_ROS/src/ros_audio_pkg)
+  set(ros_audio_pkg_DEVEL_PREFIX /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/ros_audio_pkg)
   set(ros_audio_pkg_INSTALL_PREFIX "")
   set(ros_audio_pkg_PREFIX ${ros_audio_pkg_DEVEL_PREFIX})
 else()
   set(ros_audio_pkg_SOURCE_PREFIX "")
   set(ros_audio_pkg_DEVEL_PREFIX "")
-  set(ros_audio_pkg_INSTALL_PREFIX /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/install)
+  set(ros_audio_pkg_INSTALL_PREFIX /home/andrea/Cognitive-Robotics/toDoList_ROS/install)
   set(ros_audio_pkg_PREFIX ${ros_audio_pkg_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/install/lib;/home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/andrea/Cognitive-Robotics/toDoList_ROS/install/lib;/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/lib;/home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

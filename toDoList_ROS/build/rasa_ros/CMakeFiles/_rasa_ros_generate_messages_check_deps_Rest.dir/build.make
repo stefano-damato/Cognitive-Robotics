@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/src/rasa_ros
+CMAKE_SOURCE_DIR = /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/build/rasa_ros
+CMAKE_BINARY_DIR = /home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros
 
 # Utility rule file for _rasa_ros_generate_messages_check_deps_Rest.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/b
 include CMakeFiles/_rasa_ros_generate_messages_check_deps_Rest.dir/progress.make
 
 CMakeFiles/_rasa_ros_generate_messages_check_deps_Rest:
-	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py rasa_ros /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/src/rasa_ros/srv/Rest.srv 
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py rasa_ros /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv 
 
 _rasa_ros_generate_messages_check_deps_Rest: CMakeFiles/_rasa_ros_generate_messages_check_deps_Rest
 _rasa_ros_generate_messages_check_deps_Rest: CMakeFiles/_rasa_ros_generate_messages_check_deps_Rest.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/_rasa_ros_generate_messages_check_deps_Rest.dir/clean:
 .PHONY : CMakeFiles/_rasa_ros_generate_messages_check_deps_Rest.dir/clean
 
 CMakeFiles/_rasa_ros_generate_messages_check_deps_Rest.dir/depend:
-	cd /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/build/rasa_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/src/rasa_ros /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/src/rasa_ros /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/build/rasa_ros /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/build/rasa_ros /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/build/rasa_ros/CMakeFiles/_rasa_ros_generate_messages_check_deps_Rest.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros /home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros /home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros /home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles/_rasa_ros_generate_messages_check_deps_Rest.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/_rasa_ros_generate_messages_check_deps_Rest.dir/depend
 

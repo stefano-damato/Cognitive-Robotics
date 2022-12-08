@@ -1,0 +1,1 @@
+/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/LoadUrl.js

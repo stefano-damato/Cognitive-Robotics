@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/src/rasa_ros
+CMAKE_SOURCE_DIR = /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/build/rasa_ros
+CMAKE_BINARY_DIR = /home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros
 
 # Utility rule file for _catkin_empty_exported_target.
 
@@ -67,6 +67,6 @@ CMakeFiles/_catkin_empty_exported_target.dir/clean:
 .PHONY : CMakeFiles/_catkin_empty_exported_target.dir/clean
 
 CMakeFiles/_catkin_empty_exported_target.dir/depend:
-	cd /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/build/rasa_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/src/rasa_ros /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/src/rasa_ros /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/build/rasa_ros /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/build/rasa_ros /home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/build/rasa_ros/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros /home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros /home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros /home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/_catkin_empty_exported_target.dir/depend
 
