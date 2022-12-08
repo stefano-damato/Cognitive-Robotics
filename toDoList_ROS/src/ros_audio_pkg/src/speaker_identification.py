@@ -58,7 +58,7 @@ def listener():
         
         if len(X) == 0 or id_label is None:
             c = print("Voce non conosciuta. Vuoi inserire un nuovo campione? (S/N):")
-            if user != "":
+            if user == "":
                 #text2speech_node("Hi, who am I talking to?")
                 name = rospy.wait_for_message("voice_txt", String)
                 X.append(ukn[0])
