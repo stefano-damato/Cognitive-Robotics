@@ -37,6 +37,7 @@ def main():
     global dialogue_service, terminal
     dialogue_service=rospy.ServiceProxy('dialogue_server', Dialogue)
     #text2speech_node=rospy.ServiceProxy('tts', Text2Speech)
+    print("Ready")
     rospy.Subscriber("text_to_bot", String, callback)
     terminal = TerminalInterface()
 

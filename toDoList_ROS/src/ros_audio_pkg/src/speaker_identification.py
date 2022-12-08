@@ -34,6 +34,7 @@ def listener():
     while not rospy.is_shutdown():
         data = rospy.wait_for_message("voice_data",Int16MultiArray)
         text = rospy.wait_for_message("voice_txt", String)
+        print("1. Received text:" + text.data)
 
         audio_data = np.array(data.data)
         audio_text = text.data
@@ -57,24 +58,26 @@ def listener():
             id_label = dist2id(cos_dist, y, TH, mode='avg')
         
         if len(X) == 0 or id_label is None:
-            c = print("Voce non conosciuta. Vuoi inserire un nuovo campione? (S/N):")
-            if user == "":
-                #text2speech_node("Hi, who am I talking to?")
-                name = rospy.wait_for_message("voice_txt", String)
-                X.append(ukn[0])
-                y.append(name.data)
-                pub.publish("Hi, I am" + name.data)
-                user = name.data
+            c = print("Voice not recognized. Who am I talking to?")
+            #text2speech_node("Hi, who am I talking to?")
+            name = rospy.wait_for_message("voice_txt", String)
+            if user == name.data:        
+                print("2. Received text: " + name.data)
+                pub.publish(audio_text)
             else:
-                #text2speech_node("Please, repeat")
-                print("Please, repeat")
+                pub.publish("Hello, I am " + name.data)
+                user = name.data
+            X.append(ukn[0])
+            y.append(name.data)
         else:
             print("Ha parlato:", id_label)
             if id_label != user:
-                pub.publish("Hi, I am" + id_label)
+                pub.publish("Hi, I am " + id_label)
                 user = id_label
             else:
                 pub.publish(audio_text)
+            X.append(ukn[0])
+            y.append(id_label)
 
         
 if __name__ == '__main__':
