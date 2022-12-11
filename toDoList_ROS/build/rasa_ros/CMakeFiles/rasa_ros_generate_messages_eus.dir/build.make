@@ -43,67 +43,67 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros
+CMAKE_SOURCE_DIR = /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros
+CMAKE_BINARY_DIR = /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros
 
 # Utility rule file for rasa_ros_generate_messages_eus.
 
 # Include the progress variables for this target.
 include CMakeFiles/rasa_ros_generate_messages_eus.dir/progress.make
 
-CMakeFiles/rasa_ros_generate_messages_eus: /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Dialogue.l
-CMakeFiles/rasa_ros_generate_messages_eus: /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Text2Speech.l
-CMakeFiles/rasa_ros_generate_messages_eus: /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/WakeUp.l
-CMakeFiles/rasa_ros_generate_messages_eus: /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Rest.l
-CMakeFiles/rasa_ros_generate_messages_eus: /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/ExecuteJS.l
-CMakeFiles/rasa_ros_generate_messages_eus: /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/LoadUrl.l
-CMakeFiles/rasa_ros_generate_messages_eus: /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/manifest.l
+CMakeFiles/rasa_ros_generate_messages_eus: /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Dialogue.l
+CMakeFiles/rasa_ros_generate_messages_eus: /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Text2Speech.l
+CMakeFiles/rasa_ros_generate_messages_eus: /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/WakeUp.l
+CMakeFiles/rasa_ros_generate_messages_eus: /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Rest.l
+CMakeFiles/rasa_ros_generate_messages_eus: /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/ExecuteJS.l
+CMakeFiles/rasa_ros_generate_messages_eus: /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/LoadUrl.l
+CMakeFiles/rasa_ros_generate_messages_eus: /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/manifest.l
 
 
-/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Dialogue.l: /opt/ros/noetic/lib/geneus/gen_eus.py
-/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Dialogue.l: /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from rasa_ros/Dialogue.srv"
-	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv
+/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Dialogue.l: /opt/ros/noetic/lib/geneus/gen_eus.py
+/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Dialogue.l: /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from rasa_ros/Dialogue.srv"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv
 
-/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Text2Speech.l: /opt/ros/noetic/lib/geneus/gen_eus.py
-/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Text2Speech.l: /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from rasa_ros/Text2Speech.srv"
-	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv
+/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Text2Speech.l: /opt/ros/noetic/lib/geneus/gen_eus.py
+/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Text2Speech.l: /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from rasa_ros/Text2Speech.srv"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv
 
-/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/WakeUp.l: /opt/ros/noetic/lib/geneus/gen_eus.py
-/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/WakeUp.l: /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp code from rasa_ros/WakeUp.srv"
-	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv
+/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/WakeUp.l: /opt/ros/noetic/lib/geneus/gen_eus.py
+/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/WakeUp.l: /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp code from rasa_ros/WakeUp.srv"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv
 
-/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Rest.l: /opt/ros/noetic/lib/geneus/gen_eus.py
-/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Rest.l: /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating EusLisp code from rasa_ros/Rest.srv"
-	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv
+/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Rest.l: /opt/ros/noetic/lib/geneus/gen_eus.py
+/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Rest.l: /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating EusLisp code from rasa_ros/Rest.srv"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv
 
-/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/ExecuteJS.l: /opt/ros/noetic/lib/geneus/gen_eus.py
-/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/ExecuteJS.l: /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/ExecuteJS.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating EusLisp code from rasa_ros/ExecuteJS.srv"
-	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/ExecuteJS.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv
+/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/ExecuteJS.l: /opt/ros/noetic/lib/geneus/gen_eus.py
+/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/ExecuteJS.l: /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/ExecuteJS.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating EusLisp code from rasa_ros/ExecuteJS.srv"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/ExecuteJS.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv
 
-/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/LoadUrl.l: /opt/ros/noetic/lib/geneus/gen_eus.py
-/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/LoadUrl.l: /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/LoadUrl.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating EusLisp code from rasa_ros/LoadUrl.srv"
-	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/LoadUrl.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv
+/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/LoadUrl.l: /opt/ros/noetic/lib/geneus/gen_eus.py
+/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/LoadUrl.l: /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/LoadUrl.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating EusLisp code from rasa_ros/LoadUrl.srv"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/LoadUrl.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv
 
-/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/manifest.l: /opt/ros/noetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating EusLisp manifest code for rasa_ros"
-	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros rasa_ros std_msgs
+/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/manifest.l: /opt/ros/noetic/lib/geneus/gen_eus.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating EusLisp manifest code for rasa_ros"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros rasa_ros std_msgs
 
 rasa_ros_generate_messages_eus: CMakeFiles/rasa_ros_generate_messages_eus
-rasa_ros_generate_messages_eus: /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Dialogue.l
-rasa_ros_generate_messages_eus: /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Text2Speech.l
-rasa_ros_generate_messages_eus: /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/WakeUp.l
-rasa_ros_generate_messages_eus: /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Rest.l
-rasa_ros_generate_messages_eus: /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/ExecuteJS.l
-rasa_ros_generate_messages_eus: /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/LoadUrl.l
-rasa_ros_generate_messages_eus: /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/manifest.l
+rasa_ros_generate_messages_eus: /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Dialogue.l
+rasa_ros_generate_messages_eus: /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Text2Speech.l
+rasa_ros_generate_messages_eus: /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/WakeUp.l
+rasa_ros_generate_messages_eus: /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Rest.l
+rasa_ros_generate_messages_eus: /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/ExecuteJS.l
+rasa_ros_generate_messages_eus: /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/LoadUrl.l
+rasa_ros_generate_messages_eus: /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/manifest.l
 rasa_ros_generate_messages_eus: CMakeFiles/rasa_ros_generate_messages_eus.dir/build.make
 
 .PHONY : rasa_ros_generate_messages_eus
@@ -118,6 +118,6 @@ CMakeFiles/rasa_ros_generate_messages_eus.dir/clean:
 .PHONY : CMakeFiles/rasa_ros_generate_messages_eus.dir/clean
 
 CMakeFiles/rasa_ros_generate_messages_eus.dir/depend:
-	cd /home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros /home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros /home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros /home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles/rasa_ros_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles/rasa_ros_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/rasa_ros_generate_messages_eus.dir/depend
 

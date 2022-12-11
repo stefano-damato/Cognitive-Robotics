@@ -1,4 +1,4 @@
-prefix=/home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/.private/catkin_tools_prebuild
+prefix=/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/catkin_tools_prebuild
 
 Name: catkin_tools_prebuild
 Description: Description of catkin_tools_prebuild

@@ -1,8 +1,8 @@
-# Install script for directory: /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros
+# Install script for directory: /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/andrea/Cognitive-Robotics/toDoList_ROS/install")
+  set(CMAKE_INSTALL_PREFIX "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -49,146 +49,146 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/andrea/Cognitive-Robotics/toDoList_ROS/install/_setup_util.py")
+   "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/install/_setup_util.py")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/andrea/Cognitive-Robotics/toDoList_ROS/install" TYPE PROGRAM FILES "/home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/catkin_generated/installspace/_setup_util.py")
+file(INSTALL DESTINATION "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/install" TYPE PROGRAM FILES "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/catkin_generated/installspace/_setup_util.py")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/andrea/Cognitive-Robotics/toDoList_ROS/install/env.sh")
+   "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/install/env.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/andrea/Cognitive-Robotics/toDoList_ROS/install" TYPE PROGRAM FILES "/home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/catkin_generated/installspace/env.sh")
+file(INSTALL DESTINATION "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/install" TYPE PROGRAM FILES "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/catkin_generated/installspace/env.sh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/andrea/Cognitive-Robotics/toDoList_ROS/install/setup.bash;/home/andrea/Cognitive-Robotics/toDoList_ROS/install/local_setup.bash")
+   "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/install/setup.bash;/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/install/local_setup.bash")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/andrea/Cognitive-Robotics/toDoList_ROS/install" TYPE FILE FILES
-    "/home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/catkin_generated/installspace/setup.bash"
-    "/home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/catkin_generated/installspace/local_setup.bash"
+file(INSTALL DESTINATION "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/install" TYPE FILE FILES
+    "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/catkin_generated/installspace/setup.bash"
+    "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/catkin_generated/installspace/local_setup.bash"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/andrea/Cognitive-Robotics/toDoList_ROS/install/setup.sh;/home/andrea/Cognitive-Robotics/toDoList_ROS/install/local_setup.sh")
+   "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/install/setup.sh;/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/install/local_setup.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/andrea/Cognitive-Robotics/toDoList_ROS/install" TYPE FILE FILES
-    "/home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/catkin_generated/installspace/setup.sh"
-    "/home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/catkin_generated/installspace/local_setup.sh"
+file(INSTALL DESTINATION "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/install" TYPE FILE FILES
+    "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/catkin_generated/installspace/setup.sh"
+    "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/catkin_generated/installspace/local_setup.sh"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/andrea/Cognitive-Robotics/toDoList_ROS/install/setup.zsh;/home/andrea/Cognitive-Robotics/toDoList_ROS/install/local_setup.zsh")
+   "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/install/setup.zsh;/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/install/local_setup.zsh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/andrea/Cognitive-Robotics/toDoList_ROS/install" TYPE FILE FILES
-    "/home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/catkin_generated/installspace/setup.zsh"
-    "/home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/catkin_generated/installspace/local_setup.zsh"
+file(INSTALL DESTINATION "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/install" TYPE FILE FILES
+    "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/catkin_generated/installspace/setup.zsh"
+    "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/catkin_generated/installspace/local_setup.zsh"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/andrea/Cognitive-Robotics/toDoList_ROS/install/.rosinstall")
+   "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/install/.rosinstall")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/andrea/Cognitive-Robotics/toDoList_ROS/install" TYPE FILE FILES "/home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/catkin_generated/installspace/.rosinstall")
+file(INSTALL DESTINATION "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/install" TYPE FILE FILES "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/catkin_generated/installspace/.rosinstall")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rasa_ros/srv" TYPE FILE FILES
-    "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv"
-    "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv"
-    "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv"
-    "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv"
-    "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/ExecuteJS.srv"
-    "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/LoadUrl.srv"
+    "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv"
+    "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv"
+    "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv"
+    "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv"
+    "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/ExecuteJS.srv"
+    "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/LoadUrl.srv"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rasa_ros/cmake" TYPE FILE FILES "/home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/catkin_generated/installspace/rasa_ros-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rasa_ros/cmake" TYPE FILE FILES "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/catkin_generated/installspace/rasa_ros-msg-paths.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/include/rasa_ros")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/include/rasa_ros")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/common-lisp/ros/rasa_ros")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/common-lisp/ros/rasa_ros")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros")
+  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/catkin_generated/installspace/rasa_ros.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/catkin_generated/installspace/rasa_ros.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rasa_ros/cmake" TYPE FILE FILES "/home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/catkin_generated/installspace/rasa_ros-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rasa_ros/cmake" TYPE FILE FILES "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/catkin_generated/installspace/rasa_ros-msg-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rasa_ros/cmake" TYPE FILE FILES
-    "/home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/catkin_generated/installspace/rasa_rosConfig.cmake"
-    "/home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/catkin_generated/installspace/rasa_rosConfig-version.cmake"
+    "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/catkin_generated/installspace/rasa_rosConfig.cmake"
+    "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/catkin_generated/installspace/rasa_rosConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rasa_ros" TYPE FILE FILES "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rasa_ros" TYPE FILE FILES "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/package.xml")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/gtest/cmake_install.cmake")
+  include("/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/gtest/cmake_install.cmake")
 
 endif()
 
@@ -200,5 +200,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros
+CMAKE_SOURCE_DIR = /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros
+CMAKE_BINARY_DIR = /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros
 
 # Utility rule file for rasa_ros_geneus.
 
@@ -67,6 +67,6 @@ CMakeFiles/rasa_ros_geneus.dir/clean:
 .PHONY : CMakeFiles/rasa_ros_geneus.dir/clean
 
 CMakeFiles/rasa_ros_geneus.dir/depend:
-	cd /home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros /home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros /home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros /home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros /home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles/rasa_ros_geneus.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles/rasa_ros_geneus.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/rasa_ros_geneus.dir/depend
 

@@ -1,1 +1,1 @@
-/home/andrea/Cognitive/Cognitive-Robotics-main/toDoList_ROS/devel/.private/rasa_ros/share/rasa_ros/cmake/rasa_rosConfig.cmake
+/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/rasa_ros/cmake/rasa_rosConfig.cmake

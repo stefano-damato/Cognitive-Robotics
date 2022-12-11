@@ -1,4 +1,8 @@
 .DS_Store
+toDoList_ROS/build/
+toDoList_ROS/logs/
+toDoList_ROS/devel/
+toDoList_ROS/.catkin_tools
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -17,34 +17,34 @@ add_custom_target(rasa_ros_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv" NAME_WE)
 add_custom_target(_rasa_ros_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "rasa_ros" "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "rasa_ros" "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv" ""
 )
 
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv" NAME_WE)
 add_custom_target(_rasa_ros_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "rasa_ros" "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "rasa_ros" "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv" ""
 )
 
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv" NAME_WE)
 add_custom_target(_rasa_ros_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "rasa_ros" "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "rasa_ros" "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv" ""
 )
 
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv" NAME_WE)
 add_custom_target(_rasa_ros_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "rasa_ros" "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "rasa_ros" "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv" ""
 )
 
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/ExecuteJS.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/ExecuteJS.srv" NAME_WE)
 add_custom_target(_rasa_ros_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "rasa_ros" "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/ExecuteJS.srv" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "rasa_ros" "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/ExecuteJS.srv" ""
 )
 
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/LoadUrl.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/LoadUrl.srv" NAME_WE)
 add_custom_target(_rasa_ros_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "rasa_ros" "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/LoadUrl.srv" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "rasa_ros" "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/LoadUrl.srv" ""
 )
 
 #
@@ -56,37 +56,37 @@ add_custom_target(_rasa_ros_generate_messages_check_deps_${_filename}
 
 ### Generating Services
 _generate_srv_cpp(rasa_ros
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv"
+  "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/rasa_ros
 )
 _generate_srv_cpp(rasa_ros
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv"
+  "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/rasa_ros
 )
 _generate_srv_cpp(rasa_ros
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv"
+  "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/rasa_ros
 )
 _generate_srv_cpp(rasa_ros
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv"
+  "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/rasa_ros
 )
 _generate_srv_cpp(rasa_ros
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/ExecuteJS.srv"
+  "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/ExecuteJS.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/rasa_ros
 )
 _generate_srv_cpp(rasa_ros
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/LoadUrl.srv"
+  "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/LoadUrl.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/rasa_ros
@@ -104,17 +104,17 @@ add_custom_target(rasa_ros_generate_messages_cpp
 add_dependencies(rasa_ros_generate_messages rasa_ros_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_cpp _rasa_ros_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_cpp _rasa_ros_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_cpp _rasa_ros_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_cpp _rasa_ros_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/ExecuteJS.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/ExecuteJS.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_cpp _rasa_ros_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/LoadUrl.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/LoadUrl.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_cpp _rasa_ros_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -129,37 +129,37 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS rasa_ros_generate_messages_cpp)
 
 ### Generating Services
 _generate_srv_eus(rasa_ros
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv"
+  "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/rasa_ros
 )
 _generate_srv_eus(rasa_ros
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv"
+  "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/rasa_ros
 )
 _generate_srv_eus(rasa_ros
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv"
+  "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/rasa_ros
 )
 _generate_srv_eus(rasa_ros
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv"
+  "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/rasa_ros
 )
 _generate_srv_eus(rasa_ros
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/ExecuteJS.srv"
+  "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/ExecuteJS.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/rasa_ros
 )
 _generate_srv_eus(rasa_ros
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/LoadUrl.srv"
+  "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/LoadUrl.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/rasa_ros
@@ -177,17 +177,17 @@ add_custom_target(rasa_ros_generate_messages_eus
 add_dependencies(rasa_ros_generate_messages rasa_ros_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_eus _rasa_ros_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_eus _rasa_ros_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_eus _rasa_ros_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_eus _rasa_ros_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/ExecuteJS.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/ExecuteJS.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_eus _rasa_ros_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/LoadUrl.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/LoadUrl.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_eus _rasa_ros_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -202,37 +202,37 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS rasa_ros_generate_messages_eus)
 
 ### Generating Services
 _generate_srv_lisp(rasa_ros
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv"
+  "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/rasa_ros
 )
 _generate_srv_lisp(rasa_ros
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv"
+  "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/rasa_ros
 )
 _generate_srv_lisp(rasa_ros
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv"
+  "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/rasa_ros
 )
 _generate_srv_lisp(rasa_ros
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv"
+  "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/rasa_ros
 )
 _generate_srv_lisp(rasa_ros
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/ExecuteJS.srv"
+  "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/ExecuteJS.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/rasa_ros
 )
 _generate_srv_lisp(rasa_ros
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/LoadUrl.srv"
+  "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/LoadUrl.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/rasa_ros
@@ -250,17 +250,17 @@ add_custom_target(rasa_ros_generate_messages_lisp
 add_dependencies(rasa_ros_generate_messages rasa_ros_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_lisp _rasa_ros_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_lisp _rasa_ros_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_lisp _rasa_ros_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_lisp _rasa_ros_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/ExecuteJS.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/ExecuteJS.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_lisp _rasa_ros_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/LoadUrl.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/LoadUrl.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_lisp _rasa_ros_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -275,37 +275,37 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS rasa_ros_generate_messages_lisp)
 
 ### Generating Services
 _generate_srv_nodejs(rasa_ros
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv"
+  "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/rasa_ros
 )
 _generate_srv_nodejs(rasa_ros
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv"
+  "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/rasa_ros
 )
 _generate_srv_nodejs(rasa_ros
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv"
+  "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/rasa_ros
 )
 _generate_srv_nodejs(rasa_ros
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv"
+  "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/rasa_ros
 )
 _generate_srv_nodejs(rasa_ros
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/ExecuteJS.srv"
+  "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/ExecuteJS.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/rasa_ros
 )
 _generate_srv_nodejs(rasa_ros
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/LoadUrl.srv"
+  "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/LoadUrl.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/rasa_ros
@@ -323,17 +323,17 @@ add_custom_target(rasa_ros_generate_messages_nodejs
 add_dependencies(rasa_ros_generate_messages rasa_ros_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_nodejs _rasa_ros_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_nodejs _rasa_ros_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_nodejs _rasa_ros_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_nodejs _rasa_ros_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/ExecuteJS.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/ExecuteJS.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_nodejs _rasa_ros_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/LoadUrl.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/LoadUrl.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_nodejs _rasa_ros_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -348,37 +348,37 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS rasa_ros_generate_messages_nodejs)
 
 ### Generating Services
 _generate_srv_py(rasa_ros
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv"
+  "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/rasa_ros
 )
 _generate_srv_py(rasa_ros
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv"
+  "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/rasa_ros
 )
 _generate_srv_py(rasa_ros
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv"
+  "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/rasa_ros
 )
 _generate_srv_py(rasa_ros
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv"
+  "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/rasa_ros
 )
 _generate_srv_py(rasa_ros
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/ExecuteJS.srv"
+  "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/ExecuteJS.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/rasa_ros
 )
 _generate_srv_py(rasa_ros
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/LoadUrl.srv"
+  "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/LoadUrl.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/rasa_ros
@@ -396,17 +396,17 @@ add_custom_target(rasa_ros_generate_messages_py
 add_dependencies(rasa_ros_generate_messages rasa_ros_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_py _rasa_ros_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_py _rasa_ros_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_py _rasa_ros_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_py _rasa_ros_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/ExecuteJS.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/ExecuteJS.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_py _rasa_ros_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/LoadUrl.srv" NAME_WE)
+get_filename_component(_filename "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/LoadUrl.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_py _rasa_ros_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

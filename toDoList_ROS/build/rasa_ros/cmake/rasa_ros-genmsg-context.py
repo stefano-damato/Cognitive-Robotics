@@ -1,7 +1,7 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
 messages_str = ""
-services_str = "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv;/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv;/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv;/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv;/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/ExecuteJS.srv;/home/andrea/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/LoadUrl.srv"
+services_str = "/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Dialogue.srv;/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Text2Speech.srv;/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/WakeUp.srv;/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/Rest.srv;/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/ExecuteJS.srv;/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/rasa_ros/srv/LoadUrl.srv"
 pkg_name = "rasa_ros"
 dependencies_str = "std_msgs"
 langs = "gencpp;geneus;genlisp;gennodejs;genpy"
