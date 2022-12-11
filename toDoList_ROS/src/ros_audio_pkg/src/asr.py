@@ -12,17 +12,22 @@ r = sr.Recognizer()
 # Init node
 rospy.init_node('speech_recognition', anonymous=True)
 pub1 = rospy.Publisher('voice_data', Int16MultiArray, queue_size=10)
-#pub2 = rospy.Publisher('text_to_bot', String, queue_size=10)
 pub2 = rospy.Publisher('voice_txt', String, queue_size=10)
 
 # this is called from the background thread
 def callback(audio):
+    print(1)
     data = np.array(audio.data,dtype=np.int16)
+    print(2)
     audio_data = AudioData(data.tobytes(), 16000, 2)
-
+    data = rospy.wait_for_message("ID",String)
+    label = data.data
+    print(3)
     try:
-        spoken_text= r.recognize_google(audio_data, language='en-EN')
-        print("Google Speech Recognition pensa tu abbia detto: " + spoken_text)
+        print(4)
+        spoken_text= r.recognize_google(audio_data, language='it-IT')
+        print(5)
+        print("Google Speech Recognition pensa che "+label+" abbia detto: " + spoken_text)
         pub1.publish(audio) # Publish audio only if it contains words
         pub2.publish(spoken_text)
     except sr.UnknownValueError:
