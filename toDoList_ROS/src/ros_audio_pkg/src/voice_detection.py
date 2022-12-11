@@ -7,6 +7,7 @@ import time
 import speech_recognition as sr
 
 pub = rospy.Publisher('mic_data', Int16MultiArray, queue_size=10)
+pub2 = rospy.Publisher('mic_data_label', Int16MultiArray, queue_size=10)
 rospy.init_node('voice_detection_node', anonymous=True)
 
 # this is called from the background thread
@@ -19,8 +20,10 @@ def callback(recognizer, audio):
         data = np.frombuffer(audio.get_raw_data(), dtype=np.int16)
         data_to_send = Int16MultiArray()
         data_to_send.data = data
-        
-        pub.publish(data_to_send)
+        if label=="name_request":
+            pub2.publish(data_to_send)
+        else:
+            pub.publish(data_to_send)
 
 # Initialize a Recognizer
 r = sr.Recognizer()

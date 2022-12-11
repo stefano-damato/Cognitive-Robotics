@@ -59,6 +59,7 @@ rejection_threshold=0.4
 datapath = os.path.join(os.path.dirname(__file__),"data.pickle")
 database = data_from_file(datapath)
 rospy.init_node('detector_node')
+
 pub = rospy.Publisher('detection', Detection2DArray, queue_size=2)
 pub_audio= rospy.Publisher('ID',String,queue_size=10)
 

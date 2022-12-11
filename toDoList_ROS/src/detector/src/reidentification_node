@@ -1,6 +1,7 @@
 import os
 import rospy
 from sensor_msgs.msg import Image
+from std_msgs.msg import String
 from vision_msgs.msg import Detection2D, Detection2DArray, ObjectHypothesisWithPose
 from detector import Detector
 import ros_numpy # pip3 install git+https://github.com/eric-wieser/ros_numpy
@@ -118,6 +119,7 @@ database = data_from_file(datapath)
 
 rospy.init_node('reidentification_node')
 pub = rospy.Publisher('detection', Detection2DArray, queue_size=2)
+pub_audio= rospy.Publisher('ID',String,queue_size=10)
 #pub2 = rospy.Publisher('webcam2',Image,queue_size=100)
 
 unknown=0
@@ -153,13 +155,14 @@ def rcv_image(msg):
                 if distance < min_distance[1] and distance < rejection_threshold:
                     min_distance[0] = face['id']
                     min_distance[1] = distance
-        
+        ## REIDENTIFICATION
         if unknown>0:
             min_distance[0] = "unknown"
         if min_distance[0] == "unknown":
             if  unknown==0:
                 print("I don't recognize you, who am I talking to? ")
-                name = input()
+                pub_audio.publish("name_request")
+                name = rospy.wait_for_message("text_for_reidentification",String)
                 print("Okay"+name+", now look the camera for the next 10 seconds")
                 folder_path=os.path.join(img_path,name)
                 if not os.path.exists(folder_path):
@@ -179,7 +182,10 @@ def rcv_image(msg):
         message.detections.append(d)
 
     pub.publish(message)
-    #pub2.publish(msg)
+    if len(bboxes) > 0:
+        pub_audio.publish(min_distance[0])
+    else:
+        pub_audio.publish("NO")
     rospy.loginfo("published")
 
 
