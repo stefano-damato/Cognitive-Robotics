@@ -1,0 +1,195 @@
+import os
+import rospy
+from sensor_msgs.msg import Image
+from vision_msgs.msg import Detection2D, Detection2DArray, ObjectHypothesisWithPose
+from detector import Detector
+import ros_numpy # pip3 install git+https://github.com/eric-wieser/ros_numpy
+import cv2
+import numpy as np
+from keras_vggface.vggface import VGGFace
+from keras_vggface.utils import preprocess_input
+from scipy.spatial.distance import cosine
+import pickle
+from glob import glob
+
+def getFaceBox(net, frame, conf_threshold=0.8):
+    frameOpencvDnn = frame.copy()
+    frameHeight = frameOpencvDnn.shape[0]
+    frameWidth = frameOpencvDnn.shape[1]
+    
+    #swapRB =True
+    # flag which indicates that swap first and last channels in 3-channel image is necessary.
+    #crop = False
+    # flag which indicates whether image will be cropped after resize or not
+    # If crop is false, direct resize without cropping and preserving aspect ratio is performed
+    blob = cv2.dnn.blobFromImage(frameOpencvDnn, 1.0, (300, 300), [104, 117, 123], True, False)
+
+    net.setInput(blob)
+    detections = net.forward()
+    bboxes = []
+    for i in range(detections.shape[2]):
+        confidence = detections[0, 0, i, 2]
+        if confidence > conf_threshold and detections[0, 0, i, 5]<1 and detections[0, 0, i, 6]<1:
+            x1 = int(detections[0, 0, i, 3] * frameWidth)
+            y1 = int(detections[0, 0, i, 4] * frameHeight)
+            x2 = int(detections[0, 0, i, 5] * frameWidth)
+            y2 = int(detections[0, 0, i, 6] * frameHeight)
+            bboxes.append([x1, y1, x2, y2])
+            #cv2.rectangle(frameOpencvDnn, (x1, y1), (x2, y2), (0, 255, 0), int(round(frameHeight/300)), 8)
+    return frameOpencvDnn, bboxes
+
+# This method takes as input the face recognition model and the filename of the image and returns
+# the feature vector
+def extract_features(face_reco_model, filename):
+    faceim = cv2.imread(filename)
+    faceim = cv2.resize(faceim, (224,224))
+    faceim = preprocess_input([faceim.astype(np.float32)], version=2)
+    feature_vector = (face_reco_model.predict(faceim,verbose='false')).flatten()
+    return feature_vector
+
+def data_to_file(data_dict,name):
+    print(name)
+    with open(name, 'wb') as handle:
+        pickle.dump(data_dict, handle, protocol=pickle.HIGHEST_PROTOCOL)
+
+def data_from_file(name):
+    with open(name, 'rb') as handle:
+        X = pickle.load(handle)
+    return X
+
+
+def save_face(msg,PATH):
+    frame = ros_numpy.numpify(msg)
+    frameFace, bboxes = getFaceBox(faceNet, frame)     # Get face
+    j=len(os.listdir(PATH))+1
+    for i,bbox in enumerate(bboxes):
+        # Adjust crop
+        w = bbox[2]-bbox[0]
+        h = bbox[3]-bbox[1]
+        padding_px = int(padding*max(h,w))
+        face = frame[max(0,bbox[1]-padding_px):min(bbox[3]+padding_px,frame.shape[0]-1),max(0,bbox[0]-padding_px):min(bbox[2]+padding_px, frame.shape[1]-1)]
+        face = face[ face.shape[0]//2 - face.shape[1]//2 : face.shape[0]//2 + face.shape[1]//2, :, :]
+        # Preprocess image
+        resized_face = cv2.resize(face,INPUT_SIZE)
+        cv2.imwrite(PATH+"/img_"+str(j)+".jpg", resized_face)
+        print("img_"+str(j)+".jpg saved")
+
+def train(data_path,n_images_for_person,file_path):
+    database = []
+    for dirs in os.listdir(data_path):
+        person_path = os.path.join(data_path, dirs)
+        print(person_path)
+        count = 0
+        person = []
+        if n_images_for_person is None:
+            number_of_training_images_per_person = len(os.listdir(person_path))
+        else:
+            number_of_training_images_per_person = n_images_for_person
+        print(os.path.join(person_path,'*.jpg'))
+        print(number_of_training_images_per_person)
+        for filename in glob(os.path.join(person_path,'*.jpg')):
+            if count < number_of_training_images_per_person:
+                feature_vector = extract_features(face_reco_model, filename)
+                person.append({"id": dirs, "feature_vector": feature_vector, "filename": filename})
+                count += 1
+                print("Loading %s - %d"%(dirs, count))
+        database.append(person)
+    data_to_file(database,file_path)
+# Initialize face detector
+faceProto = os.path.join(os.path.dirname(__file__),"opencv_face_detector.pbtxt")
+faceModel = os.path.join(os.path.dirname(__file__),"opencv_face_detector_uint8.pb")
+print(faceProto,faceModel)
+faceNet = cv2.dnn.readNet(faceModel, faceProto)
+# Load the VGG-Face model based on ResNet-50
+face_reco_model = VGGFace(model='resnet50', include_top=False, pooling='avg')
+
+padding = 0.2
+INPUT_SIZE = (224,224)
+rejection_threshold=0.4
+fps= 30
+pps = 2
+seconds_for_identification=10
+name_database="data.pickle"
+
+global unknown,name,folder_path,database
+img_path = os.path.join(os.path.dirname(__file__),"img")
+datapath = os.path.join(os.path.dirname(__file__),name_database)
+database = data_from_file(datapath)
+
+rospy.init_node('reidentification_node')
+pub = rospy.Publisher('detection', Detection2DArray, queue_size=2)
+#pub2 = rospy.Publisher('webcam2',Image,queue_size=100)
+
+unknown=0
+def rcv_image(msg):
+    global unknown,name,folder_path,database
+    image = ros_numpy.numpify(msg)
+    frameFace, bboxes = getFaceBox(faceNet, image)     # Get face
+    message = Detection2DArray()
+    for i,bbox in enumerate(bboxes):
+        d = Detection2D()
+
+        # bbox cordinates
+        w = bbox[2]-bbox[0]
+        h = bbox[3]-bbox[1]
+        d.bbox.size_x = w
+        d.bbox.size_y = h
+        d.bbox.center.x = bbox[0]+w/2
+        d.bbox.center.y = bbox[1]+h/2
+
+        # identity prediction
+        padding_px = int(padding*max(h,w))
+        face = image[max(0,bbox[1]-padding_px):min(bbox[3]+padding_px,image.shape[0]-1),max(0,bbox[0]-padding_px):min(bbox[2]+padding_px, image.shape[1]-1)]
+        face = face[ face.shape[0]//2 - face.shape[1]//2 : face.shape[0]//2 + face.shape[1]//2, :, :]
+        # Preprocess image
+        resized_face = cv2.resize(face,INPUT_SIZE)
+        ##
+        faceim = preprocess_input([resized_face.astype(np.float32)], version=2)
+        feature_vector = (face_reco_model.predict(faceim,verbose='false')).flatten()
+        min_distance = ["unknown", 1000000000000]
+        for person in database:
+            for face in person:
+                distance = cosine(feature_vector, face['feature_vector'])
+                if distance < min_distance[1] and distance < rejection_threshold:
+                    min_distance[0] = face['id']
+                    min_distance[1] = distance
+        
+        if unknown>0:
+            min_distance[0] = "unknown"
+        if min_distance[0] == "unknown":
+            if  unknown==0:
+                print("I don't recognize you, who am I talking to? ")
+                name = input()
+                print("Okay"+name+", now look the camera for the next 10 seconds")
+                folder_path=os.path.join(img_path,name)
+                if not os.path.exists(folder_path):
+                # Create a new directory because it does not exist
+                    os.makedirs(folder_path)
+            if unknown%(fps/pps)==0:
+                save_face(msg,folder_path)
+            if unknown==fps*seconds_for_identification:
+                train(img_path,None,os.path.join(os.path.dirname(__file__),"name_database"))
+                min_distance[0] = name
+                print("Okay"+name+", vai avanti")
+                unknown=-1
+                database = data_from_file(os.path.join(os.path.dirname(__file__),"name_database"))
+            unknown+=1
+
+        d.source_img.header.frame_id = min_distance[0]
+        message.detections.append(d)
+
+    pub.publish(message)
+    #pub2.publish(msg)
+    rospy.loginfo("published")
+
+
+si = rospy.Subscriber("webcam", Image, rcv_image)
+
+
+
+try:
+    rospy.spin()
+
+except KeyboardInterrupt:
+    print("Shutting down")
+    
