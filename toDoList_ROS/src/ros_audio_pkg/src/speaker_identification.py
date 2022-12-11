@@ -28,7 +28,7 @@ TH = 0.75
 def listener():
     rospy.init_node('reidentification_node', anonymous=True)
     pub = rospy.Publisher('text_to_bot', String, queue_size=10)
-    #text2speech_node=rospy.ServiceProxy('tts', Text2Speech)
+    text2speech_node=rospy.ServiceProxy('tts', Text2Speech)
     user = ""
 
     while not rospy.is_shutdown():
@@ -59,7 +59,7 @@ def listener():
         
         if len(X) == 0 or id_label is None:
             c = print("Voice not recognized. Who am I talking to?")
-            #text2speech_node("Hi, who am I talking to?")
+            text2speech_node("Hi, who am I talking to?")
             name = rospy.wait_for_message("voice_txt", String)
             if user == name.data:        
                 print("2. Received text: " + name.data)

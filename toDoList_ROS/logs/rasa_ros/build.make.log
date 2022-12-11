@@ -1,34 +1,17 @@
-[35m[1mScanning dependencies of target std_msgs_generate_messages_cpp[0m
-[35m[1mScanning dependencies of target _rasa_ros_generate_messages_check_deps_Dialogue[0m
-[35m[1mScanning dependencies of target _rasa_ros_generate_messages_check_deps_Rest[0m
-[35m[1mScanning dependencies of target _rasa_ros_generate_messages_check_deps_WakeUp[0m
-[35m[1mScanning dependencies of target std_msgs_generate_messages_lisp[0m
-[35m[1mScanning dependencies of target _rasa_ros_generate_messages_check_deps_LoadUrl[0m
-[35m[1mScanning dependencies of target std_msgs_generate_messages_nodejs[0m
-[35m[1mScanning dependencies of target std_msgs_generate_messages_eus[0m
-[35m[1mScanning dependencies of target _rasa_ros_generate_messages_check_deps_ExecuteJS[0m
-[35m[1mScanning dependencies of target _rasa_ros_generate_messages_check_deps_Text2Speech[0m
-[35m[1mScanning dependencies of target std_msgs_generate_messages_py[0m
-[  0%] Built target std_msgs_generate_messages_lisp
 [  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target _rasa_ros_generate_messages_check_deps_ExecuteJS
+[  0%] Built target _rasa_ros_generate_messages_check_deps_WakeUp
+[  0%] Built target _rasa_ros_generate_messages_check_deps_Dialogue
+[  0%] Built target _rasa_ros_generate_messages_check_deps_LoadUrl
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_lisp
 [  0%] Built target std_msgs_generate_messages_eus
 [  0%] Built target std_msgs_generate_messages_nodejs
-[  0%] Built target std_msgs_generate_messages_py
-[  0%] Built target _rasa_ros_generate_messages_check_deps_WakeUp
-[  0%] Built target _rasa_ros_generate_messages_check_deps_LoadUrl
-[  0%] Built target _rasa_ros_generate_messages_check_deps_ExecuteJS
-[  0%] Built target _rasa_ros_generate_messages_check_deps_Dialogue
 [  0%] Built target _rasa_ros_generate_messages_check_deps_Rest
 [  0%] Built target _rasa_ros_generate_messages_check_deps_Text2Speech
-[35m[1mScanning dependencies of target rasa_ros_generate_messages_nodejs[0m
-[35m[1mScanning dependencies of target rasa_ros_generate_messages_lisp[0m
-[35m[1mScanning dependencies of target rasa_ros_generate_messages_eus[0m
-[35m[1mScanning dependencies of target rasa_ros_generate_messages_cpp[0m
-[35m[1mScanning dependencies of target rasa_ros_generate_messages_py[0m
-[ 40%] Built target rasa_ros_generate_messages_cpp
-[ 40%] Built target rasa_ros_generate_messages_nodejs
-[ 59%] Built target rasa_ros_generate_messages_eus
-[ 90%] Built target rasa_ros_generate_messages_py
-[100%] Built target rasa_ros_generate_messages_lisp
-[35m[1mScanning dependencies of target rasa_ros_generate_messages[0m
+[ 21%] Built target rasa_ros_generate_messages_lisp
+[ 37%] Built target rasa_ros_generate_messages_cpp
+[ 59%] Built target rasa_ros_generate_messages_py
+[ 81%] Built target rasa_ros_generate_messages_eus
+[100%] Built target rasa_ros_generate_messages_nodejs
 [100%] Built target rasa_ros_generate_messages
