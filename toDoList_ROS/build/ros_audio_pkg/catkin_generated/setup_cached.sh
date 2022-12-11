@@ -7,7 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/ros_audio_pkg:$CMAKE_PREFIX_PATH"
-export PWD='/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/ros_audio_pkg'
-export ROSLISP_PACKAGE_DIRECTORIES="/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/ros_audio_pkg/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
-export ROS_PACKAGE_PATH="/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/src/ros_audio_pkg:$ROS_PACKAGE_PATH"
+export CMAKE_PREFIX_PATH="/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/ros_audio_pkg:$CMAKE_PREFIX_PATH"
+export PWD='/home/andrea/Cognitive-Robotics/toDoList_ROS/build/ros_audio_pkg'
+export ROSLISP_PACKAGE_DIRECTORIES="/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/ros_audio_pkg/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
+export ROS_PACKAGE_PATH="/home/andrea/Cognitive-Robotics/toDoList_ROS/src/ros_audio_pkg:$ROS_PACKAGE_PATH"

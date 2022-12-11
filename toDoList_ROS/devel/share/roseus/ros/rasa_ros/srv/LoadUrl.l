@@ -1,1 +1,1 @@
-/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/LoadUrl.l
+/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/LoadUrl.l

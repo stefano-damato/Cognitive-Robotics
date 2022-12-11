@@ -1,21 +1,21 @@
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
-Change Dir: /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles/CMakeTmp
+Change Dir: /home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_25ad1/fast && /usr/bin/make -f CMakeFiles/cmTC_25ad1.dir/build.make CMakeFiles/cmTC_25ad1.dir/build
-make[1]: ingresso nella directory «/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles/CMakeTmp»
-Building C object CMakeFiles/cmTC_25ad1.dir/src.c.o
-/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_25ad1.dir/src.c.o   -c /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_25ad1
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_25ad1.dir/link.txt --verbose=1
-/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_25ad1.dir/src.c.o  -o cmTC_25ad1 
-/usr/bin/ld: CMakeFiles/cmTC_25ad1.dir/src.c.o: in function `main':
+Run Build Command(s):/usr/bin/make cmTC_a7bd9/fast && /usr/bin/make -f CMakeFiles/cmTC_a7bd9.dir/build.make CMakeFiles/cmTC_a7bd9.dir/build
+make[1]: Entering directory '/home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a7bd9.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_a7bd9.dir/src.c.o   -c /home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_a7bd9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a7bd9.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_a7bd9.dir/src.c.o  -o cmTC_a7bd9 
+/usr/bin/ld: CMakeFiles/cmTC_a7bd9.dir/src.c.o: in function `main':
 src.c:(.text+0x46): undefined reference to `pthread_create'
 /usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
 /usr/bin/ld: src.c:(.text+0x63): undefined reference to `pthread_join'
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_25ad1.dir/build.make:87: cmTC_25ad1] Errore 1
-make[1]: uscita dalla directory «/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles/CMakeTmp»
-make: *** [Makefile:121: cmTC_25ad1/fast] Errore 2
+make[1]: *** [CMakeFiles/cmTC_a7bd9.dir/build.make:87: cmTC_a7bd9] Error 1
+make[1]: Leaving directory '/home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_a7bd9/fast] Error 2
 
 
 Source file was:
@@ -39,20 +39,20 @@ int main(void)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles/CMakeTmp
+Change Dir: /home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_fe20c/fast && /usr/bin/make -f CMakeFiles/cmTC_fe20c.dir/build.make CMakeFiles/cmTC_fe20c.dir/build
-make[1]: ingresso nella directory «/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles/CMakeTmp»
-Building C object CMakeFiles/cmTC_fe20c.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_fe20c.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-Linking C executable cmTC_fe20c
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fe20c.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_fe20c.dir/CheckFunctionExists.c.o  -o cmTC_fe20c  -lpthreads 
-/usr/bin/ld: impossibile trovare -lpthreads
+Run Build Command(s):/usr/bin/make cmTC_2a681/fast && /usr/bin/make -f CMakeFiles/cmTC_2a681.dir/build.make CMakeFiles/cmTC_2a681.dir/build
+make[1]: Entering directory '/home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2a681.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_2a681.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_2a681
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2a681.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_2a681.dir/CheckFunctionExists.c.o  -o cmTC_2a681  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_fe20c.dir/build.make:87: cmTC_fe20c] Errore 1
-make[1]: uscita dalla directory «/home/ski-nex/Scrivania/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles/CMakeTmp»
-make: *** [Makefile:121: cmTC_fe20c/fast] Errore 2
+make[1]: *** [CMakeFiles/cmTC_2a681.dir/build.make:87: cmTC_2a681] Error 1
+make[1]: Leaving directory '/home/andrea/Cognitive-Robotics/toDoList_ROS/build/rasa_ros/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_2a681/fast] Error 2
 
 
 

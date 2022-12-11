@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import os
 import rospy
 from sensor_msgs.msg import Image
@@ -163,6 +164,7 @@ def rcv_image(msg):
                 print("I don't recognize you, who am I talking to? ")
                 pub_audio.publish("name_request")
                 name = rospy.wait_for_message("text_for_reidentification",String)
+                name = name.data
                 print("Okay"+name+", now look the camera for the next 10 seconds")
                 folder_path=os.path.join(img_path,name)
                 if not os.path.exists(folder_path):

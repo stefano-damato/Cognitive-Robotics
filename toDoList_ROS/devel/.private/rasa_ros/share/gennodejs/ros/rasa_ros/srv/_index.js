@@ -1,18 +1,18 @@
 
 "use strict";
 
-let Text2Speech = require('./Text2Speech.js')
-let ExecuteJS = require('./ExecuteJS.js')
 let Dialogue = require('./Dialogue.js')
+let ExecuteJS = require('./ExecuteJS.js')
 let WakeUp = require('./WakeUp.js')
-let LoadUrl = require('./LoadUrl.js')
 let Rest = require('./Rest.js')
+let Text2Speech = require('./Text2Speech.js')
+let LoadUrl = require('./LoadUrl.js')
 
 module.exports = {
-  Text2Speech: Text2Speech,
-  ExecuteJS: ExecuteJS,
   Dialogue: Dialogue,
+  ExecuteJS: ExecuteJS,
   WakeUp: WakeUp,
-  LoadUrl: LoadUrl,
   Rest: Rest,
+  Text2Speech: Text2Speech,
+  LoadUrl: LoadUrl,
 };

@@ -15,9 +15,12 @@ rospy.init_node('speech_recognition', anonymous=True)
 #pub2 = rospy.Publisher('voice_txt', String, queue_size=10)
 pub = rospy.Publisher('text_to_bot', String, queue_size=10)
 pub2 = rospy.Publisher('text_for_reidentification', String, queue_size=10)
+global label
 label = ""
 # this is called from the background thread
 def callback(audio):
+    print("callback")
+    global label
     data = np.array(audio.data,dtype=np.int16)
     audio_data = AudioData(data.tobytes(), 16000, 2)
     id = rospy.wait_for_message("ID",String)
@@ -38,6 +41,7 @@ def callback(audio):
 
         
 def callback_label(audio):
+    print("callback_label")
     data = np.array(audio.data,dtype=np.int16)
     audio_data = AudioData(data.tobytes(), 16000, 2)
     id = rospy.wait_for_message("ID",String)
@@ -53,8 +57,11 @@ def callback_label(audio):
         print("Could not request results from Google Speech Recognition service; {0}".format(e))
 
 def listener():
+    print("Devo entrare in callback")
     rospy.Subscriber("mic_data", Int16MultiArray, callback)
+    print("Sono entrato in callback")
     rospy.Subscriber("mic_data_label", Int16MultiArray, callback_label)
+    print("Sono entrato in callback_label")
     rospy.spin()
 
 if __name__ == '__main__':
