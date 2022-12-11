@@ -62,7 +62,8 @@ parser.add_argument('--padding', type=float, default=0.2)
 parser.add_argument('--rejection_threshold', type=float, default=0.4)
 parser.add_argument('--data_path', help='Folder where the images are saved', type=str)
 parser.add_argument('--n_images_for_person', help='Number of images used for a known person', type=int, default=None)
-parser.add_argument('--training',  type=int, default=0)
+parser.add_argument('--training', type=int, default=0)
+parser.add_argument('--file_name',  type=str, help="The name of the database file", default=None)
 args = parser.parse_args()
 
 
@@ -86,10 +87,8 @@ padding = args.padding
 INPUT_SIZE = (224,224)
 rejection_threshold=args.rejection_threshold
 
-
-
-train = args.training
-if train == 1:
+file_name=args.file_name
+if args.training==1:
     # Creation of the database of known people
     database = []
     for dirs in os.listdir(data_path):
@@ -108,10 +107,11 @@ if train == 1:
                 count += 1
                 print("Loading %s - %d"%(dirs, count))
         database.append(person)
-    data_to_file(database,"data.pickle")
+        
+    data_to_file(database, file_name+".pickle")
 else:
-    database = data_from_file("data.pickle")
-
+    database = data_from_file(file_name+".pickle")
+print(len(database))
 # Read frame 
 cap = cv2.VideoCapture(0)
 while(1):             
