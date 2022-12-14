@@ -1,5 +1,6 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 import os
+from time import sleep
 import rospy
 from sensor_msgs.msg import Image
 from std_msgs.msg import String
@@ -97,35 +98,12 @@ def train(data_path,n_images_for_person,file_path):
                 print("Loading %s - %d"%(dirs, count))
         database.append(person)
     data_to_file(database,file_path)
-# Initialize face detector
-faceProto = os.path.join(os.path.dirname(__file__),"opencv_face_detector.pbtxt")
-faceModel = os.path.join(os.path.dirname(__file__),"opencv_face_detector_uint8.pb")
-print(faceProto,faceModel)
-faceNet = cv2.dnn.readNet(faceModel, faceProto)
-# Load the VGG-Face model based on ResNet-50
-face_reco_model = VGGFace(model='resnet50', include_top=False, pooling='avg')
 
-padding = 0.2
-INPUT_SIZE = (224,224)
-rejection_threshold=0.4
-fps= 30
-pps = 2
-seconds_for_identification=10
-name_database="data.pickle"
 
-global unknown,name,folder_path,database
-img_path = os.path.join(os.path.dirname(__file__),"img")
-datapath = os.path.join(os.path.dirname(__file__),name_database)
-database = data_from_file(datapath)
+consecutive_unknown=0
 
-rospy.init_node('reidentification_node')
-pub = rospy.Publisher('detection', Detection2DArray, queue_size=2)
-pub_audio= rospy.Publisher('ID',String,queue_size=10)
-#pub2 = rospy.Publisher('webcam2',Image,queue_size=100)
-
-unknown=0
 def rcv_image(msg):
-    global unknown,name,folder_path,database
+    global count_unknown,name,folder_path,database, min_distance, consecutive_unknown
     image = ros_numpy.numpify(msg)
     frameFace, bboxes = getFaceBox(faceNet, image)     # Get face
     message = Detection2DArray()
@@ -157,38 +135,81 @@ def rcv_image(msg):
                     min_distance[0] = face['id']
                     min_distance[1] = distance
         ## REIDENTIFICATION
-        if unknown>0:
-            min_distance[0] = "unknown"
         if min_distance[0] == "unknown":
-            if  unknown==0:
+            count_unknown+=1
+        if count_unknown>30:
+            min_distance[0] = "unknown"
+        if min_distance[0] == "unknown" and count_unknown>=30:
+            if  count_unknown==30:
                 print("I don't recognize you, who am I talking to? ")
-                pub_audio.publish("name_request")
-                name = rospy.wait_for_message("text_for_reidentification",String)
-                name = name.data
+                pub_audio.publish("unknown")
+                name=rospy.wait_for_message("text_for_reidentification",String)
+                while name.data=="RIPETI":
+                    pub_audio.publish("unknown")
+                    name=rospy.wait_for_message("text_for_reidentification",String)
+                name=name.data
                 print("Okay"+name+", now look the camera for the next 10 seconds")
                 folder_path=os.path.join(img_path,name)
                 if not os.path.exists(folder_path):
                 # Create a new directory because it does not exist
                     os.makedirs(folder_path)
-            if unknown%(fps/pps)==0:
+            if count_unknown%(fps/pps)==0:
                 save_face(msg,folder_path)
-            if unknown==fps*seconds_for_identification:
+            if count_unknown==fps*seconds_for_identification:
                 train(img_path,None,os.path.join(os.path.dirname(__file__),"name_database"))
                 min_distance[0] = name
                 print("Okay"+name+", vai avanti")
-                unknown=-1
+                count_unknown=-1
                 database = data_from_file(os.path.join(os.path.dirname(__file__),"name_database"))
-            unknown+=1
+            count_unknown+=1
 
         d.source_img.header.frame_id = min_distance[0]
         message.detections.append(d)
 
     pub.publish(message)
-    if len(bboxes) > 0:
+    if len(bboxes) > 0 and min_distance[0]!="unknown":
+        count_unknown=0
+        print(min_distance[0])
         pub_audio.publish(min_distance[0])
     else:
+        print("OH NO")
         pub_audio.publish("NO")
-    rospy.loginfo("published")
+    #rospy.loginfo("published")
+
+
+# Initialize face detector
+faceProto = os.path.join(os.path.dirname(__file__),"opencv_face_detector.pbtxt")
+faceModel = os.path.join(os.path.dirname(__file__),"opencv_face_detector_uint8.pb")
+print(faceProto,faceModel)
+faceNet = cv2.dnn.readNet(faceModel, faceProto)
+# Load the VGG-Face model based on ResNet-50
+face_reco_model = VGGFace(model='resnet50', include_top=False, pooling='avg')
+
+padding = 0.2
+INPUT_SIZE = (224,224)
+rejection_threshold=0.4
+fps= 30
+pps = 2
+seconds_for_identification=10
+name_database="data.pickle"
+
+global count_unknown,name,folder_path,database, min_distance
+img_path = os.path.join(os.path.dirname(__file__),"img")
+datapath = os.path.join(os.path.dirname(__file__),name_database)
+database = data_from_file(datapath)
+name=""
+count_unknown=0
+
+
+rospy.init_node('reidentification_node')
+pub = rospy.Publisher('detection', Detection2DArray, queue_size=2)
+pub_audio= rospy.Publisher('ID',String,queue_size=1)
+pub_label= rospy.Publisher('label',String,queue_size=10)
+#pub2 = rospy.Publisher('webcam2',Image,queue_size=100)
+#rospy.Subscriber("text_for_reidentification",String,callback)
+
+
+
 
 
 si = rospy.Subscriber("webcam", Image, rcv_image)
