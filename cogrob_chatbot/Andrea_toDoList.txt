@@ -1,1 +1,1 @@
-{'shopping': ['personal', '12/31/2050, 23:59', False], 'grocery': ['house', '11/12/2022, 08:00', True], 'play guitar': ['hobby', '11/12/2022, 20:00', True], 'running': ['sport', '12/31/2050, 23:59', False]}
+{'shopping': ['personal', '12/31/2050, 23:59', False], 'grocery': ['house', '11/12/2022, 08:00', True], 'play guitar': ['hobby', '11/12/2022, 20:00', True], 'running': ['sport', '12/31/2050, 23:59', False], 'landing': ['Sport', '12/16/2022, 00:00', False], 'firework': ['house', '12/14/2022, 00:59', False]}

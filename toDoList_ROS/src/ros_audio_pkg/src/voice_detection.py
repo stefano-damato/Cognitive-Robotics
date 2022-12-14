@@ -44,7 +44,7 @@ r = sr.Recognizer()
 
 # Audio source
 global m
-m = sr.Microphone(device_index=None,
+m = sr.Microphone(device_index=3,
                     sample_rate=16000,
                     chunk_size=1024)
 
