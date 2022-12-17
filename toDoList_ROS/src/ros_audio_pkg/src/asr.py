@@ -28,10 +28,9 @@ def callback(audio):
     global current_user,id
     data = np.array(audio.data,dtype=np.int16)
     audio_data = AudioData(data.tobytes(), 16000, 2)
-    print("id "+id)
     try:
         
-        spoken_text= r.recognize_google(audio_data, language='en-GB')
+        spoken_text= r.recognize_google(audio_data, language='en-EN')
         print("Google Speech Recognition pensa che "+id+" abbia detto: " + spoken_text)
         if id!="unknown":
             if id != current_user:

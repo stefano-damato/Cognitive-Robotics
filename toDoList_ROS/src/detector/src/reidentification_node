@@ -14,6 +14,7 @@ from keras_vggface.utils import preprocess_input
 from scipy.spatial.distance import cosine
 import pickle
 from glob import glob
+from rasa_ros.srv import Text2Speech
 
 def getFaceBox(net, frame, conf_threshold=0.8):
     frameOpencvDnn = frame.copy()
@@ -103,7 +104,7 @@ def train(data_path,n_images_for_person,file_path):
 consecutive_unknown=0
 
 def rcv_image(msg):
-    global count_unknown,name,folder_path,database, min_distance, consecutive_unknown
+    global text2speech_node, count_unknown,name,folder_path,database, min_distance, consecutive_unknown
     image = ros_numpy.numpify(msg)
     frameFace, bboxes = getFaceBox(faceNet, image)     # Get face
     message = Detection2DArray()
@@ -142,6 +143,7 @@ def rcv_image(msg):
         if min_distance[0] == "unknown" and count_unknown>=30:
             if  count_unknown==30:
                 print("I don't recognize you, who am I talking to? ")
+                #text2speech_node("I don't recognize you, who am I talking to? ")
                 pub_audio.publish("unknown")
                 name=rospy.wait_for_message("text_for_reidentification",String)
                 while name.data=="RIPETI":
@@ -149,6 +151,7 @@ def rcv_image(msg):
                     name=rospy.wait_for_message("text_for_reidentification",String)
                 name=name.data
                 print("Okay"+name+", now look the camera for the next 10 seconds")
+                text2speech_node("Okay"+name+", now look the camera for the next 10 seconds")
                 folder_path=os.path.join(img_path,name)
                 if not os.path.exists(folder_path):
                 # Create a new directory because it does not exist
@@ -207,7 +210,9 @@ pub_audio= rospy.Publisher('ID',String,queue_size=1)
 pub_label= rospy.Publisher('label',String,queue_size=10)
 #pub2 = rospy.Publisher('webcam2',Image,queue_size=100)
 #rospy.Subscriber("text_for_reidentification",String,callback)
-
+rospy.wait_for_service('tts')
+global text2speech_node
+text2speech_node=rospy.ServiceProxy('tts', Text2Speech)
 
 
 
