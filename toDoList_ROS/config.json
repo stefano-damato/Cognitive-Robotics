@@ -1,7 +1,7 @@
 {
     "WEBCAM_IDX": 0,
 
-    "MICHROPONE_IDX": 0,
+    "MICROPHONE_IDX": null,
 
     "PEPPER": false,
 
@@ -19,6 +19,6 @@
 
     "TIMEOUT": 2,
 
-    "PRHASE_TIME_LIMIT": null
+    "PRHASE_TIME_LIMIT": 10
 
 }

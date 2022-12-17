@@ -16,6 +16,7 @@ from scipy.spatial.distance import cosine
 import pickle
 from glob import glob
 from rasa_ros.srv import Text2Speech
+import json
 
 def getFaceBox(net, frame, conf_threshold=0.8):
     frameOpencvDnn = frame.copy()
@@ -142,16 +143,16 @@ def rcv_image(msg):
             min_distance[0] = "unknown"
         if min_distance[0] == "unknown" and count_unknown>=CONSECUTIVE_UNK:
             if  count_unknown==CONSECUTIVE_UNK:
+                if pepper:
+                    text2speech_node("I don't recognize you, who am I talking to? ")
                 print("I don't recognize you, who am I talking to? ")
                 pub_id.publish("unknown")
                 pub_is_there_anyone.publish(True)
                 name=rospy.wait_for_message("text_for_reidentification",String)
-                while name.data=="RIPETI":
-                    pub_id.publish("unknown")
-                    name=rospy.wait_for_message("text_for_reidentification",String)
                 name=name.data
-                print("Okay"+name+", now look the camera for the next 10 seconds")
-                text2speech_node("Okay"+name+", now look the camera for the next 10 seconds")
+                print("Okay"+name+", now look the camera for the next " + str(seconds_for_identification) + " seconds")
+                if pepper:
+                    text2speech_node("Okay"+name+", now look the camera for the next " + str(seconds_for_identification) + " seconds")
                 folder_path=os.path.join(img_path,name)
                 if not os.path.exists(folder_path):
                 # Create a new directory because it does not exist
@@ -161,7 +162,9 @@ def rcv_image(msg):
             if count_unknown==fps*seconds_for_identification:
                 train(img_path,None,os.path.join(os.path.dirname(__file__),"name_database"))
                 min_distance[0] = name
-                print("Okay"+name+", vai avanti")
+                if pepper:
+                    text2speech_node("Okay"+name+", go ahead")
+                print("Okay"+name+", go ahead")
                 count_unknown=-1
                 database = data_from_file(os.path.join(os.path.dirname(__file__),"name_database"))
             count_unknown+=1
@@ -171,7 +174,7 @@ def rcv_image(msg):
 
     pub.publish(message)
     count+=1
-    if count%(fps/2)==0:
+    if count%(fps*2)==0:
         if len(bboxes) > 0 and min_distance[0]!="unknown":
             count_unknown=0
             print(min_distance[0])
@@ -187,6 +190,8 @@ global count_unknown,name,folder_path,database, min_distance
 
 with open('config.json', 'r') as f:
   config = json.load(f)
+
+pepper = config["PEPPER"]
 
 
 
@@ -241,9 +246,10 @@ pub_is_there_anyone= rospy.Publisher('is_there_anyone',Bool,queue_size=10)
 #pub_label= rospy.Publisher('label',String,queue_size=10)
 #pub2 = rospy.Publisher('webcam2',Image,queue_size=100)
 #rospy.Subscriber("text_for_reidentification",String,callback)
-rospy.wait_for_service('tts')
-global text2speech_node
-text2speech_node=rospy.ServiceProxy('tts', Text2Speech)
+if pepper:
+    rospy.wait_for_service('tts')
+    global text2speech_node
+    text2speech_node=rospy.ServiceProxy('tts', Text2Speech)
 
 
 

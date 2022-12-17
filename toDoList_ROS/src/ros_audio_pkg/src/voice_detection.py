@@ -42,12 +42,13 @@ def callback1(msg):
     global is_there_anyone
     is_there_anyone=msg.data
     print("Current user: ", current_user)
+    print(is_there_anyone)
 
 def callback(msg):
     label=msg.data
     print("voice "+ label)
     print("Posso? ",is_there_anyone)
-    if is_there_anyone:
+    if True:
         while True:
             print("Recording...")
             with m as source:
@@ -83,6 +84,7 @@ with open('config.json', 'r') as f:
   config = json.load(f)
 TIMEOUT = config["TIMEOUT"]
 PRHASE_TIME_LIMIT = config["PRHASE_TIME_LIMIT"]
+index = config["MICROPHONE_IDX"]
 
 
 # Initialize a Recognizer
@@ -90,7 +92,7 @@ r = sr.Recognizer()
 
 # Audio source
 global m
-m = sr.Microphone(device_index=None,
+m = sr.Microphone(device_index=index,
                     sample_rate=16000,
                     chunk_size=1024)
 

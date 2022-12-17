@@ -2,6 +2,7 @@
 import rospy, ros_numpy
 import cv2
 from sensor_msgs.msg import Image
+import json
 # Read frame 
 
 def talker():
@@ -9,7 +10,10 @@ def talker():
     rospy.init_node('talker',anonymous=True)
     rate=rospy.Rate(10)
     print("Starting videocapture")
-    cap = cv2.VideoCapture(0)
+    with open('config.json', 'r') as f:
+        config = json.load(f)
+    index = config["WEBCAM_IDX"]
+    cap = cv2.VideoCapture(index)
     print("Started videocapture")
     while not rospy.is_shutdown():             
         # Take each frame
@@ -20,6 +24,8 @@ def talker():
         #rospy.loginfo(msg)
         pub.publish(msg)
         rate.sleep()
+
+
 
 if __name__=='__main__':
     try:
