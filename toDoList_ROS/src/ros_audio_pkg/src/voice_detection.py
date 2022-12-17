@@ -29,6 +29,7 @@ def asr(audio,id):
         else:
             print("text_for_reidentification "+ spoken_text)
             pub2.publish(spoken_text)
+        pub_microphone.publish(True)
         return True
     except sr.UnknownValueError:
         print("Google Speech Recognition non riesce a capire da questo file audio")
@@ -38,40 +39,35 @@ def asr(audio,id):
         return False
 
 
-def callback1(msg):
-    global is_there_anyone
-    is_there_anyone=msg.data
-    print("Current user: ", current_user)
-    print(is_there_anyone)
+
 
 def callback(msg):
     label=msg.data
     print("voice "+ label)
     print("Posso? ",is_there_anyone)
-    if True:
-        while True:
-            print("Recording...")
-            with m as source:
-                try:  
-                    # listen for 1 second, then check again if the stop function has been called
-                    print("here ", TIMEOUT, PRHASE_TIME_LIMIT)
-                    audio = r.listen(source, timeout=TIMEOUT,phrase_time_limit=PRHASE_TIME_LIMIT)
-                except Exception:
-                    print("TimeOUT expired")
-                    continue
-                else:
-                    print("CIAO MONDOOOO")
-                    data = np.frombuffer(audio.get_raw_data(), dtype=np.int16)
-                    data_to_send = Int16MultiArray()
-                    data_to_send.data = data
-                    if asr(data_to_send,label):
-                        print("break")
-                        break
-                    """pub.publish(data_to_send)
-                    pub2.publish(label)"""
+    while True:
+        print("Recording...")
+        with m as source:
+            try:  
+                # listen for 1 second, then check again if the stop function has been called
+                print("here ", TIMEOUT, PRHASE_TIME_LIMIT)
+                audio = r.listen(source, timeout=TIMEOUT,phrase_time_limit=PRHASE_TIME_LIMIT)
+            except Exception:
+                print("TimeOUT expired")
+                continue
+            else:
+                print("CIAO MONDOOOO")
+                data = np.frombuffer(audio.get_raw_data(), dtype=np.int16)
+                data_to_send = Int16MultiArray()
+                data_to_send.data = data
+                if asr(data_to_send,label):
+                    print("break")
+                    break
+                """pub.publish(data_to_send)
+                pub2.publish(label)"""
         
 
-    
+pub_microphone = rospy.Publisher('microphone_ready', Bool, queue_size=10)   
 pub = rospy.Publisher('text_to_bot', String, queue_size=10)
 pub2 = rospy.Publisher('text_for_reidentification', String, queue_size=10)
 rospy.init_node('voice_detection_node', anonymous=True)
@@ -105,6 +101,5 @@ with m as source:
 print("Calibration finished")
 
 rospy.Subscriber("ID",String,callback)
-rospy.Subscriber("is_there_anyone",Bool,callback1)
 
 rospy.spin()

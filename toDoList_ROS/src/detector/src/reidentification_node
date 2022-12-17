@@ -105,7 +105,7 @@ def train(data_path,n_images_for_person,file_path):
 
 count=0
 def rcv_image(msg):
-    global count_unknown,name,folder_path,database, min_distance,count
+    global count_unknown,name,folder_path,database, min_distance,count, microphone_ready
     image = ros_numpy.numpify(msg)
     frameFace, bboxes = getFaceBox(faceNet, image)     # Get face
     message = Detection2DArray()
@@ -147,7 +147,6 @@ def rcv_image(msg):
                     text2speech_node("I don't recognize you, who am I talking to? ")
                 print("I don't recognize you, who am I talking to? ")
                 pub_id.publish("unknown")
-                pub_is_there_anyone.publish(True)
                 name=rospy.wait_for_message("text_for_reidentification",String)
                 name=name.data
                 print("Okay"+name+", now look the camera for the next " + str(seconds_for_identification) + " seconds")
@@ -174,17 +173,19 @@ def rcv_image(msg):
 
     pub.publish(message)
     count+=1
-    if count%(fps*2)==0:
+    if microphone_ready:
         if len(bboxes) > 0 and min_distance[0]!="unknown":
             count_unknown=0
             print(min_distance[0])
-            pub_is_there_anyone.publish(True)
             pub_id.publish(min_distance[0])
+            microphone_ready = False
         else:
             print("OH NO")
-            pub_is_there_anyone.publish(False)
         #rospy.loginfo("published")
 
+def callback(msg):
+    global microphone_ready
+    microphone_ready = msg.data
 
 global count_unknown,name,folder_path,database, min_distance
 
@@ -195,7 +196,7 @@ pepper = config["PEPPER"]
 
 
 
-
+microphone_ready = True
 
 CONSECUTIVE_UNK = config["CONSECUTIVE_UNK"]
 
@@ -242,7 +243,6 @@ database = data_from_file(datapath)
 rospy.init_node('reidentification_node')
 pub = rospy.Publisher('detection', Detection2DArray, queue_size=2)
 pub_id= rospy.Publisher('ID',String,queue_size=10)
-pub_is_there_anyone= rospy.Publisher('is_there_anyone',Bool,queue_size=10)
 #pub_label= rospy.Publisher('label',String,queue_size=10)
 #pub2 = rospy.Publisher('webcam2',Image,queue_size=100)
 #rospy.Subscriber("text_for_reidentification",String,callback)
@@ -255,7 +255,7 @@ if pepper:
 
 
 si = rospy.Subscriber("webcam", Image, rcv_image)
-
+rospy.Subscriber("microphone_ready",Bool,callback)
 
 
 try:
