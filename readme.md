@@ -1,7 +1,7 @@
 # To_DO_List with Pepper
 This is a Univeristy project with the goal of develop a robotic assistant for helping people in managing their personal to do lists.
 
-The management of the to do list is done through ROS dialogue systems.
+The management of the to do list is done through a RASA chatbot.
   
 The robotic platform:
 - communicates with its users through spoken natural language.
