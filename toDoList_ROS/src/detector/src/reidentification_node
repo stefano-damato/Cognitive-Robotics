@@ -102,10 +102,9 @@ def train(data_path,n_images_for_person,file_path):
         database.append(person)
     data_to_file(database,file_path)
 
-
-count=0
+# This callback receives from the webcam_node the image from the camera
 def rcv_image(msg):
-    global count_unknown,name,folder_path,database, min_distance,count, microphone_ready
+    global count_unknown,name,folder_path,database, min_distance, microphone_ready
     image = ros_numpy.numpify(msg)
     frameFace, bboxes = getFaceBox(faceNet, image)     # Get face
     message = Detection2DArray()
@@ -126,7 +125,7 @@ def rcv_image(msg):
         face = face[ face.shape[0]//2 - face.shape[1]//2 : face.shape[0]//2 + face.shape[1]//2, :, :]
         # Preprocess image
         resized_face = cv2.resize(face,INPUT_SIZE)
-        ##
+        # Searching for a match in the database of the knowing people
         faceim = preprocess_input([resized_face.astype(np.float32)], version=2)
         feature_vector = (face_reco_model.predict(faceim,verbose='false')).flatten()
         min_distance = ["unknown", 1000000000000]
@@ -153,17 +152,22 @@ def rcv_image(msg):
                 if pepper:
                     text2speech_node("Okay"+name+", now look the camera for the next " + str(seconds_for_identification) + " seconds")
                 folder_path=os.path.join(img_path,name)
+                # Create a new directory if not exist
                 if not os.path.exists(folder_path):
-                # Create a new directory because it does not exist
                     os.makedirs(folder_path)
+            # Save user's photos each pps
             if count_unknown%(fps/pps)==0:
                 save_face(msg,folder_path)
+            # Update the database of the knowing people when the seconds_for_identification are reached
             if count_unknown==fps*seconds_for_identification:
+                print("I am updating my database, please wait")
+                if pepper:
+                    text2speech_node("I am updating my database, please wait")
                 train(img_path,None,os.path.join(os.path.dirname(__file__),"name_database"))
-                min_distance[0] = name
+                print("Okay"+name+", go ahead")
                 if pepper:
                     text2speech_node("Okay"+name+", go ahead")
-                print("Okay"+name+", go ahead")
+                min_distance[0] = name
                 count_unknown=-1
                 database = data_from_file(os.path.join(os.path.dirname(__file__),"name_database"))
             count_unknown+=1
@@ -171,18 +175,28 @@ def rcv_image(msg):
         d.source_img.header.frame_id = min_distance[0]
         message.detections.append(d)
 
+    # Publishing of the detection coordinates on the topic
+    # where the visualization_node is subscribed
     pub.publish(message)
-    count+=1
+
+    # Only if the microphone is ready to listen the label 
+    # associeted to the user is published on the ID topic
+    print("microphone_ready: ",microphone_ready)
     if microphone_ready:
         if len(bboxes) > 0 and min_distance[0]!="unknown":
             count_unknown=0
             print(min_distance[0])
+            # Publishing of the label associeted to the user on the ID topic
             pub_id.publish(min_distance[0])
+            # Set microphone_ready to False each time that the label is published on the topic ID
+            #  ( i.e. each time the microphone is activated)
             microphone_ready = False
         else:
-            print("OH NO")
+            print("No one here")
         #rospy.loginfo("published")
 
+# This callback receives from the voice_detection node the value True
+# when the conversation is successful and the microphone is ready to listen again
 def callback(msg):
     global microphone_ready
     microphone_ready = msg.data

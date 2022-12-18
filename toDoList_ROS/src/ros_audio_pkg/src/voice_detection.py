@@ -9,12 +9,12 @@ from speech_recognition import AudioData
 class WaitTimeoutError(Exception): pass
 import json
 
-
+# This function perform the speech recognition on ``audio_data`` (an ``AudioData`` instance), 
+# using the Google Speech Recognition API.
 def asr(audio,id):
     global current_user
     data = np.array(audio.data,dtype=np.int16)
     audio_data = AudioData(data.tobytes(), 16000, 2)
-    print("id "+id)
     try:
         spoken_text= r.recognize_google(audio_data, language='it-IT')
         print("Google Speech Recognition pensa che "+id+" abbia detto: " + spoken_text)
@@ -38,42 +38,36 @@ def asr(audio,id):
         print("Could not request results from Google Speech Recognition service; {0}".format(e))
         return False
 
-
-
-
+## This callback recives the label associeted to the user from the reidentification_node
 def callback(msg):
     label=msg.data
-    print("voice "+ label)
-    print("Posso? ",is_there_anyone)
+    print("Label from callback: "+ label)
+    print("Current user: "+ current_user)
     while True:
         print("Recording...")
         with m as source:
             try:  
-                # listen for 1 second, then check again if the stop function has been called
-                print("here ", TIMEOUT, PRHASE_TIME_LIMIT)
+                # listen for TIMEOUT second, then check again if the stop function has been called
+                print("before listening")
                 audio = r.listen(source, timeout=TIMEOUT,phrase_time_limit=PRHASE_TIME_LIMIT)
+                print("after listening")
             except Exception:
                 print("TimeOUT expired")
                 continue
             else:
-                print("CIAO MONDOOOO")
                 data = np.frombuffer(audio.get_raw_data(), dtype=np.int16)
                 data_to_send = Int16MultiArray()
                 data_to_send.data = data
                 if asr(data_to_send,label):
-                    print("break")
+                    print("Successful speech recognition")
                     break
-                """pub.publish(data_to_send)
-                pub2.publish(label)"""
-        
+
+rospy.init_node('voice_detection_node', anonymous=True) 
 
 pub_microphone = rospy.Publisher('microphone_ready', Bool, queue_size=10)   
 pub = rospy.Publisher('text_to_bot', String, queue_size=10)
 pub2 = rospy.Publisher('text_for_reidentification', String, queue_size=10)
-rospy.init_node('voice_detection_node', anonymous=True)
 
-
-is_there_anyone=True
 current_user=" "
 
 with open('config.json', 'r') as f:
