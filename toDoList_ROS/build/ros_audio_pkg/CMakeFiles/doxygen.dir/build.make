@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/andrea/Cognitive-Robotics/toDoList_ROS/src/ros_audio_pkg
+CMAKE_SOURCE_DIR = /home/ski-nex/Cognitive-Robotics/toDoList_ROS/src/ros_audio_pkg
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/andrea/Cognitive-Robotics/toDoList_ROS/build/ros_audio_pkg
+CMAKE_BINARY_DIR = /home/ski-nex/Cognitive-Robotics/toDoList_ROS/build/ros_audio_pkg
 
 # Utility rule file for doxygen.
 
@@ -67,6 +67,6 @@ CMakeFiles/doxygen.dir/clean:
 .PHONY : CMakeFiles/doxygen.dir/clean
 
 CMakeFiles/doxygen.dir/depend:
-	cd /home/andrea/Cognitive-Robotics/toDoList_ROS/build/ros_audio_pkg && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/andrea/Cognitive-Robotics/toDoList_ROS/src/ros_audio_pkg /home/andrea/Cognitive-Robotics/toDoList_ROS/src/ros_audio_pkg /home/andrea/Cognitive-Robotics/toDoList_ROS/build/ros_audio_pkg /home/andrea/Cognitive-Robotics/toDoList_ROS/build/ros_audio_pkg /home/andrea/Cognitive-Robotics/toDoList_ROS/build/ros_audio_pkg/CMakeFiles/doxygen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ski-nex/Cognitive-Robotics/toDoList_ROS/build/ros_audio_pkg && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ski-nex/Cognitive-Robotics/toDoList_ROS/src/ros_audio_pkg /home/ski-nex/Cognitive-Robotics/toDoList_ROS/src/ros_audio_pkg /home/ski-nex/Cognitive-Robotics/toDoList_ROS/build/ros_audio_pkg /home/ski-nex/Cognitive-Robotics/toDoList_ROS/build/ros_audio_pkg /home/ski-nex/Cognitive-Robotics/toDoList_ROS/build/ros_audio_pkg/CMakeFiles/doxygen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/doxygen.dir/depend
 

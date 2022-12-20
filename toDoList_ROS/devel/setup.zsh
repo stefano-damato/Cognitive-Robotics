@@ -1,1 +1,1 @@
-/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/catkin_tools_prebuild/setup.zsh
+/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/catkin_tools_prebuild/setup.zsh

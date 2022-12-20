@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/include/rasa_ros/Dialogue.h"
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/include/rasa_ros/ExecuteJS.h"
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/include/rasa_ros/LoadUrl.h"
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/include/rasa_ros/Rest.h"
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/include/rasa_ros/Text2Speech.h"
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/include/rasa_ros/WakeUp.h"
+  "/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/include/rasa_ros/Dialogue.h"
+  "/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/include/rasa_ros/ExecuteJS.h"
+  "/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/include/rasa_ros/LoadUrl.h"
+  "/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/include/rasa_ros/Rest.h"
+  "/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/include/rasa_ros/Text2Speech.h"
+  "/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/include/rasa_ros/WakeUp.h"
   "CMakeFiles/rasa_ros_generate_messages_cpp"
 )
 

@@ -1,4 +1,4 @@
-prefix=/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/ros_audio_pkg
+prefix=/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/ros_audio_pkg
 
 Name: ros_audio_pkg
 Description: Description of ros_audio_pkg

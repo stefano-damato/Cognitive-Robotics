@@ -1,1 +1,1 @@
-/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Text2Speech.l
+/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Text2Speech.l

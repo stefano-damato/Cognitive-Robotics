@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Dialogue.js"
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/ExecuteJS.js"
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/LoadUrl.js"
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Rest.js"
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Text2Speech.js"
-  "/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/WakeUp.js"
+  "/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Dialogue.js"
+  "/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/ExecuteJS.js"
+  "/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/LoadUrl.js"
+  "/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Rest.js"
+  "/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Text2Speech.js"
+  "/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/WakeUp.js"
   "CMakeFiles/rasa_ros_generate_messages_nodejs"
 )
 

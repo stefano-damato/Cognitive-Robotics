@@ -49,7 +49,7 @@ def main():
     while not rospy.is_shutdown():
         rospy.spin()
 
-print(os.listdir())
+print(os.getcwd())
 with open('config.json', 'r') as f:
   config = json.load(f)
 
