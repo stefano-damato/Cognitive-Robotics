@@ -1,12 +1,14 @@
-#!/usr/bin/python3
+    #!/usr/bin/python3
 
-import subprocess
+    import subprocess
+    import os
 
-# Path to a Python interpreter that runs any Python script
-# under the virtualenv /path/to/virtualenv/
-python_bin = "/home/andrea/python-env/bin/python"
+    home = os.path.expanduser('~')
+    # Path to a Python interpreter that runs any Python script
+    # under the virtualenv /path/to/virtualenv/
+    python_bin = home + "/python-env/bin/python"
 
-# Path to the script that must run under the virtualenv
-script_file = "/home/andrea/Cognitive-Robotics/toDoList_ROS/src/detector/src/reidentification_node"
+    # Path to the script that must run under the virtualenv
+    script_file = home + "/Cognitive-Robotics/toDoList_ROS/src/detector/src/reidentification_node"
 
-subprocess.Popen([python_bin, script_file])
+    subprocess.Popen([python_bin, script_file])

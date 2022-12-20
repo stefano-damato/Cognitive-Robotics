@@ -1,5 +1,5 @@
-[  0%] Built target std_msgs_generate_messages_cpp
 [  0%] Built target _rasa_ros_generate_messages_check_deps_ExecuteJS
+[  0%] Built target std_msgs_generate_messages_cpp
 [  0%] Built target _rasa_ros_generate_messages_check_deps_Dialogue
 [  0%] Built target _rasa_ros_generate_messages_check_deps_WakeUp
 [  0%] Built target _rasa_ros_generate_messages_check_deps_LoadUrl

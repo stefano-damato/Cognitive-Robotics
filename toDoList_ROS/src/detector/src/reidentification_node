@@ -182,7 +182,7 @@ def rcv_image(msg):
     # Only if the microphone is ready to listen the label 
     # associeted to the user is published on the ID topic
     print("microphone_ready: ",microphone_ready)
-    if microphone_ready:
+    if microphone_ready and not pepper_is_speaking:
         if len(bboxes) > 0 and min_distance[0]!="unknown":
             count_unknown=0
             print(min_distance[0])
@@ -201,16 +201,20 @@ def callback(msg):
     global microphone_ready
     microphone_ready = msg.data
 
+def callback_is_speaking(msg):
+    global pepper_is_speaking
+    pepper_is_speaking = msg.data
+
 global count_unknown,name,folder_path,database, min_distance
 
+microphone_ready = True
+pepper_is_speaking = False
+    
+print(os.listdir())
 with open('config.json', 'r') as f:
   config = json.load(f)
 
 pepper = config["PEPPER"]
-
-
-
-microphone_ready = True
 
 CONSECUTIVE_UNK = config["CONSECUTIVE_UNK"]
 
@@ -270,6 +274,8 @@ if pepper:
 
 si = rospy.Subscriber("webcam", Image, rcv_image)
 rospy.Subscriber("microphone_ready",Bool,callback)
+if pepper:
+    rospy.Subscriber('is_speaking', Bool, callback_is_speaking)
 
 
 try:

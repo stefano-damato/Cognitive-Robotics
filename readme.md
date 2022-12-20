@@ -25,6 +25,13 @@ python3 Image_reidentification.py --data_path img --training 1 --file_name data
 ```
 Now you can move the `data.pickle` in the ros pakage where the `reidentification_node` is containing.
 
+### Config File
+1. Incude config file and other directories in the ros workspace, from the directory of ros (usually $HOME/.ros) run the command:
+```
+ln -s ~/Cognitive-Robotics/toDoList_ROS/config.json ./
+ln -s ../Cognitive-Robotics/cogrob_chatbot/ ./
+```
+
 ### Microphone and Webcam node
 1. Find the michrophone index with:
 ```python
@@ -44,6 +51,21 @@ sudo bash install_dependencies.bash
 ```
 sudo bash install_dependencies.bash
 ```
+
+## Creating virtual environments
+1. Create the first virtual environment for streamlit application. In the root directory run:
+```
+python3 -m venv website-env
+source website-env/bin/activate
+cd Cognitive-Robotics
+bash
+pip install -r website_requirements.txt
+deactivate
+cd ..
+```
+
+2.
+
 ## How to run the application
 Go in the ROS workspace and for every point in this list open a new terminal tab
 1. run a duckling server in the docker container with the command:

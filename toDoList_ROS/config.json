@@ -11,7 +11,7 @@
 
     "CONSECUTIVE_UNK": 30,
 
-    "DATABASE_NAME": "data1.pickle",
+    "DATABASE_NAME": "data.pickle",
 
     "VGG_FACE_MODEL": "resnet50",
 

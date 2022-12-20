@@ -16,7 +16,7 @@ def asr(audio,id):
     data = np.array(audio.data,dtype=np.int16)
     audio_data = AudioData(data.tobytes(), 16000, 2)
     try:
-        spoken_text= r.recognize_google(audio_data, language='it-IT')
+        spoken_text= r.recognize_google(audio_data, language='en-GB')
         print("Google Speech Recognition pensa che "+id+" abbia detto: " + spoken_text)
         if id!="unknown":
             if id != current_user:
@@ -48,9 +48,7 @@ def callback(msg):
         with m as source:
             try:  
                 # listen for TIMEOUT second, then check again if the stop function has been called
-                print("before listening")
                 audio = r.listen(source, timeout=TIMEOUT,phrase_time_limit=PRHASE_TIME_LIMIT)
-                print("after listening")
             except Exception:
                 print("TimeOUT expired")
                 continue
@@ -75,7 +73,7 @@ with open('config.json', 'r') as f:
 TIMEOUT = config["TIMEOUT"]
 PRHASE_TIME_LIMIT = config["PRHASE_TIME_LIMIT"]
 index = config["MICROPHONE_IDX"]
-
+pepper = config["PEPPER"]
 
 # Initialize a Recognizer
 r = sr.Recognizer()

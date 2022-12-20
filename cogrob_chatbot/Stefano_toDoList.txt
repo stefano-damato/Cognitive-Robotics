@@ -1,1 +1,1 @@
-{'book a train': ['personal', '12/31/2050, 23:59', False], 'play piano': ['hobby', '12/15/2022, 12:31', True], 'running': ['house', '12/09/2022, 00:00', True]}
+{'book a train': ['personal', '12/31/2050, 23:59', False], 'play piano': ['hobby', '12/15/2022, 12:31', True], 'running': ['sport', '12/31/2050, 23:59', False], 'still': ['Sport', '12/19/2022, 20:00', True], 'dreaming': ['Sport', '12/19/2022, 06:30', True], 'streaming': ['house', '04/09/2023, 00:00', True], 'screaming': ['house', '12/19/2022, 18:30', True], 'reaming': ['Sport', '12/19/2022, 18:40', True]}
