@@ -3,7 +3,7 @@
 from utils import Session
 from optparse import OptionParser
 import rospy
-from pepper_nodes.srv import ExecuteJS, LoadUrl
+from rasa_ros.srv import ExecuteJS, LoadUrl
 
 '''
 This class implements a ROS node used to controll the Pepper tablet

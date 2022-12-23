@@ -1,0 +1,1 @@
+{'grocery': ['house', '12-16-2022 10:27', True], 'running': ['sport', '11/12/2022, 16:00', True], 'play playstation': ['hobby', '12/31/2050, 23:59', False], 'book a plane': ['personal', '11/13/2022, 09:00', True], 'the gym': ['Sport', '12/16/2022, 00:00', True], 'swimming': ['house', '12/15/2022, 23:59:00', False], 'bus 29': ['Sport', '12/31/2050, 23:59', False]}

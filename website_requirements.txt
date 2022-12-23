@@ -5,3 +5,4 @@ pandas-profiling==2.8.0
 scikit-learn==1.1.3
 streamlit==1.15.1
 rospkg
+argparse
