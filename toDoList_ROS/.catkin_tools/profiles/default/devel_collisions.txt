@@ -1,1 +1,2 @@
-/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/./cmake.lock 18
+/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/./cmake.lock 15
+/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/./cmake.lock 10

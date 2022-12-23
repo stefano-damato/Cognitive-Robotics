@@ -12,10 +12,10 @@ def talker():
     rate=rospy.Rate(10)
     print(os.listdir())
     print("Starting videocapture")
-    """with open('config.json', 'r') as f:
-        config = json.load(f)"""
-    #index = config["WEBCAM_IDX"]
-    index = 0
+    with open('config.json', 'r') as f:
+        config = json.load(f)
+    index = config["WEBCAM_IDX"]
+    #index = 6
     cap = cv2.VideoCapture(index)
     print("Started videocapture")
     while not rospy.is_shutdown():             

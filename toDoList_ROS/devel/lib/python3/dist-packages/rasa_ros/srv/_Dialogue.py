@@ -1,1 +1,1 @@
-/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/_Dialogue.py
+/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/_Dialogue.py
