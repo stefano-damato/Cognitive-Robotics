@@ -92,7 +92,7 @@ global FILENAME, pepper, prev_toDoList
 prev_toDoList = dict
 FILENAME="_toDoList.txt"
 
-"""with open('config.json', 'r') as f:
+with open('config.json', 'r') as f:
     config = json.load(f)
 
 #threading.Thread(target=lambda: rospy.init_node('website_node', disable_signals=True)).start()
@@ -103,8 +103,7 @@ pepper = config["PEPPER"]
 
 if pepper:
     rospy.wait_for_service('load_url')
-    load_url_node = rospy.ServiceProxy('load_url', LoadUrl) """
+    load_url_node = rospy.ServiceProxy('load_url', LoadUrl) 
 
-pepper = False
+#pepper = False
 
-callback("Benedetto")
