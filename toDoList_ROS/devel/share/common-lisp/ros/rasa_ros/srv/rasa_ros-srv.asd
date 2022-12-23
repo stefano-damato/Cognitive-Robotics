@@ -1,1 +1,1 @@
-/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/common-lisp/ros/rasa_ros/srv/rasa_ros-srv.asd
+/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/common-lisp/ros/rasa_ros/srv/rasa_ros-srv.asd

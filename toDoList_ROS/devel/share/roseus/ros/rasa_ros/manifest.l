@@ -1,1 +1,1 @@
-/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/manifest.l
+/home/andrea/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/manifest.l

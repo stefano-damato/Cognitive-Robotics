@@ -3,6 +3,8 @@ from utils import Session
 from rasa_ros.srv import Text2Speech
 from optparse import OptionParser
 import rospy
+from std_msgs.msg import Bool
+
 
 '''
 This class implements a ROS node able to call the Text to speech service of the robot
@@ -24,11 +26,16 @@ class Text2SpeechNode:
     '''
     def say(self, msg):
         try:
+            print("Before")
+            #pub.publish(True)
             self.tts.say(msg.speech)
+            #pub.publish(False)
+            print("After")
         except:
             self.session.reconnect()
             self.tts = self.session.get_service("ALTextToSpeech")
             self.tts.say(msg.speech)
+            
         return "ACK"
     
     '''
@@ -47,7 +54,7 @@ if __name__ == "__main__":
     parser.add_option("--ip", dest="ip", default="10.0.1.207")
     parser.add_option("--port", dest="port", default=9559)
     (options, args) = parser.parse_args()
-
+    #pub = rospy.Publisher('is_speaking', Bool, queue_size=10)
     try:
         ttsnode = Text2SpeechNode(options.ip, int(options.port))
         ttsnode.start()

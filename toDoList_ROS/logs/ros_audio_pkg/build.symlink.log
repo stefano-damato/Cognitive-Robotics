@@ -1,3 +1,3 @@
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/ros_audio_pkg/share/ros_audio_pkg/cmake/ros_audio_pkgConfig.cmake, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/ros_audio_pkg/cmake/ros_audio_pkgConfig.cmake)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/ros_audio_pkg/share/ros_audio_pkg/cmake/ros_audio_pkgConfig-version.cmake, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/ros_audio_pkg/cmake/ros_audio_pkgConfig-version.cmake)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/ros_audio_pkg/lib/pkgconfig/ros_audio_pkg.pc, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/lib/pkgconfig/ros_audio_pkg.pc)
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/lib/pkgconfig/ros_audio_pkg.pc
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/ros_audio_pkg/cmake/ros_audio_pkgConfig.cmake
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/ros_audio_pkg/cmake/ros_audio_pkgConfig-version.cmake

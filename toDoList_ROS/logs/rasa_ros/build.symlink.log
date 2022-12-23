@@ -1,60 +1,60 @@
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/_index.js, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/gennodejs/ros/rasa_ros/_index.js)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/WakeUp.js, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/gennodejs/ros/rasa_ros/srv/WakeUp.js)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/ExecuteJS.js, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/gennodejs/ros/rasa_ros/srv/ExecuteJS.js)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/LoadUrl.js, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/gennodejs/ros/rasa_ros/srv/LoadUrl.js)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Text2Speech.js, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/gennodejs/ros/rasa_ros/srv/Text2Speech.js)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Dialogue.js, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/gennodejs/ros/rasa_ros/srv/Dialogue.js)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Rest.js, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/gennodejs/ros/rasa_ros/srv/Rest.js)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/_index.js, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/gennodejs/ros/rasa_ros/srv/_index.js)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/manifest.l, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/roseus/ros/rasa_ros/manifest.l)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Dialogue.l, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/roseus/ros/rasa_ros/srv/Dialogue.l)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/ExecuteJS.l, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/roseus/ros/rasa_ros/srv/ExecuteJS.l)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Rest.l, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/roseus/ros/rasa_ros/srv/Rest.l)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/WakeUp.l, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/roseus/ros/rasa_ros/srv/WakeUp.l)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/LoadUrl.l, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/roseus/ros/rasa_ros/srv/LoadUrl.l)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Text2Speech.l, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/roseus/ros/rasa_ros/srv/Text2Speech.l)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/common-lisp/ros/rasa_ros/srv/_package_Text2Speech.lisp, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/common-lisp/ros/rasa_ros/srv/_package_Text2Speech.lisp)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/common-lisp/ros/rasa_ros/srv/_package_ExecuteJS.lisp, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/common-lisp/ros/rasa_ros/srv/_package_ExecuteJS.lisp)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/common-lisp/ros/rasa_ros/srv/_package_Dialogue.lisp, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/common-lisp/ros/rasa_ros/srv/_package_Dialogue.lisp)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/common-lisp/ros/rasa_ros/srv/LoadUrl.lisp, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/common-lisp/ros/rasa_ros/srv/LoadUrl.lisp)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/common-lisp/ros/rasa_ros/srv/_package_WakeUp.lisp, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/common-lisp/ros/rasa_ros/srv/_package_WakeUp.lisp)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/common-lisp/ros/rasa_ros/srv/rasa_ros-srv.asd, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/common-lisp/ros/rasa_ros/srv/rasa_ros-srv.asd)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/common-lisp/ros/rasa_ros/srv/ExecuteJS.lisp, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/common-lisp/ros/rasa_ros/srv/ExecuteJS.lisp)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/common-lisp/ros/rasa_ros/srv/Rest.lisp, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/common-lisp/ros/rasa_ros/srv/Rest.lisp)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/common-lisp/ros/rasa_ros/srv/Dialogue.lisp, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/common-lisp/ros/rasa_ros/srv/Dialogue.lisp)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/common-lisp/ros/rasa_ros/srv/WakeUp.lisp, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/common-lisp/ros/rasa_ros/srv/WakeUp.lisp)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/common-lisp/ros/rasa_ros/srv/Text2Speech.lisp, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/common-lisp/ros/rasa_ros/srv/Text2Speech.lisp)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/common-lisp/ros/rasa_ros/srv/_package.lisp, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/common-lisp/ros/rasa_ros/srv/_package.lisp)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/common-lisp/ros/rasa_ros/srv/_package_LoadUrl.lisp, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/common-lisp/ros/rasa_ros/srv/_package_LoadUrl.lisp)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/common-lisp/ros/rasa_ros/srv/_package_Rest.lisp, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/common-lisp/ros/rasa_ros/srv/_package_Rest.lisp)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/rasa_ros/cmake/rasa_ros-msg-extras.cmake, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/rasa_ros/cmake/rasa_ros-msg-extras.cmake)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/rasa_ros/cmake/rasa_rosConfig-version.cmake, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/rasa_ros/cmake/rasa_rosConfig-version.cmake)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/rasa_ros/cmake/rasa_rosConfig.cmake, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/rasa_ros/cmake/rasa_rosConfig.cmake)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/share/rasa_ros/cmake/rasa_ros-msg-paths.cmake, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/share/rasa_ros/cmake/rasa_ros-msg-paths.cmake)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/include/rasa_ros/ExecuteJSRequest.h, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/ExecuteJSRequest.h)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/include/rasa_ros/WakeUpResponse.h, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/WakeUpResponse.h)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/include/rasa_ros/LoadUrlResponse.h, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/LoadUrlResponse.h)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/include/rasa_ros/LoadUrlRequest.h, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/LoadUrlRequest.h)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/include/rasa_ros/DialogueResponse.h, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/DialogueResponse.h)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/include/rasa_ros/LoadUrl.h, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/LoadUrl.h)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/include/rasa_ros/ExecuteJS.h, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/ExecuteJS.h)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/include/rasa_ros/WakeUpRequest.h, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/WakeUpRequest.h)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/include/rasa_ros/Dialogue.h, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/Dialogue.h)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/include/rasa_ros/ExecuteJSResponse.h, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/ExecuteJSResponse.h)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/include/rasa_ros/Rest.h, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/Rest.h)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/include/rasa_ros/Text2Speech.h, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/Text2Speech.h)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/include/rasa_ros/RestResponse.h, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/RestResponse.h)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/include/rasa_ros/WakeUp.h, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/WakeUp.h)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/include/rasa_ros/RestRequest.h, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/RestRequest.h)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/include/rasa_ros/Text2SpeechRequest.h, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/Text2SpeechRequest.h)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/include/rasa_ros/DialogueRequest.h, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/DialogueRequest.h)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/include/rasa_ros/Text2SpeechResponse.h, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/Text2SpeechResponse.h)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/lib/pkgconfig/rasa_ros.pc, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/lib/pkgconfig/rasa_ros.pc)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/__init__.py, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/lib/python3/dist-packages/rasa_ros/__init__.py)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/_LoadUrl.py, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/lib/python3/dist-packages/rasa_ros/srv/_LoadUrl.py)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/_ExecuteJS.py, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/lib/python3/dist-packages/rasa_ros/srv/_ExecuteJS.py)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/__init__.py, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/lib/python3/dist-packages/rasa_ros/srv/__init__.py)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/_Dialogue.py, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/lib/python3/dist-packages/rasa_ros/srv/_Dialogue.py)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/_Rest.py, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/lib/python3/dist-packages/rasa_ros/srv/_Rest.py)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/_Text2Speech.py, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/lib/python3/dist-packages/rasa_ros/srv/_Text2Speech.py)
-Linked: (/home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/_WakeUp.py, /home/ski-nex/Cognitive-Robotics/toDoList_ROS/devel/lib/python3/dist-packages/rasa_ros/srv/_WakeUp.py)
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/lib/python3/dist-packages/rasa_ros/__init__.py
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/lib/python3/dist-packages/rasa_ros/srv/_ExecuteJS.py
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/lib/python3/dist-packages/rasa_ros/srv/_Text2Speech.py
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/lib/python3/dist-packages/rasa_ros/srv/_Rest.py
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/lib/python3/dist-packages/rasa_ros/srv/_Dialogue.py
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/lib/python3/dist-packages/rasa_ros/srv/_WakeUp.py
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/lib/python3/dist-packages/rasa_ros/srv/__init__.py
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/lib/python3/dist-packages/rasa_ros/srv/_LoadUrl.py
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/lib/pkgconfig/rasa_ros.pc
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/gennodejs/ros/rasa_ros/_index.js
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/gennodejs/ros/rasa_ros/srv/Dialogue.js
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/gennodejs/ros/rasa_ros/srv/WakeUp.js
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/gennodejs/ros/rasa_ros/srv/LoadUrl.js
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/gennodejs/ros/rasa_ros/srv/ExecuteJS.js
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/gennodejs/ros/rasa_ros/srv/_index.js
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/gennodejs/ros/rasa_ros/srv/Rest.js
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/gennodejs/ros/rasa_ros/srv/Text2Speech.js
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/common-lisp/ros/rasa_ros/srv/Text2Speech.lisp
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/common-lisp/ros/rasa_ros/srv/rasa_ros-srv.asd
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/common-lisp/ros/rasa_ros/srv/_package_ExecuteJS.lisp
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/common-lisp/ros/rasa_ros/srv/Dialogue.lisp
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/common-lisp/ros/rasa_ros/srv/_package.lisp
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/common-lisp/ros/rasa_ros/srv/_package_WakeUp.lisp
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/common-lisp/ros/rasa_ros/srv/ExecuteJS.lisp
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/common-lisp/ros/rasa_ros/srv/_package_Dialogue.lisp
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/common-lisp/ros/rasa_ros/srv/_package_Rest.lisp
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/common-lisp/ros/rasa_ros/srv/_package_LoadUrl.lisp
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/common-lisp/ros/rasa_ros/srv/Rest.lisp
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/common-lisp/ros/rasa_ros/srv/_package_Text2Speech.lisp
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/common-lisp/ros/rasa_ros/srv/WakeUp.lisp
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/common-lisp/ros/rasa_ros/srv/LoadUrl.lisp
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/rasa_ros/cmake/rasa_rosConfig-version.cmake
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/rasa_ros/cmake/rasa_ros-msg-paths.cmake
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/rasa_ros/cmake/rasa_rosConfig.cmake
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/rasa_ros/cmake/rasa_ros-msg-extras.cmake
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/roseus/ros/rasa_ros/manifest.l
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/roseus/ros/rasa_ros/srv/Dialogue.l
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/roseus/ros/rasa_ros/srv/Text2Speech.l
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/roseus/ros/rasa_ros/srv/WakeUp.l
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/roseus/ros/rasa_ros/srv/LoadUrl.l
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/roseus/ros/rasa_ros/srv/ExecuteJS.l
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/share/roseus/ros/rasa_ros/srv/Rest.l
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/Text2Speech.h
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/RestResponse.h
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/WakeUp.h
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/LoadUrlRequest.h
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/Text2SpeechResponse.h
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/Text2SpeechRequest.h
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/ExecuteJSResponse.h
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/ExecuteJSRequest.h
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/RestRequest.h
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/Rest.h
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/ExecuteJS.h
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/DialogueResponse.h
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/WakeUpRequest.h
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/WakeUpResponse.h
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/DialogueRequest.h
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/Dialogue.h
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/LoadUrlResponse.h
+Symlinking /home/andrea/Cognitive-Robotics/toDoList_ROS/devel/include/rasa_ros/LoadUrl.h

@@ -1,9 +1,9 @@
 {
     "WEBCAM_IDX": 0,
 
-    "MICROPHONE_IDX": null,
+    "MICROPHONE_IDX": 3,
 
-    "PEPPER": false,
+    "PEPPER": true,
 
     "PPS": 2,
 

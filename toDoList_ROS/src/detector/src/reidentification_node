@@ -181,8 +181,9 @@ def rcv_image(msg):
 
     # Only if the microphone is ready to listen the label 
     # associeted to the user is published on the ID topic
-    print("microphone_ready: ",microphone_ready)
     if microphone_ready and not pepper_is_speaking:
+        print("microphone_ready: ",microphone_ready)
+        print("pepper_is_speaking: ",pepper_is_speaking)
         if len(bboxes) > 0 and min_distance[0]!="unknown":
             count_unknown=0
             print(min_distance[0])
@@ -191,6 +192,7 @@ def rcv_image(msg):
             # Set microphone_ready to False each time that the label is published on the topic ID
             #  ( i.e. each time the microphone is activated)
             microphone_ready = False
+            #pepper_is_speaking = True
         else:
             print("No one here")
         #rospy.loginfo("published")
@@ -204,6 +206,9 @@ def callback(msg):
 def callback_is_speaking(msg):
     global pepper_is_speaking
     pepper_is_speaking = msg.data
+    print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+    print(pepper_is_speaking)
+    print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
 
 global count_unknown,name,folder_path,database, min_distance
 
