@@ -104,7 +104,7 @@ def train(data_path,n_images_for_person,file_path):
 
 # This callback receives from the webcam_node the image from the camera
 def rcv_image(msg):
-    global count_unknown,name,folder_path,database, min_distance, microphone_ready
+    global count_unknown,name,folder_path,database, min_distance, microphone_ready, pepper_is_speaking
     image = ros_numpy.numpify(msg)
     frameFace, bboxes = getFaceBox(faceNet, image)     # Get face
     message = Detection2DArray()
@@ -192,7 +192,7 @@ def rcv_image(msg):
             # Set microphone_ready to False each time that the label is published on the topic ID
             #  ( i.e. each time the microphone is activated)
             microphone_ready = False
-            #pepper_is_speaking = True
+            pepper_is_speaking = True
         else:
             print("No one here")
         #rospy.loginfo("published")
@@ -206,9 +206,9 @@ def callback(msg):
 def callback_is_speaking(msg):
     global pepper_is_speaking
     pepper_is_speaking = msg.data
-    print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
-    print(pepper_is_speaking)
-    print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+    #
+    if pepper_is_speaking:
+        print(pepper_is_speaking)
 
 global count_unknown,name,folder_path,database, min_distance
 
