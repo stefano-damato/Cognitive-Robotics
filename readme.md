@@ -53,6 +53,24 @@ sudo bash install_dependencies.bash
 ```
 
 ## Creating virtual environments
+1. Create the first virtual environment for VGGFace application. In the root directory run:
+```
+python3 -m venv python-env
+source python-env/bin/activate
+cd Cognitive-Robotics
+bash
+pip install -r VGG_requirements.txt
+deactivate
+cd ..
+```
+
+In case of ModuleNotFoundError: No module named 'keras.engine.topology'
+Change from keras.engine.topology import get_source_inputs 
+to from keras.utils.layer_utils import get_source_inputs
+in file /python-env/lib/python3.8/site-packages/keras_vggface/models.py
+
+
+## Creating virtual environments
 1. Create the first virtual environment for streamlit application. In the root directory run:
 ```
 python3 -m venv website-env
