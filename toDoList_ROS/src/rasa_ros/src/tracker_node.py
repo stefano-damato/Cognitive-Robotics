@@ -16,7 +16,7 @@ class TrackerNode:
         self.ip = ip
         self.port = port
         self.session = Session(ip, port)
-        self.tracker = self.session.service("ALTracker")
+        self.tracker = self.session.get_service("ALTracker")
 
      
     '''

@@ -103,6 +103,10 @@ def train(data_path,n_images_for_person,file_path):
     data_to_file(database,file_path)
 
 # This callback receives from the webcam_node the image from the camera
+
+def callback2(msg):
+    print("received spoken text: ", msg.data)
+
 def rcv_image(msg):
     global count_unknown,name,folder_path,database, min_distance, microphone_ready, pepper_is_speaking
     image = ros_numpy.numpify(msg)
@@ -146,7 +150,8 @@ def rcv_image(msg):
                     text2speech_node("I don't recognize you, who am I talking to? ")
                 print("I don't recognize you, who am I talking to? ")
                 pub_id.publish("unknown")
-                name=rospy.wait_for_message("text_for_reidentification",String)
+                sleep(2)
+                name=rospy.wait_for_message('text_for_reidentification',String)
                 name=name.data
                 print("Okay"+name+", now look the camera for the next " + str(seconds_for_identification) + " seconds")
                 if pepper:
@@ -278,6 +283,7 @@ if pepper:
 
 
 si = rospy.Subscriber("webcam", Image, rcv_image)
+rospy.Subscriber("text_for_reidentification", String, callback2)
 rospy.Subscriber("microphone_ready",Bool,callback)
 if pepper:
     rospy.Subscriber('is_speaking', Bool, callback_is_speaking)
