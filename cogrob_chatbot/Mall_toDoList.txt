@@ -1,1 +1,1 @@
-{'shopping': ['house', '12/16/2022, 00:00', True]}
+{'shopping': ['personal', '01/11/2023, 08:43', True]}
