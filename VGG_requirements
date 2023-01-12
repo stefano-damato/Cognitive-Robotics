@@ -4,3 +4,4 @@ keras_vggface
 tensorflow
 keras_applications
 scikit-learn
+git+https://github.com/eric-wieser/ros_numpy

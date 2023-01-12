@@ -3,8 +3,10 @@ import os
 import time
 import ast
 import rospy
+import json
 from std_msgs.msg import String
 from datetime import datetime as dt
+from rasa_ros.srv import LoadUrl
 
 def importDict(filepath):
     with open(filepath, 'r') as f:
@@ -14,7 +16,7 @@ def importDict(filepath):
 
 def callback(msg):
     global prev_toDoList
-    name = msg#.data
+    name = msg.data
     if name != "unknown":
         file_path = "cogrob_chatbot/" + name + FILENAME
         #file_path = name + FILENAME
@@ -88,8 +90,12 @@ def callback(msg):
             # close the file
             f.close()
 
-global FILENAME, pepper, prev_toDoList
+            if pepper:
+                load_url_node(url)
+
+global FILENAME, pepper, prev_toDoList, url
 prev_toDoList = dict
+url = "http://localhost/toDoList.html"
 FILENAME="_toDoList.txt"
 
 with open('config.json', 'r') as f:
@@ -105,5 +111,7 @@ if pepper:
     rospy.wait_for_service('load_url')
     load_url_node = rospy.ServiceProxy('load_url', LoadUrl) 
 
+while not rospy.is_shutdown():
+    rospy.spin()
 #pepper = False
 

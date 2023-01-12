@@ -26,9 +26,6 @@ def callback1(msg):
             print("Wrong file path!")
             toDoList={}
 
-        print(file_path)
-        print(dt_string)
-
         for key, values in toDoList.items():
             print(values[1])
             if(dt_string == values[1] and values[2]):
@@ -43,7 +40,6 @@ FILENAME="_toDoList.txt"
 rospy.init_node('alert_node')
 rospy.Subscriber("ID",String,callback1)
 
-print("ALERT SYSTEM")
 with open('config.json', 'r') as f:
   config = json.load(f)
 

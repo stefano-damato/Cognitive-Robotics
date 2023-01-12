@@ -34,13 +34,12 @@ def callback(msg):
 
 
 def main():
+    global dialogue_service, terminal, text2speech_node
+    dialogue_service=rospy.ServiceProxy('dialogue_server', Dialogue)
     rospy.init_node('writing')
     rospy.wait_for_service('dialogue_server')
     if pepper:
         rospy.wait_for_service('tts')
-    global dialogue_service, terminal, text2speech_node
-    dialogue_service=rospy.ServiceProxy('dialogue_server', Dialogue)
-    if pepper:
         text2speech_node=rospy.ServiceProxy('tts', Text2Speech)
     print("Ready")
     rospy.Subscriber("text_to_bot", String, callback)

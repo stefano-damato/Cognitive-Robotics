@@ -13,6 +13,12 @@ The robotic platform:
 
 Change the strings in `toDoList_ROS/src/rasa_ros/scripts/rasa_action.sh` and in `toDoList_ROS/src/rasa_ros/scripts/rasa_server.sh` relative to the absolute path of the rasa chatbot directory, named `cogrob_chatbot`.
 
+### Add pip bin to PATH
+Modify the .bashrc file in HOME, adding the line:
+```
+PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+```
+
 ### Creation of the Database of the knowing people
 
 To start the conversation with already known identities, you need to create the **database of known people**. Go in the folder `createdatabase` and run the following command to add photos in the image folder:
@@ -46,11 +52,10 @@ Set the index in the file `voice_detection.py`
 1. To install all the required dependencies run the `install_dependencies.bash` file with the command:
 ```
 sudo bash install_dependencies.bash
+sudo bash audio_setup.sh
+pip3 install git+https://github.com/eric-wieser/ros_numpy
 ```
-2. Create a virtual environment where to install all the dependencies for the VGGFace model.
-```
-sudo bash install_dependencies.bash
-```
+
 
 ## Creating virtual environments
 1. Create the first virtual environment for VGGFace application. In the root directory run:
