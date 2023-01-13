@@ -137,6 +137,9 @@ class ActionRemoveSubmit(Action):
                 removed_activity=toDoList.pop(activity)
         exportDict(file_path, toDoList)
 
+        category = removed_activity[0]
+        deadline = removed_activity[1]
+
         if(deadline=="12/31/2050, 23:59"):
             dispatcher.utter_message(text=f"Removed activity {activity}, {category} for {PERSON}")
         else:
