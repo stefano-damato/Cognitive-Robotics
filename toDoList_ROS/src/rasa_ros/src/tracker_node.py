@@ -24,11 +24,13 @@ class TrackerNode:
     The robot will play the text of the message
     '''
     def start_track(self):
+      print("ALTracker successfully started, now show your face to robot!")
       self.tracker.registerTarget("Face", 0.1)
       # Then, start tracker.
       self.tracker.track("Face")
 
     def stop_track(self):
+      print( "ALTracker stopped.")
       self.tracker.stopTracker()
       self.tracker.unregisterAllTargets()
         
@@ -38,7 +40,7 @@ class TrackerNode:
     '''
     def start(self):
         rospy.init_node("tracker_node")
-        self.start()
+        self.start_track()
         rospy.spin()
 
 if __name__ == "__main__":
