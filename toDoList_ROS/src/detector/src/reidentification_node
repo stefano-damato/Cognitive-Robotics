@@ -169,9 +169,9 @@ def rcv_image(msg):
                 if pepper:
                     text2speech_node("I am updating my database, please wait")
                 train(img_path,None,os.path.join(os.path.dirname(__file__),"name_database"))
-                print("Okay"+name+", go ahead")
+                print("Okay"+name+", what can I do for you?")
                 if pepper:
-                    text2speech_node("Okay"+name+", go ahead")
+                    text2speech_node("Okay"+name+" what can I do for you?")
                 min_distance[0] = name
                 count_unknown=-1
                 database = data_from_file(os.path.join(os.path.dirname(__file__),"name_database"))
@@ -197,7 +197,7 @@ def rcv_image(msg):
             # Set microphone_ready to False each time that the label is published on the topic ID
             #  ( i.e. each time the microphone is activated)
             microphone_ready = False
-            pepper_is_speaking = True
+            pepper_is_speaking = pepper
         else:
             print("No one here")
         #rospy.loginfo("published")

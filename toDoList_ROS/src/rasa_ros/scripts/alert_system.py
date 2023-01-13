@@ -27,7 +27,6 @@ def callback1(msg):
             toDoList={}
 
         for key, values in toDoList.items():
-            print(values[1])
             if(dt_string == values[1] and values[2]):
                 print("Attention " + name + ", you  have to do " + key + ", for category " + values[0])
                 if pepper:

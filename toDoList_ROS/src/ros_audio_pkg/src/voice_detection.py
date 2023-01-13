@@ -20,9 +20,9 @@ def asr(audio,id):
         print("Google Speech Recognition pensa che "+id+" abbia detto: " + spoken_text)
         if id!="unknown":
             if id != current_user:
-                current_user = id
-                print("Hi, I am "+ current_user)
-                pub.publish("Hi, I am "+ current_user)
+                current_user = id.capitalize()
+                print("Hi, I'm "+ current_user)
+                pub.publish("Hi, I'm "+ current_user)
             else: 
                 print("text_to_bot"+spoken_text)
                 pub.publish(spoken_text)
@@ -80,7 +80,7 @@ r = sr.Recognizer()
 
 # Audio source
 global m
-m = sr.Microphone(device_index=index,
+m = sr.Microphone(device_index=None,
                     sample_rate=16000,
                     chunk_size=1024)
 

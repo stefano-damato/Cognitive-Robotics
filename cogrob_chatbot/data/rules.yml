@@ -10,21 +10,20 @@ rules:
 - rule: Introduce
   steps:
   - intent: introduce
-  - action: presentation_form
-  - active_loop: presentation_form
+  - action: utter_greet
+  - action: introduce_form
+  - active_loop: introduce_form
 
 - rule: Presentation
   steps:
   - intent: greet
   - action: utter_greet
-  - action: presentation_form
-  - active_loop: presentation_form
 
-- rule: Presentation form
+- rule: Introduce form
   condition:
-  - active_loop: presentation_form
+  - active_loop: introduce_form
   steps:
-  - action: presentation_form
+  - action: introduce_form
   - active_loop: null
   - slot_was_set:
     - requested_slot: null

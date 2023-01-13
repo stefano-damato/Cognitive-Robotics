@@ -18,6 +18,25 @@ def exportDict(filepath,dict):
 
 
 FILENAME="_toDoList.txt"
+global PERSON
+PERSON="default"
+
+class ActionPresentation(Action):
+    def name(self) -> Text:
+        return "action_presentation"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        global PERSON
+        PERSON = tracker.get_slot("PERSON")
+        if(isinstance(PERSON,list)):
+            PERSON=PERSON[0]
+
+        PERSON=PERSON.capitalize()
+
+        return [AllSlotsReset(), SlotSet("PERSON", PERSON)]
 
 class ActionAddSubmit(Action):
 
@@ -28,6 +47,7 @@ class ActionAddSubmit(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
+        global PERSON
         activity = tracker.get_slot("activity")
         deadline = tracker.get_slot("time")
         time_object = dt.strptime(deadline, "%Y-%m-%dT%H:%M:%S.%f%z")
@@ -37,11 +57,7 @@ class ActionAddSubmit(Action):
         if (reminder!=True and reminder!=False):
             reminder=True
         category = tracker.get_slot("category")
-        PERSON = tracker.get_slot("PERSON")
-        if(isinstance(PERSON,list)):
-            PERSON=PERSON[0]
-
-        PERSON=PERSON.capitalize()
+        
         file_path = PERSON + FILENAME
         
         if(os.path.exists(file_path)):
@@ -72,14 +88,7 @@ class ActionDisplaySubmit(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        PERSON = tracker.get_slot("PERSON")
-        if(isinstance(PERSON,list)):
-            PERSON=PERSON[0]
-
-        if(PERSON is None):
-            dispatcher.utter_message(text=f"Please enter your name")
-            return [AllSlotsReset()]
-
+        global PERSON
         file_path = PERSON + FILENAME
 
         if(os.path.exists(file_path)):
@@ -109,11 +118,9 @@ class ActionRemoveSubmit(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
+        global PERSON
         activity = tracker.get_slot("activity")
-        PERSON = tracker.get_slot("PERSON")
-        if(isinstance(PERSON,list)):
-            PERSON=PERSON[0]
-
+    
         file_path = PERSON + FILENAME
 
         print("\nActivity:",activity)
@@ -146,10 +153,9 @@ class ActionModifySubmit(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
+        global PERSON
         activity = tracker.get_slot("activity")
-        PERSON = tracker.get_slot("PERSON")
-        if(isinstance(PERSON,list)):
-            PERSON=PERSON[0]
+        
         deadline = tracker.get_slot("time")
         time_object = dt.strptime(deadline, "%Y-%m-%dT%H:%M:%S.%f%z")
         deadline=time_object.strftime("%m/%d/%Y, %H:%M:%S")
@@ -181,7 +187,7 @@ class ActionModifySubmit(Action):
         
         return [AllSlotsReset(), SlotSet("PERSON", PERSON)]
 
-class ActionPresentation(Action):
+"""class ActionPresentation(Action):
 
     def name(self) -> Text:
         return "action_presentation"
@@ -196,4 +202,4 @@ class ActionPresentation(Action):
         PERSON=PERSON.capitalize()
         dispatcher.utter_message(text=f"Hello {PERSON}! How can I help you today?")
         
-        return []
+        return []"""

@@ -6,13 +6,14 @@
   <param name="nao_port" type="string" value="$(arg nao_port)"/>
 
   <node pkg="rasa_ros" type="wakeup_node.py" name="wakeup_node" required="false" args="--ip=$(arg nao_ip) --port=$(arg nao_port)" output="screen" />
-  <node pkg="rasa_ros" name="alert_system" type="alert_system.py" output="screen"/> 
+  
   <node pkg="rasa_ros" type="text2speech_node.py" name="text2speech" required="false" args="--ip=$(arg nao_ip) --port=$(arg nao_port)" output="screen" />
   <node pkg="rasa_ros" type="tracker_node.py" name="tracker_node" required="false" args="--ip=$(arg nao_ip) --port=$(arg nao_port)" output="screen" />
-  <node pkg="rasa_ros" name="rasa_action" type="rasa_action.sh" output="screen"/>
-  <node pkg="rasa_ros" name="rasa_server" type="rasa_server.sh" output="screen"/> 
   <node pkg="rasa_ros" name="dialogue_server" type="dialogue_server.py" output="screen" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' "/>
   <node pkg="rasa_ros" name="dialogue_interface" type="dialogue_interface.py" output="screen" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' "/>
-  <node pkg="rasa_ros" name="create_html" type="create_html.py" output="screen"/> 
   <node pkg="rasa_ros" type="tablet_node.py" name="tablet_node" required="false" args="--ip=$(arg nao_ip) --port=$(arg nao_port)" output="screen" />
+  <node pkg="rasa_ros" name="alert_system" type="alert_system.py" output="screen"/> 
+  <node pkg="rasa_ros" name="rasa_action" type="rasa_action.sh" output="screen"/>
+  <node pkg="rasa_ros" name="rasa_server" type="rasa_server.sh" output="screen"/> 
+  <node pkg="rasa_ros" name="create_html" type="create_html.py" output="screen"/> 
 </launch>

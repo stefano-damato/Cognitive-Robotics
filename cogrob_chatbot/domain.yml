@@ -142,7 +142,7 @@ forms:
       PERSON:
       - type: from_entity
         entity: PERSON
-  presentation_form:
+  introduce_form:
     required_slots:
       PERSON:
       - type: from_entity
@@ -183,7 +183,7 @@ responses:
   - text: "When does the activity start?"
 
   utter_ask_add_activity_form_time:
-  - text: "Enter the deadline. If you don't want to specify a deadline, please enter \"no\""
+  - text: "Enter the deadline. If you don't want to specify a deadline, please say \"no\""
 
   utter_ask_add_activity_with_time_form_time:
   - text: "What is the deadline?"
@@ -206,8 +206,8 @@ responses:
   - text: "For which category?"
 
   utter_greet:
-  - text: "Hi!"
-  - text: "Hello!"
+  - text: "Hi {PERSON}! How can I help you today?"
+  - text: "Hello {PERSON}! How can I help you today?"
 
   utter_goodbye:
   - text: "Talk to you later {PERSON}!"

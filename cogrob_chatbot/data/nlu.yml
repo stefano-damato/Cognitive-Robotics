@@ -77,6 +77,7 @@ nlu:
     - [buy apples](activity)
     - [buy milk](activity)
     - [go out](activity)
+    - [go to the shopping mall](activity)
     - [go to the market](activity)
     - [go to the supermarket](activity)
     - [study](activity)
@@ -193,21 +194,21 @@ nlu:
     - [Remind me](reminder) to go [shopping](activity) in [house](category) category
     - [Remind me](reminder) to go [running](activity)
     - [Remind me](reminder) to do a [brunch](activity)
-    - [Remember me](reminder) to [visit grandma](action)
-    - [Remember me](reminder) to [visit grandpa](action) in [personal](category) category
-    - [Remember me](reminder) to [visit grandpa](action) in [personal](category)
-    - [Remember me](reminder) to [visit grandma](action)
-    - [Remember me](reminder) to [visit grandma](action) in [personal](category) category
+    - [Remember me](reminder) to [visit grandma](activity)
+    - [Remember me](reminder) to [visit grandpa](activity) in [personal](category) category
+    - [Remember me](reminder) to [visit grandpa](activity) in [personal](category)
+    - [Remember me](reminder) to [visit grandma](activity)
+    - [Remember me](reminder) to [visit grandma](activity) in [personal](category) category
     - [Set a reminder](reminder): [prepare a deck for next meeting](activity)
     - [Set a reminder](reminder): [prepare a deck for next meeting](activity) for [work](category)
     - [Remind me](reminder) to [book the conference room](activity) in [work](category) category
-    - [Remind me](reminder) to [update project plan](action)
-    - [Remind me](reminder) to [update project plan](action) in [work](category) category
+    - [Remind me](reminder) to [update project plan](activity)
+    - [Remind me](reminder) to [update project plan](activity) in [work](category) category
     - [Remind me](reminder) to [book a plane](activity)
     - [Remind me](reminder) to [book a plane](activity) in [personal](category)
     - Please [Remind me](reminder) to [book a train](activity)
     - [Set a reminder](reminder) saying [contact service center](activity) in [personal](category) category
-    - [Remind me](reminder) to [verify project budget](action)
+    - [Remind me](reminder) to [verify project budget](activity)
 - intent: show_all_activities
   examples: |
     - Show me the notes
@@ -221,11 +222,6 @@ nlu:
     - Show the notes
     - Show the activities
     - Show the tasks
-    - Show me [Mario](PERSON)'s notes
-    - Show me the activities for [Giovanna](PERSON)
-    - Show me [Luigi](PERSON)'s tasks
-    - Display the notes for [Gianluca](PERSON)
-    - Display [Matilde](PERSON)'s activities
 - intent: remove_activity
   examples: |
     - Remove a note
@@ -235,22 +231,12 @@ nlu:
     - Delete a task
     - Delete an activity
     - Remove
-    - remove [grocery](activity)
-    - delete [shopping](activity)
     - Remove [running](activity)
     - Remove the note [brunch](activity)
-    - remove the task [buy apples](activity)
-    - delete the note [go out](activity)
-    - delete the task [study](activity)
     - Remove the activity [call Steve](activity)
     - Delete the activity [visit grandma](category)
-    - remove [email team for updates](activity)
-    - delete [send out meeting request](activity)
-    - delete [prepare a deck for next meeting](activity)
     - Remove [book conference room](activity)
     - Delete [update project plan](category)
-    - remove [create a meeting agenda](activity)
-    - delete [book a plane](activity)
     - Remove [book a train](activity)
     - Delete [contact service center](activity)
     - Remove [verify project budget](category)
@@ -262,21 +248,12 @@ nlu:
     - Edit a note
     - Edit a task
     - Edit an activity
-    - modify [grocery](activity)
     - Edit [shopping](activity)
-    - modify [running](activity)
     - Edit the note [brunch](activity)
-    - modify the task [buy apples](activity)
     - Modify the note [go out](activity)
-    - modify the task [study](activity)
     - Edit the activity [call Steve](activity)
-    - edit the activity [visit grandma](category)
-    - modify [email team for updates](activity)
-    - edit [send out meeting request](activity)
-    - edit [prepare a deck for next meeting](activity)
     - Edit [book conference room](activity)
     - Modify [update project plan](category)
-    - modify [create a meeting agenda](activity)
     - Edit [book a plane](activity)
     - Edit [book a train](activity)
     - Modify [contact service center](activity)
