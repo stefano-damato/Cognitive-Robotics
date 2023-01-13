@@ -48,7 +48,7 @@ class ActionAddSubmit(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         global PERSON
-        activity = tracker.get_slot("activity")
+        activity = tracker.get_slot("activity").capitalize()
         deadline = tracker.get_slot("time")
         time_object = dt.strptime(deadline, "%Y-%m-%dT%H:%M:%S.%f%z")
         deadline=time_object.strftime("%m/%d/%Y, %H:%M")
@@ -119,7 +119,7 @@ class ActionRemoveSubmit(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         global PERSON
-        activity = tracker.get_slot("activity")
+        activity = tracker.get_slot("activity").capitalize()
     
         file_path = PERSON + FILENAME
 
