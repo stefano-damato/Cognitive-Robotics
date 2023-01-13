@@ -27,6 +27,7 @@ actions:
   - action_remove_submit
   - action_modify_submit
   - action_presentation
+  - action_check_for_reminder
   - utter_greet
   - utter_goodbye
   - utter_noworries
@@ -37,7 +38,6 @@ actions:
   - utter_ask_modify_activity_form_time
   - utter_ask_modify_activity_form_category
   - utter_ask_reminder
-  - utter_ask_time
   - utter_ask_PERSON
   - utter_ask_category
 
@@ -75,9 +75,15 @@ forms:
       category:
       - type: from_entity
         entity: category
+      - intent: deny
+        type: from_intent
+        value: "no category"
       time:
       - type: from_entity
         entity: time
+      - intent: deny
+        type: from_intent
+        value: "no deadline"
       reminder:
       - intent: affirm
         type: from_intent
@@ -101,12 +107,6 @@ forms:
       category:
       - type: from_entity
         entity: category
-      time:
-      - type: from_entity
-        entity: time
-      - intent: deny
-        type: from_intent
-        value: "2050-12-31T23:59:00.000-08:00"
       reminder:
       - type: from_entity
         entity: reminder
@@ -119,6 +119,14 @@ forms:
       PERSON:
       - type: from_entity
         entity: PERSON
+  ask_deadline_form:
+    required_slots:
+      time:
+      - type: from_entity
+        entity: time
+      - intent: deny
+        type: from_intent
+        value: "2050-12-31T23:59:00.000-08:00"
   add_activity_with_reminder_form:
     required_slots:
       activity:
@@ -171,19 +179,13 @@ responses:
   - text: "What task would you like to modify?"
 
   utter_ask_modify_activity_form_category:
-  - text: "Insert the new category"
+  - text: "Insert the new category. If you don't want to modify the category, please say \"no\""
 
   utter_ask_modify_activity_form_time:
-  - text: "Insert the new deadline"
-
-  utter_ask_time:
-  - text: "What is the deadline?"
-  - text: "Please specify the deadline"
-  - text: "At what date and time does the activity start?"
-  - text: "When does the activity start?"
-
+  - text: "Insert the new deadline. If you don't want to modify the deadline, please say \"no\""
+  
   utter_ask_add_activity_form_time:
-  - text: "Enter the deadline. If you don't want to specify a deadline, please say \"no\""
+  - text: "Specify the deadline. If you don't want a deadline, please say \"no\""
 
   utter_ask_add_activity_with_time_form_time:
   - text: "What is the deadline?"
