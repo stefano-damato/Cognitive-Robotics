@@ -6,6 +6,7 @@ import rospy
 import json
 from std_msgs.msg import String
 from datetime import datetime as dt
+import socket
 from rasa_ros.srv import LoadUrl
 
 def importDict(filepath):
@@ -95,7 +96,8 @@ def callback(msg):
 
 global FILENAME, pepper, prev_toDoList, url
 prev_toDoList = dict
-url = "http://localhost/toDoList.html"
+ip = socket.gethostbyname(socket.gethostname())
+url = "http://" + ip + "/toDoList.html"
 FILENAME="_toDoList.txt"
 
 with open('config.json', 'r') as f:
