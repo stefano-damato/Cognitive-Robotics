@@ -100,6 +100,19 @@ rules:
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
+  - action: action_check_for_reminder
+  - action: ask_deadline_form
+  - active_loop: ask_deadline_form
+
+#form per chiedere la deadline
+- rule: Ask deadline form
+  condition: 
+  - active_loop: ask_deadline_form
+  steps:
+  - action: ask_deadline_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
   - action: utter_thanks
   - action: action_add_submit
 

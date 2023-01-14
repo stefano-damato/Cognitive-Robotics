@@ -168,8 +168,9 @@ class ActionModifySubmit(Action):
         activity = tracker.get_slot("activity")
         
         deadline = tracker.get_slot("time")
-        time_object = dt.strptime(deadline, "%Y-%m-%dT%H:%M:%S.%f%z")
-        deadline=time_object.strftime("%m/%d/%Y, %H:%M:%S")
+        if deadline != "no deadline":
+            time_object = dt.strptime(deadline, "%Y-%m-%dT%H:%M:%S.%f%z")
+            deadline=time_object.strftime("%m/%d/%Y, %H:%M")
         reminder = tracker.get_slot("reminder")
         category = tracker.get_slot("category")
 
@@ -186,8 +187,10 @@ class ActionModifySubmit(Action):
                 dispatcher.utter_message(text=f"There is no such activity")
                 return [AllSlotsReset(), SlotSet("PERSON", PERSON)]
             else:
-                toDoList[activity][0]=category
-                toDoList[activity][1]=deadline
+                if category != "no category":
+                    toDoList[activity][0]=category
+                if deadline != "no deadline":
+                    toDoList[activity][1]=deadline
                 toDoList[activity][2]=reminder
         exportDict(file_path, toDoList)
 
@@ -197,6 +200,25 @@ class ActionModifySubmit(Action):
             dispatcher.utter_message(text=f"Modified activity {activity}, {category} at {deadline} for {PERSON}")
         
         return [AllSlotsReset(), SlotSet("PERSON", PERSON)]
+
+
+class ActionCheckForReminder(Action):
+    def name(self) -> Text:
+        return "action_check_for_reminder"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        reminder = tracker.get_slot("reminder")
+
+        if reminder:
+            dispatcher.utter_message(template="utter_ask_add_activity_with_time_form_time")
+        else:
+            dispatcher.utter_message(template="utter_ask_add_activity_form_time")
+
+        return []
+
 
 """class ActionPresentation(Action):
 
