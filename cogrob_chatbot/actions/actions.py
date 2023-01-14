@@ -107,6 +107,14 @@ class ActionDisplaySubmit(Action):
                 dispatcher.utter_message(text=f"[{i}] Activity: {key}, category: {value[0]}, deadline: {value[1]}, reminder: {value[2]}\n")
             i+=1
 
+        """
+        for key,value in toDoList.items():
+            if value[1]=="12/31/2050, 23:59":
+                dispatcher.utter_message(text=f"{key}, category: {value[0]}\n")
+            else:
+                dispatcher.utter_message(text=f"{key} on {value[1]}, category: {value[0]} with reminder: {value[2]}\n")
+            i+=1
+"""
         return [AllSlotsReset(), SlotSet("PERSON", PERSON)]
 
 class ActionRemoveSubmit(Action):

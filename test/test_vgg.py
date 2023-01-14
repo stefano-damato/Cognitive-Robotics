@@ -1,7 +1,5 @@
 import numpy as np
 import cv2
-import tensorflow as tf
-
 from keras_vggface.vggface import VGGFace
 from keras_vggface.utils import preprocess_input
 import pickle
@@ -9,7 +7,7 @@ import os
 from glob import glob
 from scipy.spatial.distance import cosine
 from argparse import ArgumentParser
-
+from sklearn.metrics import accuracy_score, confusion_matrix
 
 
 # This method takes as input the face recognition model and the filename of the image and returns
@@ -35,6 +33,7 @@ parser = ArgumentParser()
 parser.add_argument('--padding', type=float, default=0.2)
 parser.add_argument('--rejection_threshold', type=float, default=0.4)
 parser.add_argument('--data_path', help='Folder where the images are saved', type=str)
+parser.add_argument('--test_path', help='Folder where the test images are saved', type=str)
 parser.add_argument('--n_images_for_person', help='Number of images used for a known person', type=int, default=None)
 parser.add_argument('--training', type=int, default=0)
 parser.add_argument('--file_name',  type=str, help="The name of the database file", default=None)
@@ -45,11 +44,12 @@ model_name=args.model
 # Load the VGG-Face model based on ResNet-50
 face_reco_model = VGGFace(model=model_name, include_top=False, pooling='avg')
 
-
+save_path="Result_"+model_name+".txt"
 
 
 # Dataset path - Folder in which the faces are saved
 data_path=args.data_path
+test_path=args.test_path
 
 padding = args.padding
 INPUT_SIZE = (224,224)
@@ -77,21 +77,19 @@ for dirs in os.listdir(data_path):
     database.append(person)
 data_to_file(database, file_name+".pickle")
 print(len(database))
-# Read frame 
-cap = cv2.VideoCapture(0)
-while(1):             
-    # Take each frame
-    _, frame = cap.read() # Read frame
-    frameFace, bboxes = getFaceBox(faceNet, frame)     # Get face
-    for i,bbox in enumerate(bboxes):
-        # Adjust crop
-        w = bbox[2]-bbox[0]
-        h = bbox[3]-bbox[1]
-        padding_px = int(padding*max(h,w))
-        face = frame[max(0,bbox[1]-padding_px):min(bbox[3]+padding_px,frame.shape[0]-1),max(0,bbox[0]-padding_px):min(bbox[2]+padding_px, frame.shape[1]-1)]
-        face = face[ face.shape[0]//2 - face.shape[1]//2 : face.shape[0]//2 + face.shape[1]//2, :, :]
+
+
+# Test on the TestSet
+groundtruth = []
+predictions = []
+
+for dirs in os.listdir(test_path):
+    person_path = os.path.join(test_path, dirs)
+    print(person_path)
+    count = 0
+    for filename in glob(os.path.join(person_path,'*.jpg')):
         # Preprocess image
-        resized_face = cv2.resize(face,INPUT_SIZE)
+        resized_face = cv2.resize(filename,INPUT_SIZE)
         ##
         faceim = preprocess_input([resized_face.astype(np.float32)], version=2)
         feature_vector = (face_reco_model.predict(faceim,verbose='false')).flatten()
@@ -103,13 +101,14 @@ while(1):
                     min_distance[0] = face['id']
                     min_distance[1] = distance
                     #print("if")
-                """else:
-                    #print("else")"""
-        
+        groundtruth.append(dirs)
+        predictions.append(min_distance[0])
 
-        cv2.imshow("f%d"%i, resized_face)
-        cv2.moveWindow("f%d"%i, INPUT_SIZE[0]*i, 40)
-        cv2.putText(frameFace, min_distance[0], (bbox[0], bbox[1]), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 2, cv2.LINE_AA)
-    cv2.imshow("Emotion Demo", frameFace)
-    cv2.waitKey(1)
-cv2.destroyAllWindows()    
+accuracy = accuracy_score(groundtruth, predictions)
+print("Accuracy score: %.3f" % (accuracy))
+print("Normalized confusion matrix\n %s" % (confusion_matrix(groundtruth, predictions, normalize='true')))
+
+res = "The accuracy of the %s model is %.3f"% (model_name,accuracy)
+with open(save_path,"w") as f:
+    f.write(res)
+         

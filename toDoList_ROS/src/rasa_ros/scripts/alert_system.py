@@ -31,7 +31,40 @@ def callback1(msg):
                 print("Attention " + name + ", you  have to do " + key + ", for category " + values[0])
                 if pepper:
                     text2speech_node("Attention " + name + ", you  have to do " + key + ", for category " + values[0])
+    """
+    if name != "unknown":
+        file_path = "cogrob_chatbot/" + name + FILENAME
+        datetime_object_now = dt.now()
+        
+        if(os.path.exists(file_path)):
+            toDoList=importDict(file_path)
+        else:
+            print("Wrong file path!")
+            toDoList={}
 
+        for key, values in toDoList.items():
+            datetime_object = dt.strptime(values[1],"%m/%d/%Y, %H:%M")
+            diff=datetime_object_now-datetime_object
+            days = diff.days
+            seconds = diff.seconds
+            if days==7:
+                print("Attention " + name + ", you  have to do " + key + " in a week, for category " + values[0])
+                if pepper:
+                    text2speech_node("Attention " + name + ", you  have to do " + key + " in a week, for category " + values[0])
+            if days==0:
+                if seconds==3600:
+                    print("Attention " + name + ", you  have to do " + key + " in one hour, for category " + values[0])
+                    if pepper:
+                        text2speech_node("Attention " + name + ", you  have to do " + key + " in one hour, for category " + values[0])
+                if seconds==1800:
+                    print("Attention " + name + ", you  have to do " + key + " in half an hour, for category " + values[0])
+                    if pepper:
+                        text2speech_node("Attention " + name + ", you  have to do " + key + " in half an hour, for category " + values[0])
+                if seconds==0:
+                    print("Attention " + name + ", you  have to do " + key + " now, for category " + values[0])
+                    if pepper:
+                        text2speech_node("Attention " + name + ", you  have to do " + key + " now, for category " + values[0])
+"""
     time.sleep(20)
 
 FILENAME="_toDoList.txt"
