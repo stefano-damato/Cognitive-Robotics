@@ -5,8 +5,7 @@ from time import sleep
 import rospy
 from sensor_msgs.msg import Image
 from std_msgs.msg import String, Bool
-from vision_msgs.msg import Detection2D, Detection2DArray, ObjectHypothesisWithPose
-from detector import Detector
+from vision_msgs.msg import Detection2D, Detection2DArray
 import ros_numpy # pip3 install git+https://github.com/eric-wieser/ros_numpy
 import cv2
 import numpy as np
@@ -92,7 +91,6 @@ def train(data_path,n_images_for_person,file_path):
         else:
             number_of_training_images_per_person = n_images_for_person
         print(os.path.join(person_path,'*.jpg'))
-        print(number_of_training_images_per_person)
         for filename in glob(os.path.join(person_path,'*.jpg')):
             if count < number_of_training_images_per_person:
                 feature_vector = extract_features(face_reco_model, filename)
