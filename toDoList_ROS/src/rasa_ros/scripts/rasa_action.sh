@@ -4,4 +4,4 @@ BOT_DIR="$HOME/Cognitive-Robotics/cogrob_chatbot"
 
 cd $BOT_DIR
 
-rasa run actions
+pyhton3 -m rasa run actions
