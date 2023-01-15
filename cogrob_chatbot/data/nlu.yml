@@ -32,12 +32,9 @@ nlu:
     - Goodbye friend
     - bye
     - bye for now
-    - catch you later
-    - gotta go
     - See you
     - goodnight
     - have a nice day
-    - i'm off
     - see you later alligator
     - we'll speak soon
 - intent: greet
@@ -45,6 +42,7 @@ nlu:
     - Hi
     - Hey
     - Hi bot
+    - Hi pepper
     - Hey bot
     - Hello
     - good morning
@@ -142,16 +140,11 @@ nlu:
     - [house](category)
 - intent: introduce
   examples: |
-    - my name is [Giacomo](PERSON)
-    - my name is [Gabriele](PERSON)
-    - I'm [Giovanna](PERSON)
-    - I'm [Simon](PERSON)
-    - [Chiara](PERSON) is my name
-    - [Matt](PERSON) is my name
-    - Hi, my name is [Antonio](PERSON)
-    - Hi, my name is [Marco](PERSON)
-    - Hello! I'm [Alberto](PERSON)
-    - Good morning bot,[Carlo](PERSON) is my name
+    - This is a custom formula, [Giacomo](PERSON), nice to meet you
+    - This is a custom formula, [Matteo](PERSON), nice to meet you
+    - This is a custom formula, [Luca](PERSON), nice to meet you
+    - This is a custom formula, [Giada](PERSON), nice to meet you
+    - This is a custom formula, [Alessia](PERSON), nice to meet you
 - intent: add_activity
   examples: |
     - Add a note

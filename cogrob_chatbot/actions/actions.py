@@ -75,7 +75,10 @@ class ActionAddSubmit(Action):
         if(deadline=="12/31/2050, 23:59"):
             dispatcher.utter_message(text=f"Added activity {activity}, {category} for {PERSON}")
         else:
-            dispatcher.utter_message(text=f"Added activity {activity}, {category} at {deadline} for {PERSON} with reminder:{reminder}")
+            if reminder:
+                dispatcher.utter_message(text=f"Added activity {activity}, {category} at {deadline} for {PERSON} with reminder")
+            else:
+                dispatcher.utter_message(text=f"Added activity {activity}, {category} at {deadline} for {PERSON} without reminder")
         
         return [AllSlotsReset(), SlotSet("PERSON", PERSON)]
 
@@ -98,23 +101,15 @@ class ActionDisplaySubmit(Action):
 
         dispatcher.utter_message(text=f"{PERSON}'s ToDo List:\n")
 
-        i = 1
-
-        for key,value in toDoList.items():
-            if value[1]=="12/31/2050, 23:59":
-                dispatcher.utter_message(text=f"[{i}] Activity: {key}, category: {value[0]}\n")
-            else:
-                dispatcher.utter_message(text=f"[{i}] Activity: {key}, category: {value[0]}, deadline: {value[1]}, reminder: {value[2]}\n")
-            i+=1
-
-        """
         for key,value in toDoList.items():
             if value[1]=="12/31/2050, 23:59":
                 dispatcher.utter_message(text=f"{key}, category: {value[0]}\n")
             else:
-                dispatcher.utter_message(text=f"{key} on {value[1]}, category: {value[0]} with reminder: {value[2]}\n")
-            i+=1
-"""
+                if value[2]:
+                    dispatcher.utter_message(text=f"{key} on {value[1]}, category: {value[0]} with reminder\n")
+                else:
+                    dispatcher.utter_message(text=f"{key} on {value[1]}, category: {value[0]} without reminder\n")
+           
         return [AllSlotsReset(), SlotSet("PERSON", PERSON)]
 
 class ActionRemoveSubmit(Action):
@@ -165,7 +160,7 @@ class ActionModifySubmit(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         global PERSON
-        activity = tracker.get_slot("activity")
+        activity = tracker.get_slot("activity").capitalize()
         
         deadline = tracker.get_slot("time")
         if deadline != "no deadline":
@@ -213,26 +208,18 @@ class ActionCheckForReminder(Action):
         reminder = tracker.get_slot("reminder")
 
         if reminder:
-            dispatcher.utter_message(template="utter_ask_add_activity_with_time_form_time")
+            dispatcher.utter_message(template="utter_ask_add_activity_with_reminder_form_time")
         else:
             dispatcher.utter_message(template="utter_ask_add_activity_form_time")
 
         return []
 
-
-"""class ActionPresentation(Action):
-
+class ActionSetPerson(Action):
     def name(self) -> Text:
-        return "action_presentation"
+        return "action_set_person"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        PERSON = tracker.get_slot("PERSON")
-        if(isinstance(PERSON,list)):
-            PERSON=PERSON[0]
-        PERSON=PERSON.capitalize()
-        dispatcher.utter_message(text=f"Hello {PERSON}! How can I help you today?")
-        
-        return []"""
+        return [SlotSet("PERSON", PERSON)]

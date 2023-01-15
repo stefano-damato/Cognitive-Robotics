@@ -17,7 +17,7 @@ def importDict(filepath):
 def callback1(msg):
     
     name = msg.data
-    if name != "unknown":
+    """if name != "unknown":
         file_path = "cogrob_chatbot/" + name + FILENAME
         dt_string = dt.now().strftime("%m/%d/%Y, %H:%M")
         if(os.path.exists(file_path)):
@@ -35,6 +35,7 @@ def callback1(msg):
     if name != "unknown":
         file_path = "cogrob_chatbot/" + name + FILENAME
         datetime_object_now = dt.now()
+        print(datetime_object_now)
         
         if(os.path.exists(file_path)):
             toDoList=importDict(file_path)
@@ -44,28 +45,27 @@ def callback1(msg):
 
         for key, values in toDoList.items():
             datetime_object = dt.strptime(values[1],"%m/%d/%Y, %H:%M")
-            diff=datetime_object_now-datetime_object
+            print(datetime_object)
+            diff=datetime_object - datetime_object_now
             days = diff.days
             seconds = diff.seconds
-            if days==7:
-                print("Attention " + name + ", you  have to do " + key + " in a week, for category " + values[0])
-                if pepper:
-                    text2speech_node("Attention " + name + ", you  have to do " + key + " in a week, for category " + values[0])
+            minutes = int((seconds+60)/60)
+            print(minutes)
             if days==0:
-                if seconds==3600:
-                    print("Attention " + name + ", you  have to do " + key + " in one hour, for category " + values[0])
+                if minutes==60:
+                    print("Attention " + name + ", you  have to " + key + " in one hour, for category " + values[0])
                     if pepper:
-                        text2speech_node("Attention " + name + ", you  have to do " + key + " in one hour, for category " + values[0])
-                if seconds==1800:
-                    print("Attention " + name + ", you  have to do " + key + " in half an hour, for category " + values[0])
+                        text2speech_node("Attention " + name + ", you  have to " + key + " in one hour, for category " + values[0])
+                if minutes==30:
+                    print("Attention " + name + ", you  have to " + key + " in half an hour, for category " + values[0])
                     if pepper:
-                        text2speech_node("Attention " + name + ", you  have to do " + key + " in half an hour, for category " + values[0])
-                if seconds==0:
-                    print("Attention " + name + ", you  have to do " + key + " now, for category " + values[0])
+                        text2speech_node("Attention " + name + ", you  have to " + key + " in half an hour, for category " + values[0])
+                if minutes==1:
+                    print("Attention " + name + ", you  have to " + key + " now, for category " + values[0])
                     if pepper:
-                        text2speech_node("Attention " + name + ", you  have to do " + key + " now, for category " + values[0])
-"""
-    time.sleep(20)
+                        text2speech_node("Attention " + name + ", you  have to " + key + " now, for category " + values[0])
+
+    #time.sleep(20)
 
 FILENAME="_toDoList.txt"
 

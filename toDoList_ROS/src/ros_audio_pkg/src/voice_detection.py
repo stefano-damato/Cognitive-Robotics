@@ -21,8 +21,8 @@ def asr(audio,id):
         if id!="unknown":
             if id != current_user:
                 current_user = id.capitalize()
-                print("Hi, I'm "+ current_user)
-                pub.publish("Hi, I'm "+ current_user)
+                print("This is a custom formula, " + current_user + ", nice to meet you")
+                pub.publish("This is a custom formula, " + current_user + ", nice to meet you")
             else: 
                 print("text_to_bot"+spoken_text)
                 pub.publish(spoken_text)

@@ -28,6 +28,7 @@ actions:
   - action_modify_submit
   - action_presentation
   - action_check_for_reminder
+  - action_set_person
   - utter_greet
   - utter_goodbye
   - utter_noworries
@@ -187,7 +188,7 @@ responses:
   utter_ask_add_activity_form_time:
   - text: "Specify the deadline. If you don't want a deadline, please say \"no\""
 
-  utter_ask_add_activity_with_time_form_time:
+  utter_ask_add_activity_with_reminder_form_time:
   - text: "What is the deadline?"
   - text: "Please specify the deadline"
   - text: "At what date and time does the activity start?"

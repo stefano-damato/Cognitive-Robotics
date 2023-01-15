@@ -43,7 +43,7 @@ def callback(msg):
             dt_string = dt.now().strftime("%m/%d/%Y, %H:%M")
             for key, value in toDoList.items():
                 if value[1] < dt_string:
-                    html_template = html_template +"""<li class="sgLi"><div class="box"><h3>""" + key +  """</h3><ul class="df"><li>""" + value[0] + """</li><li>""" + value[1] + """</li></ul></div>"""
+                    html_template = html_template +"""<li class="sgLi"><div class="box_expired"><h3>""" + key +  """</h3><ul class="df"><li>""" + value[0] + """</li><li>""" + value[1] + """</li></ul></div>"""
                 else:
                     html_template = html_template +"""<li class="sgLi"><div class="box"><h3>""" + key +  """</h3><ul class="df"><li>""" + value[0] + """</li>"""
                     if value[1] != "12/31/2050, 23:59":
@@ -102,6 +102,15 @@ def callback(msg):
             height: 100vh;
             padding: 1% 2%;
             background: #EFCF2D;
+            min-height: 200px;
+            max-height: 220px;
+            box-sizing: border-box;
+            }
+            .box_expired{
+            width: 100%;
+            height: 100vh;
+            padding: 1% 2%;
+            background: #ef2d2d;
             min-height: 200px;
             max-height: 220px;
             box-sizing: border-box;

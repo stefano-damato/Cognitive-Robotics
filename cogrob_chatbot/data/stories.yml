@@ -3,6 +3,7 @@ stories:
 - story: story_goodbye
   steps:
   - intent: goodbye
+  - action: action_set_person
   - action: utter_goodbye
 
 - story: story_thankyou

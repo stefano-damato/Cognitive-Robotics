@@ -5,6 +5,7 @@ rules:
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
+  - action: action_set_person
   - action: utter_goodbye
 
 - rule: Introduce
@@ -17,6 +18,7 @@ rules:
 - rule: Presentation
   steps:
   - intent: greet
+  - action: action_set_person
   - action: utter_greet
 
 - rule: Introduce form
