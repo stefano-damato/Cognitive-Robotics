@@ -15,7 +15,7 @@ def importDict(filepath):
     return convertedDict
 
 def callback1(msg):
-    
+    global name
     name = msg.data
     """if name != "unknown":
         file_path = "cogrob_chatbot/" + name + FILENAME
@@ -32,6 +32,24 @@ def callback1(msg):
                 if pepper:
                     text2speech_node("Attention " + name + ", you  have to do " + key + ", for category " + values[0])
     """
+    
+global name
+name = "default"
+FILENAME="_toDoList.txt"
+
+rospy.init_node('alert_node')
+rospy.Subscriber("ID",String,callback1)
+
+with open('config.json', 'r') as f:
+  config = json.load(f)
+
+pepper = config["PEPPER"]
+if pepper:
+    rospy.wait_for_service('tts')
+    text2speech_node=rospy.ServiceProxy('tts', Text2Speech) 
+
+while not rospy.is_shutdown():
+    time.sleep(20)
     if name != "unknown":
         file_path = "cogrob_chatbot/" + name + FILENAME
         datetime_object_now = dt.now()
@@ -65,20 +83,4 @@ def callback1(msg):
                     if pepper:
                         text2speech_node("Attention " + name + ", you  have to " + key + " now, for category " + values[0])
 
-    #time.sleep(20)
-
-FILENAME="_toDoList.txt"
-
-rospy.init_node('alert_node')
-rospy.Subscriber("ID",String,callback1)
-
-with open('config.json', 'r') as f:
-  config = json.load(f)
-
-pepper = config["PEPPER"]
-if pepper:
-    rospy.wait_for_service('tts')
-    text2speech_node=rospy.ServiceProxy('tts', Text2Speech) 
-
-while not rospy.is_shutdown():
-    rospy.spin()
+    

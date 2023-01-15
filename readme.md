@@ -27,7 +27,7 @@ python3 Take_photo.py --face_path img/name_of_the_person --pps 2
 ```
 To obtain the file containing the new database that will be used from the face recognition model run:
 ```
-python3 Image_reidentification.py --data_path img --training 1 --file_name data
+python3 Image_reidentification.py --data_path img --traineing 1 --file_name data
 ```
 Now you can move the `data.pickle` in the ros pakage where the `reidentification_node` is containing.
 
@@ -46,6 +46,13 @@ sd.query_devices()
 ```
 Set the index in the file `voice_detection.py`
 2. Find the webcam index with:
+```
+sudo apt-get install v4l-utils
+v4l2-ctl --list-devices
+sudo apt install ffmpeg
+ffplay /dev/video_indices
+```
+Substitute "video_indices" with the listed cameras from the previous command
 
 ### Dependencies:
 

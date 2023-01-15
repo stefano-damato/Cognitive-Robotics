@@ -48,7 +48,7 @@ PATH = args.face_path
 
 j=len(os.listdir(PATH))+1
 # Read frame 
-cap = cv2.VideoCapture(6)
+cap = cv2.VideoCapture(0)
 fps= int(cap.get(cv2.CAP_PROP_FPS))
 count=1
 while(1):             
