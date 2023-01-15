@@ -34,6 +34,7 @@ parser = ArgumentParser()
 parser.add_argument('--padding', type=float, default=0.2)
 parser.add_argument('--face_path', help='Folder where the images will be saved', type=str)
 parser.add_argument('--pps', help='photos per second', type=int, default=1)
+parser.add_argument('--camera_index', help='index of the camera to use', type=int, default=0)
 args = parser.parse_args()
 
 # Initialize detector
@@ -48,7 +49,7 @@ PATH = args.face_path
 
 j=len(os.listdir(PATH))+1
 # Read frame 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(args.camera_index)
 fps= int(cap.get(cv2.CAP_PROP_FPS))
 count=1
 while(1):             
