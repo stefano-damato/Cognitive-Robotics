@@ -17,21 +17,6 @@ def importDict(filepath):
 def callback1(msg):
     global name
     name = msg.data
-    """if name != "unknown":
-        file_path = "cogrob_chatbot/" + name + FILENAME
-        dt_string = dt.now().strftime("%m/%d/%Y, %H:%M")
-        if(os.path.exists(file_path)):
-            toDoList=importDict(file_path)
-        else:
-            print("Wrong file path!")
-            toDoList={}
-
-        for key, values in toDoList.items():
-            if(dt_string == values[1] and values[2]):
-                print("Attention " + name + ", you  have to do " + key + ", for category " + values[0])
-                if pepper:
-                    text2speech_node("Attention " + name + ", you  have to do " + key + ", for category " + values[0])
-    """
     
 global name
 name = "default"
@@ -53,7 +38,6 @@ while not rospy.is_shutdown():
     if name != "unknown":
         file_path = "cogrob_chatbot/" + name + FILENAME
         datetime_object_now = dt.now()
-        print(datetime_object_now)
         
         if(os.path.exists(file_path)):
             toDoList=importDict(file_path)
@@ -63,12 +47,10 @@ while not rospy.is_shutdown():
 
         for key, values in toDoList.items():
             datetime_object = dt.strptime(values[1],"%m/%d/%Y, %H:%M")
-            print(datetime_object)
             diff=datetime_object - datetime_object_now
             days = diff.days
             seconds = diff.seconds
             minutes = int((seconds+60)/60)
-            print(minutes)
             if days==0:
                 if minutes==60:
                     print("Attention " + name + ", you  have to " + key + " in one hour, for category " + values[0])

@@ -9,6 +9,6 @@ home = os.path.expanduser('~')
 python_bin = home + "/python-env/bin/python"
 
 # Path to the script that must run under the virtualenv
-script_file = home + "/Cognitive-Robotics/toDoList_ROS/src/detector/src/reidentification_node"
+script_file = home + "/Cognitive-Robotics/toDoList_ROS/src/detector/src/reidentification_node.py"
 
 subprocess.Popen([python_bin, script_file])

@@ -76,7 +76,7 @@ def callback(msg):
             color: #000000;
             }
             li{
-            color: #2c3e50;
+            color: #000000;
             font-size: 18px;
             line-height: 30px;
             text-align: justify;

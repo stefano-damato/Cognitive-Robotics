@@ -6,7 +6,6 @@ from vision_msgs.msg import Detection2DArray
 import cv2
 import ros_numpy # pip3 install git+https://github.com/eric-wieser/ros_numpy
 from threading import Lock
-from classmap import category_map as classmap # https://gist.github.com/xhlulu/f7735970704b97fd0b72203628c1cc77
 
 rospy.init_node('visualization_node')
 image_lock = Lock()

@@ -1,0 +1,8 @@
+<launch>
+
+  <arg name="node_start_delay" default="10.0" />  
+
+  <node pkg="detector" name="visualization_node" type="visualization_node.py" output="screen"/>
+  <node pkg="detector" name="launch_custom_env" type="launch_custom_env.py" output="screen"/> 
+  <node pkg="detector" name="webcam_node" type="webcam_node.py" output="screen" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' "/>
+</launch>
