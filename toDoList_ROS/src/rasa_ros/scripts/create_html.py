@@ -192,5 +192,4 @@ if pepper:
 
 while not rospy.is_shutdown():
     rospy.spin()
-#pepper = False
 
