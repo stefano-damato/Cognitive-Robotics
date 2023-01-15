@@ -13,30 +13,22 @@ The robotic platform:
 
 Change the strings in `toDoList_ROS/src/rasa_ros/scripts/rasa_action.sh` and in `toDoList_ROS/src/rasa_ros/scripts/rasa_server.sh` relative to the absolute path of the rasa chatbot directory, named `cogrob_chatbot`.
 
-### Add pip bin to PATH
-Modify the .bashrc file in HOME, adding the line:
+### Creating virtual environments
+1. Create a virtual environment for VGGFace application. In the root directory run:
 ```
-PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+python3 -m venv python-env
+source python-env/bin/activate
+cd Cognitive-Robotics
+pip install -r VGG_requirements.txt
+deactivate
+cd ..
 ```
 
-### Creation of the Database of the knowing people
+In case of ModuleNotFoundError: No module named 'keras.engine.topology'
+Change from keras.engine.topology import get_source_inputs 
+to from keras.utils.layer_utils import get_source_inputs
+in file /python-env/lib/python3.8/site-packages/keras_vggface/models.py
 
-To start the conversation with already known identities, you need to create the **database of known people**. Go in the folder `createdatabase` and run the following command to add photos in the image folder:
-```
-python3 Take_photo.py --face_path img/name_of_the_person --pps 2
-```
-To obtain the file containing the new database that will be used from the face recognition model run:
-```
-python3 Image_reidentification.py --data_path img --traineing 1 --file_name data
-```
-Now you can move the `data.pickle` in the ros pakage where the `reidentification_node` is containing.
-
-### Config File
-1. Incude config file and other directories in the ros workspace, from the directory of ros (usually $HOME/.ros) run the command:
-```
-ln -s ~/Cognitive-Robotics/toDoList_ROS/config.json ./
-ln -s ../Cognitive-Robotics/cogrob_chatbot/ ./
-```
 
 ### Microphone and Webcam node
 1. Find the michrophone index with:
@@ -52,10 +44,31 @@ v4l2-ctl --list-devices
 sudo apt install ffmpeg
 ffplay /dev/video_indices
 ```
-Substitute "video_indices" with the listed cameras from the previous command
+Substitute "video_indices" with the listed cameras from the previous command to check the webcam to use. 
+
+### Creation of the Database of the knowing people
+
+To start the conversation with already known identities, you need to create the **database of known people**. Go in the folder `createdatabase` and run the following command to add photos in the image folder:
+```
+python3 Take_photo.py --face_path img/your_name --pps 2 --camera_index chosen_camera
+```
+Substitute "your_name" with your name and "chosen_camera" with the index of the camera checked at the previous point.
+To obtain the file containing the new database that will be used from the face recognition model run:
+```
+source ~/python-env/bin/activate
+python3 Image_reidentification.py --data_path img --traineing 1 --file_name data
+deactivate
+```
+Now you can move the `data.pickle` in the ros pakage where the `reidentification_node` is containing.
+
+### Symbolinc links
+Incude config file and other files in the ros workspace, from the directory of ros (usually $HOME/.ros) run the command:
+```
+ln -s ~/Cognitive-Robotics/toDoList_ROS/config.json ./
+ln -s ../Cognitive-Robotics/cogrob_chatbot/ ./
+```
 
 ### Dependencies:
-
 1. To install all the required dependencies run the `install_dependencies.bash` file with the command:
 ```
 sudo bash install_dependencies.bash
@@ -75,38 +88,6 @@ sudo rosdep init
 rosdep update
 ```
 
-
-## Creating virtual environments
-1. Create the first virtual environment for VGGFace application. In the root directory run:
-```
-python3 -m venv python-env
-source python-env/bin/activate
-cd Cognitive-Robotics
-bash
-pip install -r VGG_requirements.txt
-deactivate
-cd ..
-```
-
-In case of ModuleNotFoundError: No module named 'keras.engine.topology'
-Change from keras.engine.topology import get_source_inputs 
-to from keras.utils.layer_utils import get_source_inputs
-in file /python-env/lib/python3.8/site-packages/keras_vggface/models.py
-
-
-## Creating virtual environments
-1. Create the first virtual environment for streamlit application. In the root directory run:
-```
-python3 -m venv website-env
-source website-env/bin/activate
-cd Cognitive-Robotics
-bash
-pip install -r website_requirements.txt
-deactivate
-cd ..
-```
-
-2.
 
 ## How to run the application
 Go in the ROS workspace and for every point in this list open a new terminal tab
