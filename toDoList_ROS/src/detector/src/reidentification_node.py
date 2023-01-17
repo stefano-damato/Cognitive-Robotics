@@ -100,11 +100,10 @@ def train(data_path,n_images_for_person,file_path):
         database.append(person)
     data_to_file(database,file_path)
 
-# This callback receives from the webcam_node the image from the camera
-
 def callback2(msg):
     print("received spoken text: ", msg.data)
 
+# This callback receives from the webcam_node the image from the camera
 def rcv_image(msg):
     global count_unknown,name,folder_path,database, min_distance, microphone_ready, pepper_is_speaking
     image = ros_numpy.numpify(msg)
@@ -137,7 +136,7 @@ def rcv_image(msg):
                 if distance < min_distance[1] and distance < rejection_threshold:
                     min_distance[0] = face['id']
                     min_distance[1] = distance
-        ## REIDENTIFICATION
+        ## IDENTIFICATION
         if min_distance[0] == "unknown":
             count_unknown+=1
         if count_unknown>CONSECUTIVE_UNK:
@@ -209,7 +208,7 @@ def callback(msg):
 def callback_is_speaking(msg):
     global pepper_is_speaking
     pepper_is_speaking = msg.data
-    #
+    
     if pepper_is_speaking:
         print(pepper_is_speaking)
 
@@ -276,9 +275,6 @@ if pepper:
     rospy.wait_for_service('tts')
     global text2speech_node
     text2speech_node=rospy.ServiceProxy('tts', Text2Speech)
-
-
-
 
 si = rospy.Subscriber("webcam", Image, rcv_image)
 rospy.Subscriber("text_for_reidentification", String, callback2)

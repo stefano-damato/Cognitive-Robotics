@@ -10,9 +10,8 @@ pipeline:
   - name: "DucklingHTTPExtractor"
     url: "http://localhost:8000"
     dimensions: ["time"]
-  - name: RegexFeaturizer
   - name: CRFEntityExtractor
-  - name: "SpacyEntityExtractor" # extractor used for person names
+  - name: "SpacyEntityExtractor"      # extractor used for person names
     dimensions: ["PERSON"]
   - name: EntitySynonymMapper
   - name: SklearnIntentClassifier

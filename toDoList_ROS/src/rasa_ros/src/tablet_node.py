@@ -49,7 +49,7 @@ class TabletNode:
     def start(self):
         rospy.init_node("tablet_node")
 
-        #rospy.Service('execute_js', ExecuteJS, self.execute_js)
+        rospy.Service('execute_js', ExecuteJS, self.execute_js)
         rospy.Service('load_url', LoadUrl, self.load_url)
 
         rospy.spin()

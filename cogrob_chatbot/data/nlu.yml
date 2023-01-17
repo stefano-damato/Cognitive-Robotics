@@ -273,6 +273,7 @@ nlu:
   examples: |
     - note
     - task
+    - activity
 - synonym: rbry-mqwu
   examples: |
     - time
