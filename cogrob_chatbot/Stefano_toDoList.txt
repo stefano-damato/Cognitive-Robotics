@@ -1,1 +1,0 @@
-{'call Andrea': ['personal', '01/15/2023, 14:31'], 'Go to the shop mall': ['Sport', '01/15/2023, 15:31', True]}

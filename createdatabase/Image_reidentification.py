@@ -1,7 +1,7 @@
 import numpy as np
 import cv2
 import tensorflow as tf
-
+import time
 from keras_vggface.vggface import VGGFace
 from keras_vggface.utils import preprocess_input
 import pickle
@@ -114,6 +114,7 @@ else:
 print(len(database))
 # Read frame 
 cap = cv2.VideoCapture(0)
+times = []
 while(1):             
     # Take each frame
     _, frame = cap.read() # Read frame
@@ -128,9 +129,13 @@ while(1):
         # Preprocess image
         resized_face = cv2.resize(face,INPUT_SIZE)
         ##
+        
         faceim = preprocess_input([resized_face.astype(np.float32)], version=2)
+        
+        st = time.time()
         feature_vector = (face_reco_model.predict(faceim,verbose='false')).flatten()
         min_distance = ["unknown", 1000000000000]
+
         for person in database:
             for face in person:
                 distance = cosine(feature_vector, face['feature_vector'])
@@ -140,7 +145,11 @@ while(1):
                     #print("if")
                 """else:
                     #print("else")"""
-        
+        et = time.time()
+
+        times.append(et-st)
+        with open("results.txt", "w") as f:
+            f.write(str(np.mean(times)))
 
         cv2.imshow("f%d"%i, resized_face)
         cv2.moveWindow("f%d"%i, INPUT_SIZE[0]*i, 40)

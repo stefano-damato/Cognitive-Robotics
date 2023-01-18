@@ -15,6 +15,9 @@ def importDict(filepath):
     convertedDict=ast.literal_eval(str)
     return convertedDict
 
+# this callback creates an html file that shows the to-do list if it's changed from the 
+# previous one; then it asks the load_url serivce to load the url of this file on Pepper's
+# tablet
 def callback(msg):
     global prev_toDoList
     name = msg.data
@@ -173,6 +176,7 @@ def callback(msg):
 
 global FILENAME, pepper, prev_toDoList, url
 prev_toDoList = dict
+#retrive the IP assigned to this machine
 ip = socket.gethostbyname(socket.gethostname())
 url = "http://" + ip + "/toDoList.html"
 FILENAME="_toDoList.txt"
@@ -182,6 +186,8 @@ with open('config.json', 'r') as f:
 
 #threading.Thread(target=lambda: rospy.init_node('website_node', disable_signals=True)).start()
 rospy.init_node('website_node')
+# Subscribe to the topic ID for acquiring the user identity and firing the callback for
+# creating the html file and loading the url
 rospy.Subscriber("ID",String,callback)
 
 pepper = config["PEPPER"]

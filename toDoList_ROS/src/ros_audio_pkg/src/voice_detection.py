@@ -9,8 +9,9 @@ from speech_recognition import AudioData
 class WaitTimeoutError(Exception): pass
 import json
 
-# This function perform the speech recognition on ``audio_data`` (an ``AudioData`` instance), 
-# using the Google Speech Recognition API.
+# This function performs the speech recognition on ``audio_data`` (an ``AudioData`` instance), 
+# using the Google Speech Recognition API, and, when it has done restores the availability of
+# the microhone
 def asr(audio,id):
     global current_user
     data = np.array(audio.data,dtype=np.int16)
@@ -38,7 +39,8 @@ def asr(audio,id):
         print("Could not request results from Google Speech Recognition service; {0}".format(e))
         return False
 
-## This callback recives the label associeted to the user from the reidentification_node
+# This callback recives the label associeted to the user from the reidentification_node and
+# enables the microhone for the speech recognition
 def callback(msg):
     label=msg.data
     print("Label from callback: "+ label)
@@ -46,8 +48,10 @@ def callback(msg):
     while True:
         print("Recording...")
         with m as source:
-            try:  
-                # listen for TIMEOUT second, then check again if the stop function has been called
+            try:
+                # wait for TIMEOUT seconds for someone to speak  
+                # listen for PRHASE_TIME_LIMIT second, then returns the part of the phrase
+                # processed before the time limit was reached.
                 audio = r.listen(source, timeout=TIMEOUT,phrase_time_limit=PRHASE_TIME_LIMIT)
             except Exception:
                 print("TimeOUT expired")
@@ -62,8 +66,13 @@ def callback(msg):
 
 rospy.init_node('voice_detection_node', anonymous=True) 
 
-pub_microphone = rospy.Publisher('microphone_ready', Bool, queue_size=10)   
+# publish on this topic when the speech recognition is succesfull performed
+pub_microphone = rospy.Publisher('microphone_ready', Bool, queue_size=10) 
+
+# publish on this topic a text to be forwarded to the RASA module
 pub = rospy.Publisher('text_to_bot', String, queue_size=10)
+
+#publish on this topic when user is unknown and he/she says his/her name
 pub2 = rospy.Publisher('text_for_reidentification', String, queue_size=10)
 
 current_user=" "
@@ -92,6 +101,8 @@ with m as source:
     r.adjust_for_ambient_noise(source,duration=3)  
 print("Calibration finished")
 
+# Subscribe to the topic ID for acquiring the user identity and firing the callback for the
+# speech to text
 rospy.Subscriber("ID",String,callback)
 
 rospy.spin()
