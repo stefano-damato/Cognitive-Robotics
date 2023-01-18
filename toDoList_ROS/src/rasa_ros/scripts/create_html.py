@@ -179,7 +179,8 @@ def callback(msg):
 global FILENAME, pepper, prev_toDoList, url
 prev_toDoList = dict
 # Retrive the IP assigned to this machine
-ip = socket.gethostbyname(socket.gethostname())
+#ip = print([(s.connect(('8.8.8.8', 53)), s.getsockname()[0], s.close()) for s in [socket.socket(socket.AF_INET, socket.SOCK_DGRAM)]][0][1])
+ip = "10.0.1.220"
 url = "http://" + ip + "/toDoList.html"
 FILENAME="_toDoList.txt"
 
