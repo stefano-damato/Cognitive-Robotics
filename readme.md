@@ -62,10 +62,10 @@ Substitute "your_name" with your name and "chosen_camera" with the index of the 
 To obtain the file containing the new database that will be used from the face recognition model run:
 ```
 source ~/python-env/bin/activate
-python3 Image_reidentification.py --data_path img --traineing 1 --file_name data
+python3 Image_reidentification.py --data_path img --training 1 --file_name data
 deactivate
 ```
-Now you can move the `data.pickle` in the ros pakage where the `reidentification_node` is containing.
+Now you can move the `data.pickle` in the ros pakage where the `reidentification_node` is contained.
 
 ### Symbolinc links
 Incude config file and other files in the ros workspace, from the directory of ros (usually $HOME/.ros) run the command:
