@@ -9,12 +9,17 @@ from datetime import datetime as dt
 import socket
 from rasa_ros.srv import LoadUrl
 
+# Function used to open the toDoList file, read it and import its content as a dictionary in which the key is activity name
+# and the value is a list containing the activity properties.
 def importDict(filepath):
     with open(filepath, 'r') as f:
         str = f.read()
     convertedDict=ast.literal_eval(str)
     return convertedDict
 
+# This callback creates an html file that shows the to-do list if it's changed from the 
+# previous one; then it asks the load_url serivce to load the url of this file on Pepper's
+# tablet
 def callback(msg):
     global prev_toDoList
     name = msg.data
@@ -173,6 +178,7 @@ def callback(msg):
 
 global FILENAME, pepper, prev_toDoList, url
 prev_toDoList = dict
+# Retrive the IP assigned to this machine
 ip = socket.gethostbyname(socket.gethostname())
 url = "http://" + ip + "/toDoList.html"
 FILENAME="_toDoList.txt"
@@ -180,8 +186,9 @@ FILENAME="_toDoList.txt"
 with open('config.json', 'r') as f:
     config = json.load(f)
 
-#threading.Thread(target=lambda: rospy.init_node('website_node', disable_signals=True)).start()
 rospy.init_node('website_node')
+# Subscribe to the topic ID for acquiring the user identity and firing the callback for
+# creating the html file and loading the url
 rospy.Subscriber("ID",String,callback)
 
 pepper = config["PEPPER"]
