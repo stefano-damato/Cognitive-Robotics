@@ -27,8 +27,10 @@ class Text2SpeechNode:
     def say(self, msg):
         try:
             print("Before")
+            # Publish the value True on the "is_speaking" topic to inform the other nodes that the robot is about to start speaking
             pub.publish(True)
             self.tts.say(msg.speech)
+            # Publish the value False on the "is_speaking" topic to inform the other nodes that the robot has finished speaking
             pub.publish(False)
             print("After")
         except:
@@ -54,6 +56,8 @@ if __name__ == "__main__":
     parser.add_option("--ip", dest="ip", default="10.0.1.207")
     parser.add_option("--port", dest="port", default=9559)
     (options, args) = parser.parse_args()
+    # Initialize the publisher for the "is_speaking" topic, used to inform the other nodes (such as reidentification_node which
+    # subscribes to the topic) wheter the robot has finished talking or not
     pub = rospy.Publisher('is_speaking', Bool, queue_size=10)
     try:
         ttsnode = Text2SpeechNode(options.ip, int(options.port))
