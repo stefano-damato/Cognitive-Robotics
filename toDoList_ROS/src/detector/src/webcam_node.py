@@ -7,6 +7,7 @@ import os
 # Read frame 
 
 def talker():
+    # Publish the acquired image on the topic webcam
     pub = rospy.Publisher('webcam',Image,queue_size=100)
     rospy.init_node('talker',anonymous=True)
     rate=rospy.Rate(10)

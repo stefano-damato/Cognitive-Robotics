@@ -11,6 +11,7 @@ rospy.init_node('visualization_node')
 image_lock = Lock()
 image = None
 
+# This callback recives the bounding box cordinates and draw it
 def rcv_detection(msg):
     global image
     rospy.loginfo('detection here')
@@ -36,6 +37,7 @@ def rcv_detection(msg):
     cv2.imshow('Image', im)
     cv2.waitKey(10)
 
+# This callback recive the image from the webcam
 def rcv_image(msg):
     global image
     rospy.loginfo('image here')
@@ -43,8 +45,9 @@ def rcv_image(msg):
     image = ros_numpy.numpify(msg)
     image_lock.release()
 
-#si = rospy.Subscriber("webcam2", Image, rcv_image)
+# Subscribe to the topic webcam where the webcam_node publish the images
 si = rospy.Subscriber("webcam", Image, rcv_image)
+# Subscribe to the topic detection where the reidentification node publish the bounding box cordinates
 sd = rospy.Subscriber("detection", Detection2DArray, rcv_detection)
 
 

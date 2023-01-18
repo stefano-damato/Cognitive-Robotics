@@ -17,6 +17,8 @@ from glob import glob
 from rasa_ros.srv import Text2Speech
 import json
 
+# This method takes as input the face detector model, the frame and a threshold and returns
+# the frame that it recive in input and the bounding boxes of the detectd faces
 def getFaceBox(net, frame, conf_threshold=0.8):
     frameOpencvDnn = frame.copy()
     frameHeight = frameOpencvDnn.shape[0]
@@ -52,17 +54,19 @@ def extract_features(face_reco_model, filename):
     feature_vector = (face_reco_model.predict(faceim,verbose='false')).flatten()
     return feature_vector
 
+# This method saves the database of the knowing people into a file (name)
 def data_to_file(data_dict,name):
     print(name)
     with open(name, 'wb') as handle:
         pickle.dump(data_dict, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
+# This method saves the database of the knowing people frome a file (name)
 def data_from_file(name):
     with open(name, 'rb') as handle:
         X = pickle.load(handle)
     return X
 
-
+# This method save the face (msg) into a folder (PATH)
 def save_face(msg,PATH):
     frame = ros_numpy.numpify(msg)
     frameFace, bboxes = getFaceBox(faceNet, frame)     # Get face
@@ -79,6 +83,7 @@ def save_face(msg,PATH):
         cv2.imwrite(PATH+"/img_"+str(j)+".jpg", resized_face)
         print("img_"+str(j)+".jpg saved")
 
+# This method returns the new database of knowing people 
 def train(data_path,n_images_for_person,file_path):
     database = []
     for dirs in os.listdir(data_path):
@@ -100,6 +105,7 @@ def train(data_path,n_images_for_person,file_path):
         database.append(person)
     data_to_file(database,file_path)
 
+# This is a Debug callback 
 def callback2(msg):
     print("received spoken text: ", msg.data)
 
@@ -204,16 +210,17 @@ def rcv_image(msg):
 def callback(msg):
     global microphone_ready
     microphone_ready = msg.data
-
+# This callback receives from the text2speech node the value True when Pepper is speaking
+# and False otherwise
 def callback_is_speaking(msg):
     global pepper_is_speaking
     pepper_is_speaking = msg.data
-    
     if pepper_is_speaking:
         print(pepper_is_speaking)
 
 global count_unknown,name,folder_path,database, min_distance
 
+# At the begin we set these variable to True and False
 microphone_ready = True
 pepper_is_speaking = False
     
@@ -266,19 +273,27 @@ database = data_from_file(datapath)
 
 
 rospy.init_node('reidentification_node')
+# Publish the bounding box cordinates of the detected faces on the topic detection
 pub = rospy.Publisher('detection', Detection2DArray, queue_size=2)
+# Publish the id of the current user on the topic ID
 pub_id= rospy.Publisher('ID',String,queue_size=10)
-#pub_label= rospy.Publisher('label',String,queue_size=10)
-#pub2 = rospy.Publisher('webcam2',Image,queue_size=100)
-#rospy.Subscriber("text_for_reidentification",String,callback)
+
 if pepper:
     rospy.wait_for_service('tts')
     global text2speech_node
     text2speech_node=rospy.ServiceProxy('tts', Text2Speech)
 
+# Subscribe to the topic webcam where the webcam_node publish
 si = rospy.Subscriber("webcam", Image, rcv_image)
+# Subscribe to the topic text_for_reidentification where the voice_detection_node publish
+# the translation in text of the user’s speech the text useful for the registration phase
 rospy.Subscriber("text_for_reidentification", String, callback2)
+# Subscribe to the topic microphone_ready where the voice_detection_node publish
+# when the microphone is ready to listen
 rospy.Subscriber("microphone_ready",Bool,callback)
+
+# Subscribe to the topic is_speaking where the text2speech_node publish
+# when Pepper is speaking or not
 if pepper:
     rospy.Subscriber('is_speaking', Bool, callback_is_speaking)
 

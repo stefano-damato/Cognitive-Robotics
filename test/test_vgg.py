@@ -44,7 +44,7 @@ model_name=args.model
 # Load the VGG-Face model based on ResNet-50
 face_reco_model = VGGFace(model=model_name, include_top=False, pooling='avg')
 
-save_path="Result_"+model_name+".txt"
+save_path="Result_"+model_name+"_"+str(args.n_images_for_person)+".txt"
 
 
 # Dataset path - Folder in which the faces are saved
@@ -88,11 +88,7 @@ for dirs in os.listdir(test_path):
     print(person_path)
     count = 0
     for filename in glob(os.path.join(person_path,'*.jpg')):
-        # Preprocess image
-        resized_face = cv2.resize(filename,INPUT_SIZE)
-        ##
-        faceim = preprocess_input([resized_face.astype(np.float32)], version=2)
-        feature_vector = (face_reco_model.predict(faceim,verbose='false')).flatten()
+        feature_vector = extract_features(face_reco_model, filename)
         min_distance = ["unknown", 1000000000000]
         for person in database:
             for face in person:
