@@ -125,8 +125,6 @@ roslaunch detector recognition.launch
 roslaunch ros_audio_pkg speech_recognition.launch
 ```
 
-## Application Demo
-
 ## Authors
 - Cirillo Benedetto @bcirillo99
 - D'Amato Stefano @stefano-damato
