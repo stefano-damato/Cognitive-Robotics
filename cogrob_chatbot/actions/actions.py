@@ -7,6 +7,8 @@ from datetime import datetime as dt
 import ast
 import os
 
+# Function used to open the toDoList file, read it and import its content as a dictionary in which the key is activity name
+# and the value is a list containing the activity properties
 def importDict(filepath):
     with open(filepath, 'r') as f:
         str = f.read()
@@ -21,6 +23,7 @@ FILENAME="_toDoList.txt"
 global PERSON
 PERSON="default"
 
+# This action is the only action that allows to set the global variable PERSON
 class ActionPresentation(Action):
     def name(self) -> Text:
         return "action_presentation"
@@ -38,6 +41,7 @@ class ActionPresentation(Action):
 
         return [AllSlotsReset(), SlotSet("PERSON", PERSON)]
 
+# Through this action a new activity is added in the to-do list
 class ActionAddSubmit(Action):
 
     def name(self) -> Text:
@@ -82,6 +86,9 @@ class ActionAddSubmit(Action):
         
         return [AllSlotsReset(), SlotSet("PERSON", PERSON)]
 
+
+# This action allows to display in the dialogue interface (and to utter, if Pepper is
+# connected) the user's to-do list
 class ActionDisplaySubmit(Action):
 
     def name(self) -> Text:
@@ -112,6 +119,8 @@ class ActionDisplaySubmit(Action):
            
         return [AllSlotsReset(), SlotSet("PERSON", PERSON)]
 
+
+# Through this action an activity in the to-do list can be removed
 class ActionRemoveSubmit(Action):
 
     def name(self) -> Text:
@@ -150,6 +159,9 @@ class ActionRemoveSubmit(Action):
         
         return [AllSlotsReset(), SlotSet("PERSON", PERSON)]
 
+
+# Through this action the category, the deadline or the reminder
+# of an activity in the to-do list can be modified
 class ActionModifySubmit(Action):
 
     def name(self) -> Text:
@@ -196,7 +208,9 @@ class ActionModifySubmit(Action):
         
         return [AllSlotsReset(), SlotSet("PERSON", PERSON)]
 
-
+# Depending on whether the user set or not the reminder, this action asks for the deadline 
+# in a different way: in the first case it is mandatory, in the second one the user is allowed
+# not to enter it
 class ActionCheckForReminder(Action):
     def name(self) -> Text:
         return "action_check_for_reminder"
@@ -214,6 +228,8 @@ class ActionCheckForReminder(Action):
 
         return []
 
+
+# This action set the slot PERSON with the namesake global variable
 class ActionSetPerson(Action):
     def name(self) -> Text:
         return "action_set_person"
