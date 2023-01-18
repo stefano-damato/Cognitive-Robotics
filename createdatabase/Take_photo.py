@@ -3,7 +3,7 @@ import cv2
 import tensorflow as tf
 from argparse import ArgumentParser
 import os
-
+import time
 def getFaceBox(net, frame, conf_threshold=0.8):
     frameOpencvDnn = frame.copy()
     frameHeight = frameOpencvDnn.shape[0]
@@ -34,7 +34,6 @@ parser = ArgumentParser()
 parser.add_argument('--padding', type=float, default=0.2)
 parser.add_argument('--face_path', help='Folder where the images will be saved', type=str)
 parser.add_argument('--pps', help='photos per second', type=int, default=1)
-parser.add_argument('--camera_index', help='index of the camera to use', type=int, default=0)
 args = parser.parse_args()
 
 # Initialize detector
@@ -46,19 +45,25 @@ faceNet = cv2.dnn.readNet(faceModel, faceProto)
 padding = args.padding
 INPUT_SIZE = (224,224)
 PATH = args.face_path
-
+ext_list_find=[]
+ext_list_crop=[]
 j=len(os.listdir(PATH))+1
 # Read frame 
-cap = cv2.VideoCapture(args.camera_index)
+cap = cv2.VideoCapture(0)
 fps= int(cap.get(cv2.CAP_PROP_FPS))
 count=1
 while(1):             
     # Take each frame
     _, frame = cap.read() # Read frame
+    st = time.time()
     frameFace, bboxes = getFaceBox(faceNet, frame)     # Get face
-
+    et = time.time()
+    ext = et - st
+    print(ext)
+    ext_list_find.append(ext)
     for i,bbox in enumerate(bboxes):
         # Adjust crop
+        st = time.time()
         w = bbox[2]-bbox[0]
         h = bbox[3]-bbox[1]
         padding_px = int(padding*max(h,w))
@@ -66,6 +71,16 @@ while(1):
         face = face[ face.shape[0]//2 - face.shape[1]//2 : face.shape[0]//2 + face.shape[1]//2, :, :]
         # Preprocess image
         resized_face = cv2.resize(face,INPUT_SIZE)
+        et = time.time()
+        ext = et - st
+        print(ext)
+        ext_list_crop.append(ext)
+        
+        with open("inference_box.txt","w") as f: 
+            f.write("Individuation (s): \n")
+            f.write(str(np.mean(ext_list_find))+"\n")
+            f.write("Crop (s): \n")
+            f.write(str(np.mean(ext_list_crop))+"\n")
         if count%(fps/args.pps)==0:
             cv2.imwrite(PATH+"/img_"+str(j)+".jpg", resized_face)
             print("img_"+str(j)+".jpg saved")

@@ -66,13 +66,13 @@ def callback(msg):
 
 rospy.init_node('voice_detection_node', anonymous=True) 
 
-# publish on this topic when the speech recognition is succesfull performed
+# Publish on this topic when the speech recognition is succesfull performed
 pub_microphone = rospy.Publisher('microphone_ready', Bool, queue_size=10) 
 
-# publish on this topic a text to be forwarded to the RASA module
+# Publish on this topic a text to be forwarded to the RASA module
 pub = rospy.Publisher('text_to_bot', String, queue_size=10)
 
-#publish on this topic when user is unknown and he/she says his/her name
+# Publish on this topic when user is unknown and he/she says his/her name
 pub2 = rospy.Publisher('text_for_reidentification', String, queue_size=10)
 
 current_user=" "
