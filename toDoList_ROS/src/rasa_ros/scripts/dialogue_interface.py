@@ -39,9 +39,11 @@ def main():
     rospy.init_node('writing')
     rospy.wait_for_service('dialogue_server')
     if pepper:
+        # Check if the 'tts' service is available to perform the text-to-speech
         rospy.wait_for_service('tts')
         text2speech_node=rospy.ServiceProxy('tts', Text2Speech)
     print("Ready")
+    # Subscribe to this topic to retrive the phrase that Pepper will utter
     rospy.Subscriber("text_to_bot", String, callback)
     terminal = TerminalInterface()
 

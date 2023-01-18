@@ -10,7 +10,7 @@ def talker():
     # Publish the acquired image on the topic webcam
     pub = rospy.Publisher('webcam',Image,queue_size=100)
     rospy.init_node('talker',anonymous=True)
-    rate=rospy.Rate(10)
+    rate=rospy.Rate(1)
     print(os.listdir())
     print("Starting videocapture")
     with open('config.json', 'r') as f:
